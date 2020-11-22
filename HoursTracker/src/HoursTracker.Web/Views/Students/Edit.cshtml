@@ -1,0 +1,212 @@
+﻿@{
+    ViewData["Title"] = "Editar alumno";
+}
+
+@section Scripts {
+
+    <script>
+
+    function setFormValues(id) {
+        $.get(`@Url.Action("Get", "Students")/${id}`, data => {
+            for (var key in data) {
+              $('[name="' + key + '"]').val(data[key]);
+
+            }
+
+
+            $('#selectCareers').selectpicker('val', data.careers);
+            $('#selectCampus').selectpicker('val', data.campus);
+
+        });
+    }
+        $(function () {
+
+            $('#selectCareers').selectpicker();
+            $('#selectCampus').selectpicker();
+
+        setFormValues(@Model);
+
+        $.get('@Url.Action("All", "Careers")', function (data) {
+            for (const { id, name } of data) {
+                $('#selectCareers').append('<option value=' + id + '>' + name + '</option>').selectpicker('refresh');
+            }
+        });
+
+         $.get('@Url.Action("All", "Campuses")', function (data) {
+            for (const { id, name } of data) {
+                $('#selectCampus').append('<option value=' + id + '>' + name + '</option>').selectpicker('refresh');
+            }
+        });
+
+
+        $(".form-horizontal").submit(function (event){
+            event.preventDefault();
+
+            $(this).ajaxSubmit({
+                url: '@Url.Action("Edit", "Students")',
+                type: 'put',
+                success: () => {
+                    $(this).prepend(`
+                        <div id="alert" class="alert bg-green alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            ¡El alumno ha si editado exitosamente!
+                        </div>
+                    `);
+                },
+                error: (error) => {
+                    if (error.responseText === "Ya existe un Estudiante con este numero de Cuenta") {
+                        $(this).prepend(`
+                        <div id="alert" class="alert bg-red alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            ¡Ya existe un Estudiante con este numero de Cuenta!
+                        </div>
+                    `);
+                    }
+                    console.log(error);
+                    //some stuff on failure
+                }
+            })
+
+        })
+    });
+        jQuery(function ($) {
+            $('.back-button').click(function (e) {
+                history.back();
+            });
+        });
+    </script>
+
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    <button type="button" class="back-button btn btn-primary btn-circle waves-effect"> <i class="fa fa-arrow-left"></i> </button>
+                    Editar alumno
+                </h2>
+            </div>
+            <div class="body form-center">
+                <form class="form-horizontal">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="account">Numero de cuenta</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="account" name="account" class="form-control" autocomplete="off" required maxlength="50" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor ingrese un numero de cuenta')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="firstName">Primer nombre</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="firstName" name="firstName" class="form-control" autocomplete="off" required maxlength="50" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor ingrese un nombre')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="secondName">Segundo nombre</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="secondName" name="secondName" class="form-control" autocomplete="off" maxlength="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="firstSurname">Primer apellido</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="firstSurname" name="firstSurname" class="form-control" autocomplete="off" required maxlength="50" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor ingrese un apellido')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="secondSurname">Segundo apellido</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="secondSurname" name="secondSurname" class="form-control" autocomplete="off" maxlength="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="email">Correo</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="email" name="email" class="form-control" autocomplete="off" required maxlength="50" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor ingrese un correo')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="selectCampus">Campus</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select id="selectCampus" name="campus" class="form-control show-tick" title="Seleccione una opcion" data-live-search="true" required onchange="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor seleccione una opcion')">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="selectCareers">Carrera</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select id="selectCareers" name="careers" class="form-control show-tick" title="Seleccione una opcion" data-live-search="true" required onchange="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor seleccione una opcion')">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="settlement">Finiquito</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input type="checkbox" class="filled-in" value=true id="settlement" name="settlement">
+                                    <label for="settlement" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            <button id="saveButton" type="submit" class="btn btn-primary m-t-15 waves-effect">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

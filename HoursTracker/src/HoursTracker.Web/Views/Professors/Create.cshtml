@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewData["Title"] = "Nuevo maestro";
+}
+
+
+@section Scripts { 
+
+<script>
+    $(function () {
+
+
+        $(".form-horizontal").submit(function (event){
+            event.preventDefault();
+            
+            $(this).ajaxSubmit({
+                url: '@Url.Action("Create", "Professors")',
+                type: 'post',
+                resetForm: true,
+                success: () => {
+                    $(this).prepend(`
+                        <div id="alert" class="alert bg-green alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            ¡El maestro ha si creado exitosamente!
+                        </div>
+                    `);
+                },
+                error: (error) => {
+                    if (error.responseText === "Ya existe un Maestro con este codigo") {
+                        $(this).prepend(`
+                        <div id="alert" class="alert bg-red alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            ¡Ya existe un Mestro con este codigo!
+                        </div>
+                    `);
+                    }
+                    console.log(error);
+                    //some stuff on failure
+                }
+            })
+            
+        })
+
+    });
+
+    jQuery(function ($) {
+        $('.back-button').click(function (e) {
+            history.back();
+        });
+    });
+</script>
+
+}
+
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        <button type="button" class="back-button btn btn-primary btn-circle waves-effect"> <i class="fa fa-arrow-left"></i> </button>
+                        Agregar maestro
+                    </h2>
+                </div>
+                <div class="body form-center">
+                    <form class="form-horizontal">
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                <label for="code">Código</label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="code" name="code" class="form-control" autocomplete="off" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                <label for="firstName">Primer nombre</label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="firstName" name="firstName" class="form-control" autocomplete="off" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                <label for="secondName">Segundo nombre</label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="secondName" name="secondName" class="form-control" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                <label for="firstLastName">Primer apellido</label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="firstLastName" name="firstLastName" class="form-control" autocomplete="off" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                <label for="secondLastName">Segundo apellido</label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="secondLastName" name="secondLastName" class="form-control" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                                <button id="saveButton" type="submit" class="btn btn-primary m-t-15 waves-effect">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

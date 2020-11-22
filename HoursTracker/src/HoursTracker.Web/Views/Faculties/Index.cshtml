@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewData["Title"] = "Facultad";
+}
+
+@section Scripts {
+    <script>
+        $(function () {
+
+          const table = $("#facultiesTable").DataTable({
+            language,
+            dom: "Bfrtip",
+            ajax: {
+                url: "@Url.Action("All", "Faculties")",
+                dataSrc: ""
+            },
+            buttons: [
+              {
+                text: "Agregar",
+                className: "btn btn-primary waves-effect",
+                action: function () {
+                  window.location.href = "@Url.Action("Create", "Faculties")";
+                },
+              },
+            ],
+              columns: [
+              { data: "code" },
+              { data: "name" },
+              { data: null },
+            ],
+            columnDefs: [
+              {
+                targets: [-1],
+                width: 80,
+                render: function (data, type, row) {
+                  const {id} = row;
+                  return (
+                    `<div class="text-center">
+                        <button type="button" class="btn bg-light-blue waves-effect edit-action" data-id=${id}>
+                            <i class="material-icons">create</i>
+                        </button>
+                        <button type="button" class="btn bg-red waves-effect delete-action" data-id=${id}>
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </div>`
+                  );
+                },
+              },
+            ],
+          });
+
+          $(document).on('click', '.edit-action', function () {
+
+              window.location.href = `@Url.Action("Edit", "Faculties")/${this.dataset.id}`;
+          });
+
+          $(document).on('click', '.delete-action', function () {
+              bootbox.confirm({
+                  message: "¿Está seguro que desea elimiar el registro?",
+                      buttons: {
+                          confirm: {
+                              label: 'Si',
+                              className: 'btn-default'
+                          },
+                          cancel: {
+                              label: 'No',
+                              className: 'btn-primary'
+                          }
+                      },
+                      callback: result => {
+                          if (!result) return;
+
+                          $.ajax({
+                              url: `@Url.Action("Delete", "Faculties")/${this.dataset.id}`,
+                              type: 'DELETE',
+                              success: function() {
+                                  table.ajax.reload();
+                              }
+                          });
+                      }
+                });
+          });
+        });
+    </script>
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    <span>Facultad</span>
+                </h2>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+
+                    <table id="facultiesTable" class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

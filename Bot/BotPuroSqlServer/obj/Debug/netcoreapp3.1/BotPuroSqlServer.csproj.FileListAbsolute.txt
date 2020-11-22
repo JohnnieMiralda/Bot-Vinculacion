@@ -1,0 +1,44 @@
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.exe
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.deps.json
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.runtimeconfig.json
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.runtimeconfig.dev.json
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.dll
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.pdb
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Telegram.Bot.dll
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csprojAssemblyReference.cache
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfoInputs.cache
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfo.cs
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CoreCompileInputs.cache
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CopyComplete
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.dll
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.pdb
+C:\Users\Gerahn10\source\repos\BotPuroSqlServer\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.genruntimeconfig.cache
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.exe
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.deps.json
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.runtimeconfig.json
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.runtimeconfig.dev.json
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.dll
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.pdb
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Telegram.Bot.dll
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csprojAssemblyReference.cache
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfoInputs.cache
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfo.cs
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CoreCompileInputs.cache
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CopyComplete
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.dll
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.pdb
+C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.genruntimeconfig.cache

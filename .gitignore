@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/HoursTracker/.vs/HoursTracker
+*.user
+/HoursTracker/.vs
+/HoursTracker/.idea/.idea.HoursTracker/.idea
+/HoursTracker/src/HoursTracker.Data/Migrations
+/.vs
+/HoursTracker/src/HoursTracker.Web/Migrations

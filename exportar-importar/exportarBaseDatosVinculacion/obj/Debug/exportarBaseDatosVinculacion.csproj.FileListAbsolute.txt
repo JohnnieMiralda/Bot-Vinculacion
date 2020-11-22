@@ -1,0 +1,76 @@
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.exe.config
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.exe
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.pdb
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csprojAssemblyReference.cache
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.Properties.Resources.resources
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.GenerateResource.cache
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.CoreCompileInputs.cache
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.exe
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.pdb
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\bin\Debug\aa-DJ\exportarBaseDatosVinculacion.resources.dll
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\obj\Debug\aa-DJ\exportarBaseDatosVinculacion.resources.dll
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.LoginForm.resources
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.LoginForm.aa-DJ.resources
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.MainForm.resources
+C:\Users\Sarah\source\repos\exportarBaseDatosVinculacion\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.ResolveComReference.cache
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.exe.config
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.exe
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.pdb
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\aa-DJ\exportarBaseDatosVinculacion.resources.dll
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csprojAssemblyReference.cache
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.ResolveComReference.cache
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.LoginForm.resources
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.MainForm.resources
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.Properties.Resources.resources
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.LoginForm.aa-DJ.resources
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.GenerateResource.cache
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.CoreCompileInputs.cache
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\aa-DJ\exportarBaseDatosVinculacion.resources.dll
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.exe
+C:\Users\Sarah\Documents\CLASES\INGENIERIA SOFTWARE\VinculacionUnitec-SPS\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.pdb
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csprojAssemblyReference.cache
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.ResolveComReference.cache
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.ImportForm.resources
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.LoginForm.resources
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.MainForm.resources
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.Properties.Resources.resources
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.LoginForm.aa-DJ.resources
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.GenerateResource.cache
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.CoreCompileInputs.cache
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.exe
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.pdb
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.exe.config
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.exe
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.pdb
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\aa-DJ\exportarBaseDatosVinculacion.resources.dll
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.dll
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.pdb
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.xml
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\aa-DJ\exportarBaseDatosVinculacion.resources.dll
+C:\Users\mitoo\Downloads\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.CopyComplete
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.exe.config
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.exe
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\exportarBaseDatosVinculacion.pdb
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\aa-DJ\exportarBaseDatosVinculacion.resources.dll
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.dll
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.pdb
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.xml
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csprojAssemblyReference.cache
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.ResolveComReference.cache
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.ImportForm.resources
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.LoginForm.resources
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.MainForm.resources
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.Properties.Resources.resources
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.LoginForm.aa-DJ.resources
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.GenerateResource.cache
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.CoreCompileInputs.cache
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\aa-DJ\exportarBaseDatosVinculacion.resources.dll
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.csproj.CopyComplete
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.exe
+C:\Users\Sarah\Desktop\VinculacionUnitec-SPS-ExportDatabase\exportar-importar\exportarBaseDatosVinculacion\obj\Debug\exportarBaseDatosVinculacion.pdb

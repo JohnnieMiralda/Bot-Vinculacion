@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewData["Title"] = "Editar asignatura";
+}
+
+@section Scripts {
+
+    <script>
+
+
+    function setFormValues(id) {
+        $.get(`@Url.Action("Get", "Classes")/${id}`, data => {
+            for (var key in data) {
+            $('[name="'+key+'"]').val(data[key]);
+            }
+
+            $('#selectCareers').selectpicker('val', data.careers);
+        });
+    }
+
+        $(function () {
+
+            $('#selectCareers').selectpicker();
+
+            $.get('@Url.Action("All", "Careers")', function (data) {
+                for (const { id, name } of data) {
+                    $('#selectCareers').append('<option value= ' + id + '>' + name + '</option>').selectpicker('refresh');
+                }
+
+                setFormValues(@Model);
+            });
+
+        $(".form-horizontal").submit(function (event){
+            event.preventDefault();
+
+            $(this).ajaxSubmit({
+                url: '@Url.Action("Edit", "Classes")',
+                type: 'put',
+                resetForm: false,
+                success: () => {
+                    $(this).prepend(`
+                        <div id="alert" class="alert bg-green alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            ¡La asignatura ha sido editada exitosamente!
+                        </div>
+                    `);
+                },
+                error: (error) => {
+                    if (error.responseText === "Ya existe una clase con este codigo") {
+                        $(this).prepend(`
+                        <div id="alert" class="alert bg-red alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            ¡Ya existe una clase con este codigo!
+                        </div>
+                    `);
+                    }
+                    console.log(error);
+                    //some stuff on failure
+                }
+            })
+
+        })
+        });
+
+        jQuery(function ($) {
+            $('.back-button').click(function (e) {
+                history.back();
+            });
+        });
+    </script>
+
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    <button type="button" class="back-button btn btn-primary btn-circle waves-effect"> <i class="fa fa-arrow-left"></i> </button>
+                     Editar asignatura
+                </h2>
+            </div>
+            <div class="body form-center">
+                <form class="form-horizontal">
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="className">Código</label>
+                        </div>
+
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="classCode" name="classCode" class="form-control" autocomplete="off" required maxlength="50" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor ingrese un codigo')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="classCode">Nombre</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="className" name="className" class="form-control" autocomplete="off" required maxlength="50" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor ingrese un nombre')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="ClassCode">Carrera</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select id="selectCareers" name="careers" class="form-control show-tick" multiple required title="Seleccione una opcion" data-live-search="true" onchange="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor seleccione una opcion')">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            
+                            <button id="saveButton" type="submit" class="btn btn-primary m-t-15 waves-effect">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

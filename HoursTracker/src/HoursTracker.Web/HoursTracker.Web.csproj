@@ -1,0 +1,202 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.4" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.4" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.4" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.4" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.RazorPages" Version="2.2.5" />
+      <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\browser-support\_ie10.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\browser-support\_ie11.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\pages\_404.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\pages\_500.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\pages\_forgotpasswordpage.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\pages\_loginpage.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\pages\_profile.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\pages\_signuppage.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\style.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-amber.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-black.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-blue-grey.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-blue.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-brown.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-cyan.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-deep-orange.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-deep-purple.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-green.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-grey.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-indigo.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-light-blue.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-light-green.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-lime.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-orange.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-pink.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-purple.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-red.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-teal.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\theme-yellow.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\_all-themes.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\themes\_theme-color-variables.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_alerts.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_badgelistgroupitem.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_bootstrapnotify.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_bootstrapselect.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_breadcrumbs.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_buttons.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_card.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_charts.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_checkboxradio.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_collapse.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_colorpicker.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_customanimate.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_dashboard.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_datetimepicker.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_demo.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_dialogs.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_dropdownmenu.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_dropzone.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_formwizard.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_general.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_helpers.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_infobox.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_inputformgroup.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_ionrangeslider.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_jquerydatatable.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_jquerynestable.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_labels.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_leftsidebaroverlay.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_lightgallery.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_maps.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_materialicons.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_media.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_mediaobject.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_mixins.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_modals.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_multiselect.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_navbar.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_navtabs.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_noUISlider.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_pageloader.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_pagination.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_panels.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_preloaders.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_progressbars.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_searchbar.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_switch.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_tables.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_tagsinput.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_thumbnails.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_tooltippopovers.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_variables.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\scss\_waveseffect.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\1.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\10.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\11.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\12.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\13.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\14.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\15.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\16.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\17.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\18.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\19.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\2.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\20.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\3.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\4.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\5.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\6.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\7.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\8.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\9.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-1.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-10.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-11.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-12.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-13.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-14.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-15.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-16.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-17.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-18.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-19.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-2.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-20.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-3.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-4.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-5.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-6.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-7.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-8.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\theme\images\image-gallery\thumb\thumb-9.jpg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Pages\Professors\Index.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Pages\Professors\Index.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\lib\theme\images\user-img-background.jpg">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\lib\theme\images\user.png">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\lib\jQuery-slimScroll-1.3.8\.gitignore">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\lib\jQuery-slimScroll-1.3.8\bower.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\lib\jQuery-slimScroll-1.3.8\jquery.slimscroll.js">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\lib\jQuery-slimScroll-1.3.8\jquery.slimscroll.min.js">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\lib\jQuery-slimScroll-1.3.8\package.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="wwwroot\lib\jQuery-slimScroll-1.3.8\README.md">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Views\Professors\Create.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Views\Professors\Edit.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\img" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HoursTracker.Core\HoursTracker.Core.csproj" />
+      <ProjectReference Include="..\HoursTracker.Data\HoursTracker.Data.csproj" />
+    </ItemGroup>
+
+</Project>

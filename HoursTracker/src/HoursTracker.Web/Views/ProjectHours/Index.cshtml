@@ -1,0 +1,213 @@
+﻿
+@{
+    ViewData["Title"] = "Horas de Vinculacion";
+}
+
+@section Scripts {
+    <script>
+        $(function () {
+
+          const table = $("#projecthoursTable").DataTable({
+              language,
+              "bFilter": false,
+            dom: "Bfrtip",
+            ajax: {
+                url: "@Url.Action("All", "ProjectHours")",
+                dataSrc: ""
+            },
+
+            buttons: [
+              {
+                text: "Agregar",
+                className: "btn btn-primary waves-effect",
+                action: function () {
+                  window.location.href = "@Url.Action("Create", "ProjectHours")";
+                },
+              },
+            ],
+              columns: [
+                  { data: "studentAccount" },
+                  { data: "studentFirstName" },
+                  { data: "studentLastName" },
+                  { data: "sectionCode" },
+                  { data: "projectName" },
+                  { data: "hours" },
+                  { data: "tableState",
+                  render: function (data, type, row) {
+                      return (data == true) ? 'Aprobado' : 'Ingresado';
+                      }
+                  },
+
+              { data: null },
+              ],
+            columnDefs: [
+              {
+                targets: [-1],
+                width: 10,
+                render: function (data, type, row) {
+                  const {id} = row;
+                  return (
+                    `
+                    <div class="text-center">
+                        <button type="button" class="btn bg-light-blue waves-effect edit-action" data-id=${id}>
+                            <i class="material-icons">create</i>
+                        </button>
+                        <button type="button" class="btn bg-red waves-effect delete-action" data-id=${id}>
+                            <i class="material-icons">delete</i>
+                        </button>
+                        <button type="button" class="btn bg-green waves-effect approve-action" data-id=${id}>
+                            <i class="fas fa-check"></i>
+                        </button>
+
+                    </div>`
+                  );
+                },
+              },
+            ],
+          });
+
+          $(document).on('click', '.edit-action', function () {
+
+              window.location.href = `@Url.Action("Edit", "ProjectHours")/${this.dataset.id}`;
+          });
+
+
+          $(document).on('click', '.approve-action', function () {
+              bootbox.confirm({
+                  message: "¿Está seguro que desea aprobar el registro?",
+                      buttons: {
+                          confirm: {
+                              label: 'Si',
+                              className: 'btn-default'
+                          },
+                          cancel: {
+                              label: 'No',
+                              className: 'btn-primary'
+                          }
+                      },
+                      callback: result => {
+                          if (!result) return;
+
+                          $.ajax({
+                              url: `@Url.Action("Approve", "ProjectHours")/${this.dataset.id}`,
+                              type: 'DELETE',
+                              success: function () {
+                                  table.ajax.reload();                                
+                                  $("#showerrormessage").html(`
+                                <div id="alert" class="alert bg-green alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    ¡Registro aprobado exitosamente!
+                                </div>
+                            `);
+                              }
+                          });
+                      }
+                });
+          });
+
+          $(document).on('click', '.delete-action', function () {
+              bootbox.confirm({
+                  message: "¿Está seguro que desea eliminar el registro?",
+                      buttons: {
+                          confirm: {
+                              label: 'Si',
+                              className: 'btn-default'
+                          },
+                          cancel: {
+                              label: 'No',
+                              className: 'btn-primary'
+                          }
+                      },
+                      callback: result => {
+                          if (!result) return;
+
+                          $.ajax({
+                              url: `@Url.Action("Delete", "ProjectHours")/${this.dataset.id}`,
+                              type: 'DELETE',
+                              success: function() {
+                                  table.ajax.reload();
+                              }
+                          });
+                      }
+                });
+          });
+           
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val();
+
+                $("#projecthoursTable tr").each(function (index) {
+                    if (index !== 0) {
+
+                        $row = $(this);
+
+                        var id = $row.find("td:first").text();
+
+                        if (id.indexOf(value) !== 0) {
+                            $row.hide();
+                        }
+                        else {
+                            $row.show();
+                        }
+                    }
+                });
+            });
+
+            $('#projecthoursTable thead tr').clone(true).appendTo('#projecthoursTable thead');
+            $('#projecthoursTable thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                $(this).html('<input type="text" class="inputsearch"  placeholder="Buscar ' + title + '" />');
+
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        alert(this.value)
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                })
+
+
+            });
+
+          
+
+        });
+
+
+    </script>
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h6 id="showerrormessage"></h6>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    <span>Horas de Vinculacion</span>
+                </h2>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table id="projecthoursTable" class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
+                            <tr>
+                                <th>Número de Cuenta</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Seccion</th>
+                                <th>Proyecto</th>
+                                <th>Horas</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

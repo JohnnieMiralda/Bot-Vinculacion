@@ -1,0 +1,41 @@
+﻿@page
+@model HoursTracker.Web.Views.Role.Index1Model
+@{
+}
+
+
+<h1>Bienvenido ahora es un administrador.</h1>
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    <span>Roles</span>
+                </h2>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>User</th>
+                                <th>Email</th>
+                            </tr>
+                            @foreach (var aspnet in ViewBag.AspNetUsers)
+                            {
+                        <tr>
+                            <td>@aspnet.Id</td>
+                            <td>@aspnet.UserName</td>
+                            <td>@aspnet.Email</td>
+                        </tr>
+                            }
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

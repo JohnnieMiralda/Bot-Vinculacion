@@ -1,0 +1,299 @@
+﻿@{
+    ViewData["Title"] = "Editar seccion";
+}
+
+@section Scripts {
+
+    <script>
+
+    function setFormValues(id) {
+        $.get({
+                url: `@Url.Action("Get", "Sections")/${id}`,
+            success: (data) => {
+                for (var key in data) {
+                        $('[name="' + key + '"]').val(data[key]);
+                }
+                $('#selectClass').val(data.classId);
+                $('#selectProfessor').val(data.professorId);
+                $('#selectPeriodo').val(data.periodId);
+
+                $('#selectClass').selectpicker("refresh");
+                $('#selectProfessor').selectpicker("refresh");
+                $('#selectPeriodo').selectpicker("refresh");
+                },
+                async: false
+            });
+
+        }
+
+        $(function () {
+
+
+            const table = $("#studentsTable").DataTable({
+                language,
+                "dom": 'lrtip',
+                "bPaginate": false,
+                 ajax: {
+                url: `@Url.Action("StudentsBySection", "Sections")/@Model`,
+                dataSrc: ""
+            },
+            columns: [
+              { data: "account" },
+              { data: "firstName" },
+              { data: "secondName" },
+              { data: "firstSurname" },
+              { data: "secondSurname" },
+              { data: "email" },
+              { data: null },
+            ],
+            columnDefs: [
+              {
+                targets: [-1],
+                width: 80,
+                render: function (data, type, row) {
+                  const {id} = row;
+                  return (
+                    `<div class="text-center">
+                        <button type="button" class="btn bg-red waves-effect delete-action" data-id=${id}>
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </div>`
+                  );
+                },
+              },
+            ],
+            });
+
+            $('#searchButton').click(() => {
+                const accountInfo = $('#studentAccount').val();
+
+                if (table.rows().data().toArray().find(({ account }) => account === accountInfo)) {
+                    $('#message').prepend(`
+                        <div id="alert" class="alert bg-red alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            ¡El alumno ya existen en la sección!
+                        </div>
+                    `);
+                    return;
+                }
+
+                $.get({
+                    url: `@Url.Action("FindByAccount", "Students")/${accountInfo}`,
+                    error: (xhr, status, error) => {
+                        $('#message').prepend(`
+                        <div id="alert" class="alert bg-red alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            ¡El alumno con la cuenta ${accountInfo} no fue encontrado!
+                        </div>
+                    `);
+                    },
+                    success: (data) => {
+                        table.rows.add([data]).draw();
+                        $('#studentAccount').val('');
+                    },
+                async: false
+            });
+
+            });
+
+            $('#selectClass').selectpicker();
+            $('#selectProfessor').selectpicker();
+            $('#selectPeriodo').selectpicker();
+
+            $.get({
+                url: '@Url.Action("SingleClasses", "Classes")',
+                success: (data) => {
+                    for (const { id, className } of data) {
+                        $('#selectClass').append('<option value=' + id + '>' + className + '</option>').selectpicker('refresh');
+                    }
+                },
+                async: false
+            });
+
+            $.get({
+                url: '@Url.Action("All", "Professors")',
+                success: (data) => {
+                    for (const { id, firstName, secondName, firstLastName, secondLastName } of data) {
+                        $('#selectProfessor').append('<option value=' + id + '>' + firstName + " " + secondName + " " + firstLastName + " " + secondLastName + " " + '</option>').selectpicker('refresh');
+                    }
+                },
+                async: false
+            });
+
+            $.get({
+                url: '@Url.Action("All", "Periods")',
+                success: (data) => {
+                    for (const { id, code } of data) {
+                        $('#selectPeriodo').append('<option value=' + id + '>' + code + '</option>').selectpicker('refresh');
+                    }
+                },
+                async: false
+            });
+
+            $(document).on('click', '.delete-action', function () {
+              bootbox.confirm({
+                  message: "¿Está seguro que desea elimiar el registro?",
+                      buttons: {
+                          confirm: {
+                              label: 'Si',
+                              className: 'btn-default'
+                          },
+                          cancel: {
+                              label: 'No',
+                              className: 'btn-primary'
+                          }
+                      },
+                      callback: result => {
+                          if (!result) return;
+                          table
+                              .row($(this).parents('tr'))
+                              .remove()
+                              .draw();
+                         
+                      }
+                });
+          });
+
+        setFormValues(@Model);
+
+            $(".form-horizontal").submit(function (event) {
+                event.preventDefault();
+
+                const data = $(".form-horizontal").serializeArray().reduce((prev, current) => ({ ...prev, [current.name]: current.value }), {});
+                data.students = table.rows().data().toArray().map(x => x.account);
+
+                $.ajax({
+                    url: '@Url.Action("Edit", "Sections")',
+                    type: 'PUT',
+                    data,
+                    success: function (data) {
+                        $('#message').prepend(`
+                        <div id="alert" class="alert bg-green alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            ¡La sección ha si editada exitosamente!
+                        </div>
+                    `);
+                    },
+                    error: (error) => {
+
+                    }
+                });
+
+            });
+    });
+        jQuery(function ($) {
+            $('.back-button').click(function (e) {
+                history.back();
+            });
+        });
+    </script>
+
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    <button type="button" class="back-button btn btn-primary btn-circle waves-effect"> <i class="fa fa-arrow-left"></i> </button>
+                    Editar seccion
+                </h2>
+            </div>
+            <div class="body form-center">
+                <p id="message"></p>
+                <form class="form-horizontal">
+                    <input type="hidden" id="id" name="id" value="3487">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="code">Codigo</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="code" name="code" class="form-control" autocomplete="off" required maxlength="50" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor ingrese un codigo')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="selectPeriodo">Periodo</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select id="selectPeriodo" name="period" class="form-control show-tick" required title="Seleccione una opcion" data-live-search="true" onchange="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor seleccione una opcion')">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="selectClass">Clase</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select id="selectClass" name="class" class="form-control show-tick" required title="Seleccione una opcion" data-live-search="true" onchange="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor seleccione una opcion')">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="selectProfessor">Maestro</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select id="selectProfessor" name="professor" class="form-control show-tick" required title="Seleccione una opcion" data-live-search="true" onchange="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor seleccione una opcion')">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix" style="margin-top: 50px">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="student">Numero de cuenta</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="studentAccount" name="student" class="form-control" autocomplete="off" maxlength="50">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            <button id="searchButton" type="button" class="btn btn-primary m-t-15 waves-effect">Buscar</button>
+                        </div>
+
+                    </div>
+                    <div class="table-responsive">
+
+                        <table id="studentsTable" class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Cuenta</th>
+                                    <th>Primer nombre</th>
+                                    <th>Segundo nombre</th>
+                                    <th>Primer apellido</th>
+                                    <th>Segundo apellido</th>
+                                    <th>Correo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            <button id="saveButton" type="submit" class="btn btn-primary m-t-15 waves-effect">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿.inputsearch {
+    opacity: .5;
+}
+
+table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: block;
+    font-family: '';
+    opacity: 0;
+}
+
+
+.dtrg-group {
+    font-weight: bold;
+}
+
+﻿.btn-group.bootstrap-select.form-control.show-tick.dropup.open > div > * {
+    margin-left: 30px;
+}
+
+body > section.content > div > div > div > div > div > div.body.form-center > form > div:nth-child(8) > div.col-lg-5.col-md-5.col-sm-8.col-xs-7 > div > div > div > div {
+    max-height: 403px ;
+    min-height: 82px; 
+    height: 200px ;
+    left: 0px;
+    overflow: hidden ;
+}
+
+.bootstrap-select.btn-group .dropdown-menu.inner {
+    position: static;
+    float: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-left: 28px;
+}
+
+.bootstrap-select .bs-searchbox .form-control, .bootstrap-select .bs-actionsbox .form-control, .bootstrap-select .bs-donebutton .form-control {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none;
+    margin-left: 30px;
+}
+

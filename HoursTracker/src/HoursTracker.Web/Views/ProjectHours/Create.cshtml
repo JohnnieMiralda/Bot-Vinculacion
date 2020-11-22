@@ -1,0 +1,246 @@
+﻿
+@{
+    ViewData["Title"] = "Horas de Vinculacion";
+}
+
+
+@section Scripts {
+
+    <script>
+        $(function () {
+            var globalId = 0;
+            $("#searchButton").click(function () {
+                $.get('@Url.Action("All", "Students")', function (data) {
+                    var inputSearchAccount = document.getElementById("student").value;
+                    var checkExist = 0;
+                    for (const { id, account, firstName, firstSurname } of data) {
+                        if (account == inputSearchAccount) {
+                            $("#studentName").val(firstName);
+                            $("#studentLastName").val(firstSurname);
+                            checkExist = 1;
+                            break;
+                        }
+                    }
+
+                    if (checkExist == 0)
+                    {
+                        $("#showerrormessage").html(`
+                        <div id="alert" class="alert bg-red alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            ¡Numero de cuenta es invalido!
+                        </div>
+                    `);
+                    }
+
+                 })
+
+            });
+
+            $.get('@Url.Action("All", "Sections")', function (data) {
+                for (const { id, code } of data) {
+                    $('#section').append('<option value=' + id + '>' + code + '</option>').selectpicker('refresh');
+                }
+            })
+
+            $('#section').on('change', function () {
+
+                var id_value = this.value
+                    $.get('@Url.Action("All", "Sections")', function (data) {
+                        for (const { id, period, professor, className } of data) {
+                            if (id_value == id) {
+                                $("#period").val(period);
+                                $("#class").val(className);
+                            }
+                }
+            })
+            });
+
+            $.get('@Url.Action("All", "Projects")', function (data) {
+                    var count = 0;
+                    for (const { id, name } of data) {
+                        if (count == 500)
+                            break;
+                        $('#project').append('<option value=' + id + '>' + name + '</option>').selectpicker('refresh');
+                        count++
+                    }
+             })
+
+        $(".form-horizontal").submit(function (event){
+            event.preventDefault();
+
+            $(this).ajaxSubmit({
+                url: '@Url.Action("Create", "ProjectHours")',
+                type: 'post',
+                resetForm: true,
+                success: () => {
+                    $(this).prepend(`
+                        <div id="alert" class="alert bg-green alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            ¡Horas han sido agregadas exitosamente!
+                        </div>
+                    `);
+                }
+            })
+
+        })
+
+        });
+
+        jQuery(function ($) {
+            $('.back-button').click(function (e) {
+                history.back();
+            });
+        });
+    </script>
+
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+           <h6 id="showerrormessage"></h6>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    <button type="button" class="back-button btn btn-primary btn-circle waves-effect"> <i class="fa fa-arrow-left"></i> </button>
+                    Agregar Horas
+                </h2>
+            </div>
+            <div class="body form-center">
+                <form class="form-horizontal">
+
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="section">Sección</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select id="section" name="section" class="form-control show-tick" required title="Seleccione una opcion" data-live-search="true" onchange="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor seleccione una opcion')">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="period">Periodo</label>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="period" name="period" class="form-control" autocomplete="off" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="class">Clase</label>
+                        </div>
+                        <div class="col-lg-3 col-md-2 col-sm-4 col-xs-5">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="class" name="class" class="form-control" autocomplete="off" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="project">Proyectos</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select id="project" name="project" class="form-control show-tick" required title="Seleccione una opcion" data-live-search="true" onchange="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor seleccione una opcion')">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="student">Numero de cuenta</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="student" name="student" class="form-control" autocomplete="off" required maxlength="50" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor ingrese un codigo')">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            <button id="searchButton" type="button" class="btn btn-primary m-t-15 waves-effect">Buscar</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="studentName">Nombre</label>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="studentName" name="studentName" class="form-control" autocomplete="off" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="studentLastName">Apellido</label>
+                        </div>
+                        <div class="col-lg-3 col-md-2 col-sm-4 col-xs-5">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="studentLastName" name="studentLastName" class="form-control" autocomplete="off" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="hours">Horas</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="number" id="hours" name="hours" class="form-control" autocomplete="off" required maxlength="50" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Porfavor ingrese un codigo')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix" style="opacity: 0;">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                            <label for="tableState">Estado del registro</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-7">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <select id="tableState" name="tableState" class="form-control" disabled>
+                                        <option value="0">Ingresado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                            <button id="saveButton" type="submit" class="btn btn-primary m-t-15 waves-effect">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
