@@ -3,9 +3,13 @@ using System.Linq;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types.ReplyMarkups;
+using Microsoft.Extensions.Logging;
+using log4net;
+using log4net.Config;
+using System.Reflection;//es para assembly
+using System.IO;//es para fileinfo
 
-
-namespace BotVinculacionUnitec
+namespace BotVinculacionUnitec//que cosas no
 {
     class Program
     {
@@ -15,19 +19,18 @@ namespace BotVinculacionUnitec
         {
             //Método que se ejecuta cuando se recibe un mensaje
             Bot.OnMessage += Bot_OnMessage; ;
-  
+            
             //Método que se ejecuta cuando se recibe un callbackQuery
             Bot.OnCallbackQuery += Bot_OnCallbackQuery; ;
 
             //Método que se ejecuta cuando se recibe un error
             Bot.OnReceiveError += Bot_OnReceiveError; ;
+
             Bot.StartReceiving();
             Console.WriteLine("Bot Encendido y Recibiendo @VinculacionUnitecsps_bot");
-
             Console.ReadLine();
             Bot.StopReceiving();
         }
-
 
         private static void Bot_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
@@ -234,8 +237,8 @@ namespace BotVinculacionUnitec
 
         private static void Bot_OnReceiveError(object sender, ReceiveErrorEventArgs e)
         {
-
-            Console.WriteLine(e.ApiRequestException.Message);
+            Logger.Log(e.ApiRequestException.Message,LogType.Error);
+           //Console.WriteLine(e.ApiRequestException.Message);
         }
 
         private static void Bot_OnCallbackQuery(object sender, CallbackQueryEventArgs callbackQueryEventArgs)
