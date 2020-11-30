@@ -1,38 +1,40 @@
 ﻿using System;
-using System.Linq;
-using Microsoft.Extensions.Hosting;//para windows service
-using Microsoft.Extensions.DependencyInjection;//para windows service
-using System.Threading.Tasks;//para windows service TASK
-using System.Diagnostics;//para windows service para DEBUGGER
-
+using Topshelf;
 
 namespace BotVinculacionUnitec
 {
     internal class Program
     {
-
-         private static async Task Main(string[] args)
+         static  void Main(string[] args)
         {
-            var isService = !(Debugger.IsAttached || args.Contains("--console"));
-            var builder = new HostBuilder()
-                .ConfigureServices((hostContext, services) =>
+            try
+            {
+                var exitCode = HostFactory.Run(x =>
                 {
-                    services.AddHostedService<BotService>();
-                });
+                    x.Service<BotService>(s =>
+                    {
+                        s.ConstructUsing(service => new BotService());
 
-            if (isService)
-            {
-                await builder.RunAsServiceAsync();
+                        s.WhenStarted(service => service.Start());
+                        s.WhenStopped(service => service.Stop());
+
+                    });
+                    x.RunAsNetworkService();
+                    x.SetServiceName("BotService");
+                    x.SetDisplayName("My BotService");
+                    x.SetDescription("This service moves files around");
+                });
+                int exitCodeValue = (int)Convert.ChangeType(exitCode, exitCode.GetTypeCode());
+                Environment.ExitCode = exitCodeValue;
             }
-            else
+            catch (Exception e)
             {
-                await builder.RunConsoleAsync();
+                Console.WriteLine(e.Message);
+                Environment.Exit(-1);
             }
 
         }
 
     }
-
-   
 
 }

@@ -3,18 +3,15 @@ using System.Linq;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types.ReplyMarkups;
-using Microsoft.Extensions.Hosting;
-using System.Threading;
-using System.Threading.Tasks;
-
 
 namespace BotVinculacionUnitec
 {
-    class BotService: IHostedService, IDisposable
+    class BotService
     {
+
         private static readonly TelegramBotClient Bot = new TelegramBotClient("1242656066:AAF3AqRwRp3VHVJ0ULpY53HLQKrZjkt5bH8");
-        
-        public Task StartAsync(CancellationToken cancellationToken)
+
+        public BotService()
         {
             //Método que se ejecuta cuando se recibe un mensaje
             Bot.OnMessage += Bot_OnMessage; ;
@@ -24,31 +21,22 @@ namespace BotVinculacionUnitec
 
             //Método que se ejecuta cuando se recibe un error
             Bot.OnReceiveError += Bot_OnReceiveError; ;
+        }
 
-            Bot.StartReceiving();
-            //Console.WriteLine("Bot Encendido y Recibiendo @VinculacionUnitecsps_bot");
-           
-            Console.ReadLine();
+        public void Stop()
+        {
             Bot.StopReceiving();
-
-            return Task.CompletedTask;
         }
-
-        public Task StopAsync(CancellationToken cancellationToken)
+        public void Start()
         {
-            // Stop timers, services
-            return Task.CompletedTask;
-        }
+            Bot.StartReceiving();
 
-        public void Dispose()
-        {
-            // dispose of non-managed resources
         }
 
         private static void Bot_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
             var message = e.Message;
-
+  
             sqlserver sqlite = new sqlserver();
 
             Console.WriteLine($"Mensaje de @{message.Chat.Username}:" + message.Text);
@@ -318,7 +306,6 @@ namespace BotVinculacionUnitec
             }
 
         }
-
 
 
     }
