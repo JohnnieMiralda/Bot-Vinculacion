@@ -29,7 +29,7 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+               // Console.WriteLine(e.Message);
                 Environment.Exit(-1);
             }
 

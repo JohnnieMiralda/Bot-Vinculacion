@@ -56,7 +56,6 @@ C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug
 C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csprojAssemblyReference.cache
 C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfoInputs.cache
 C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfo.cs
 C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CopyComplete
@@ -79,3 +78,17 @@ C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug
 C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
 C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CoreCompileInputs.cache
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Diagnostics.EventLog.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.ServiceProcess.ServiceController.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Topshelf.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\TopShelf.ServiceInstaller.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.ServiceProcess.ServiceController.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csprojAssemblyReference.cache

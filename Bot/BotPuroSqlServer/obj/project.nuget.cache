@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SBAUxlIhZu5Vkh3ZF8tvx8TpcNPSDz5x4He1Q+JCalrkT7lbt9F+G6uclJUseO+CSWA8ywM1rOI0+69w77hvtQ==",
+  "dgSpecHash": "gsMdz0mm6+6No19/SJ8BsQFKfGCUhq6d9oWAVu+AZSkaF1Bi6u5LFLG6lCoGioEOoK3ru2BuOgtOD4ElcNr+pQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Enrique\\Documents\\GitHub\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
   "expectedPackageFiles": [
@@ -15,10 +15,10 @@
     "C:\\Users\\Enrique\\.nuget\\packages\\microsoft.extensions.logging.log4net.aspnetcore\\5.0.0\\microsoft.extensions.logging.log4net.aspnetcore.5.0.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\microsoft.extensions.options\\3.1.10\\microsoft.extensions.options.3.1.10.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.10\\microsoft.extensions.primitives.3.1.10.nupkg.sha512",
-    "C:\\Users\\Enrique\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Enrique\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\Enrique\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Enrique\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -50,6 +50,7 @@
     "C:\\Users\\Enrique\\.nuget\\packages\\system.data.sqlclient\\4.8.1\\system.data.sqlclient.4.8.1.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.3.0\\system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512",
+    "C:\\Users\\Enrique\\.nuget\\packages\\system.diagnostics.eventlog\\5.0.0\\system.diagnostics.eventlog.5.0.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
@@ -82,7 +83,7 @@
     "C:\\Users\\Enrique\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.3.0\\system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.runtime.numerics\\4.3.0\\system.runtime.numerics.4.3.0.nupkg.sha512",
-    "C:\\Users\\Enrique\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\Enrique\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.security.cryptography.algorithms\\4.3.0\\system.security.cryptography.algorithms.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.security.cryptography.cng\\4.3.0\\system.security.cryptography.cng.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.security.cryptography.csp\\4.3.0\\system.security.cryptography.csp.4.3.0.nupkg.sha512",
@@ -92,7 +93,8 @@
     "C:\\Users\\Enrique\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.security.cryptography.x509certificates\\4.3.0\\system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
-    "C:\\Users\\Enrique\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\Enrique\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\Enrique\\.nuget\\packages\\system.serviceprocess.servicecontroller\\5.0.0\\system.serviceprocess.servicecontroller.5.0.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\system.text.regularexpressions.4.3.0.nupkg.sha512",
@@ -104,7 +106,9 @@
     "C:\\Users\\Enrique\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
     "C:\\Users\\Enrique\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Enrique\\.nuget\\packages\\telegram.bot\\15.5.1\\telegram.bot.15.5.1.nupkg.sha512"
+    "C:\\Users\\Enrique\\.nuget\\packages\\telegram.bot\\15.5.1\\telegram.bot.15.5.1.nupkg.sha512",
+    "C:\\Users\\Enrique\\.nuget\\packages\\topshelf\\4.2.1\\topshelf.4.2.1.nupkg.sha512",
+    "C:\\Users\\Enrique\\.nuget\\packages\\topshelf.serviceinstaller\\4.2.1\\topshelf.serviceinstaller.4.2.1.nupkg.sha512"
   ],
   "logs": []
 }

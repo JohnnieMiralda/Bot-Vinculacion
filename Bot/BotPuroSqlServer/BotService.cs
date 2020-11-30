@@ -8,13 +8,13 @@ namespace BotVinculacionUnitec
 {
     class BotService
     {
-
+        //bot de enriquecs 
         private static readonly TelegramBotClient Bot = new TelegramBotClient("1242656066:AAF3AqRwRp3VHVJ0ULpY53HLQKrZjkt5bH8");
 
         public BotService()
         {
             //Método que se ejecuta cuando se recibe un mensaje
-            Bot.OnMessage += Bot_OnMessage; ;
+             Bot.OnMessage += Bot_OnMessage; ;
 
             //Método que se ejecuta cuando se recibe un callbackQuery
             Bot.OnCallbackQuery += Bot_OnCallbackQuery; ;
@@ -27,6 +27,7 @@ namespace BotVinculacionUnitec
         {
             Bot.StopReceiving();
         }
+
         public void Start()
         {
             Bot.StartReceiving();
@@ -36,10 +37,13 @@ namespace BotVinculacionUnitec
         private static void Bot_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
             var message = e.Message;
-  
+            //pruebas temporales------------------------------
+            Logger.Log(message.Text, LogType.Warn);
+            Logger.Log(message.Text, LogType.Fatal);
+            Logger.Log(message.Text, LogType.Error);
+            //-----------------------------------------
+            //Console.WriteLine($"Mensaje de @{message.Chat.Username}:" + message.Text);
             sqlserver sqlite = new sqlserver();
-
-            Console.WriteLine($"Mensaje de @{message.Chat.Username}:" + message.Text);
 
             if (message.Text == "hola")
                 Bot.SendTextMessageAsync(message.Chat.Id, "Adios " + message.Chat.Username);

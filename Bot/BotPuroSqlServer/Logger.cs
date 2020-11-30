@@ -11,9 +11,9 @@ namespace BotVinculacionUnitec {
 
         private static ILog log;
 
-
         public static void Log(string message,LogType logType) {
             EnsureLogger();
+
             switch (logType) {
                 case LogType.Error:
                     log.Error(message);
