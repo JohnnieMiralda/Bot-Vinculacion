@@ -1,0 +1,12 @@
+Ejecutar simbolo del sistema como administrador:
+Crear el BotService:
+sc create BotService binPath="C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Release\netcoreapp3.1\publish\BotPuroSqlServer.exe"
+
+Iniciar el BotService:
+sc start BotService
+
+Detener el BotService:
+sc stop BotService
+
+Ver el estado del BotService:
+sc query BotService
