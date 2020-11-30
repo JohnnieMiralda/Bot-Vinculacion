@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {}
+    "C:\\Users\\Enrique\\Documents\\GitHub\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {
+    "C:\\Users\\Enrique\\Documents\\GitHub\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
+        "projectUniqueName": "C:\\Users\\Enrique\\Documents\\GitHub\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
         "projectName": "BotPuroSqlServer",
-        "projectPath": "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
+        "projectPath": "C:\\Users\\Enrique\\Documents\\GitHub\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
         "packagesPath": "C:\\Users\\Enrique\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\obj\\",
+        "outputPath": "C:\\Users\\Enrique\\Documents\\GitHub\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Enrique\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,9 +38,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.1, )"
+            },
+            "System.ServiceProcess.ServiceController": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "Telegram.Bot": {
               "target": "Package",
@@ -62,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
         }
       }
     }
