@@ -3,13 +3,14 @@
 
 using System.Data.SqlClient;
 
-
 namespace BotVinculacionUnitec
 {
     class sqlserver
     {
-        SqlConnection myConnection = new SqlConnection("Server=tcp:hours-tracker-staging.database.windows.net,1433;Initial Catalog=HoursTrackerStaging;Persist Security Info=False;User ID=hours-tracker;Password=H0ur5-7r4ck3r-123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        //SqlConnection Connection = new SqlConnection("Server=tcp:hours-tracker-staging.database.windows.net,1433;Initial Catalog=HoursTrackerStaging;Persist Security Info=False;User ID=hours-tracker;Password=H0ur5-7r4ck3r-123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
+        SqlConnection myConnection = new SqlConnection("Server=EC2AMAZ-HS1PV7U\\SQLEXPRESS; Database=HoursTracker; Trusted_Connection=True;");
+        //Server=myServerAddress;Database=myDataBase;Trusted_Connection=True;
         public void OpenConnection()
         {
             if (myConnection.State != System.Data.ConnectionState.Open)
@@ -18,7 +19,8 @@ namespace BotVinculacionUnitec
                 {
                     myConnection.Open();
                 }
-                catch (Exception e) {
+                catch (Exception e)
+                {
                     Console.WriteLine(e.Message);
                 }
             }
@@ -54,12 +56,12 @@ namespace BotVinculacionUnitec
             try
             {
                 selectResult = selectCommand.ExecuteReader();
-            
-            if (selectResult.HasRows)
-            {
-                CloseConnection();
-                return true;
-            }
+
+                if (selectResult.HasRows)
+                {
+                    CloseConnection();
+                    return true;
+                }
             }
             catch (Exception e)
             {
@@ -71,6 +73,7 @@ namespace BotVinculacionUnitec
 
         public bool CuentaVerificadaDb(string numeroCuenta)
         {
+
             /*
             SELECT from Database
             */
@@ -91,7 +94,7 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Console.WriteLine("CuentaVerificar"+e.Message);
+                Console.WriteLine("CuentaVerificar" + e.Message);
             }
             CloseConnection();
             return false;
@@ -163,7 +166,7 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Console.WriteLine("Existe "+e.Message);
+                Console.WriteLine("Existe " + e.Message);
             }
             CloseConnection();
             return false;
@@ -184,21 +187,21 @@ namespace BotVinculacionUnitec
             try
             {
                 selectResult = selectCommand.ExecuteReader();
-            
-            while (selectResult.Read())
-            {
-                // Console.WriteLine(selectResult.GetString(0));
-                if (Cuenta == selectResult.GetString(0))
+
+                while (selectResult.Read())
                 {
-                    int num = selectResult.GetInt32(6);
-                    // Console.WriteLine(num);
-                    if (num == 2)
+                    // Console.WriteLine(selectResult.GetString(0));
+                    if (Cuenta == selectResult.GetString(0))
                     {
-                        CloseConnection();
-                        return true;
+                        int num = selectResult.GetInt32(6);
+                        // Console.WriteLine(num);
+                        if (num == 2)
+                        {
+                            CloseConnection();
+                            return true;
+                        }
                     }
                 }
-            }
             }
             catch (Exception e)
             {
@@ -242,7 +245,7 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Console.WriteLine("estado "+e.Message);
+                Console.WriteLine("estado " + e.Message);
             }
             CloseConnection();
             return false;
@@ -314,7 +317,7 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Console.WriteLine("verificar "+e.Message);
+                Console.WriteLine("verificar " + e.Message);
             }
             CloseConnection();
             return false;
@@ -322,8 +325,10 @@ namespace BotVinculacionUnitec
 
         public bool VerificarUpdate(string Cuenta, string code)
         {
-            SqlConnection Connection = new SqlConnection("Server=tcp:hours-tracker-staging.database.windows.net,1433;Initial Catalog=HoursTrackerStaging;Persist Security Info=False;User ID=hours-tracker;Password=H0ur5-7r4ck3r-123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            //SqlConnection Connection = new SqlConnection("Server=tcp:hours-tracker-staging.database.windows.net,1433;Initial Catalog=HoursTrackerStaging;Persist Security Info=False;User ID=hours-tracker;Password=H0ur5-7r4ck3r-123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
+            SqlConnection Connection = new SqlConnection("Server=(localdb)\\MSSQLLocalDB;Database=HoursTrackerDemo;Trusted_Connection=True;");
+            //Server=myServerAddress;Database=myDataBase;Trusted_Connection=True;
             /*
             SELECT from Database
             */
@@ -331,7 +336,8 @@ namespace BotVinculacionUnitec
             DateTime now = DateTime.Now;
             string updatequery = "Update DataBot set fecha_confirmacion=@now ,confirmado=1 ,estado=2,token_generado=@unique where token_generado=@code and cuenta_telegram=@Cuenta";
 
-            try {
+            try
+            {
                 using var cmd = new SqlCommand(updatequery, Connection);
                 Connection.Open();
                 cmd.Parameters.Add(new SqlParameter("@unique", unique));
@@ -359,8 +365,10 @@ namespace BotVinculacionUnitec
 
         public bool VerificarUpdateDb(string Cuenta, string code)
         {
-            SqlConnection Connection = new SqlConnection("Server=tcp:hours-tracker-staging.database.windows.net,1433;Initial Catalog=HoursTrackerStaging;Persist Security Info=False;User ID=hours-tracker;Password=H0ur5-7r4ck3r-123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            //SqlConnection Connection = new SqlConnection("Server=tcp:hours-tracker-staging.database.windows.net,1433;Initial Catalog=HoursTrackerStaging;Persist Security Info=False;User ID=hours-tracker;Password=H0ur5-7r4ck3r-123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
+            SqlConnection Connection = new SqlConnection("Server=EC2AMAZ-HS1PV7U\\SQLEXPRESS; Database=HoursTracker; Trusted_Connection=True;");
+            //Server=myServerAddress;Database=myDataBase;Trusted_Connection=True;
             /*
             SELECT from Database
             */
@@ -446,7 +454,7 @@ namespace BotVinculacionUnitec
                 OpenConnection();
                 try
                 {
-                    
+
                     selectCommand.Parameters.Add(new SqlParameter("@Cuenta", Cuenta));
 
                     SqlDataReader selectResult = selectCommand.ExecuteReader();
@@ -456,7 +464,7 @@ namespace BotVinculacionUnitec
                         if (Cuenta == selectResult.GetString(0))
                         {
 
-                            string retornable = selectResult.GetString(1)+" " + selectResult.GetString(2);
+                            string retornable = selectResult.GetString(1) + " " + selectResult.GetString(2);
                             CloseConnection();
                             return retornable;
 
@@ -470,7 +478,7 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Console.WriteLine("getCuenta"+e.Message);
+                Console.WriteLine("getCuenta" + e.Message);
             }
             CloseConnection();
             string aus = "";
@@ -508,7 +516,8 @@ namespace BotVinculacionUnitec
                             }
                         }
                     }
-                    catch (Exception e) {
+                    catch (Exception e)
+                    {
                         Console.WriteLine("");
                         return "";
                     }
@@ -573,31 +582,34 @@ namespace BotVinculacionUnitec
             {
                 using var selectCommand = new SqlCommand(selectQuery, myConnection);
                 OpenConnection();
-                try {
-                    
-                    selectCommand.Parameters.Add(new SqlParameter("@Cuenta", Cuenta));
-                SqlDataReader selectResult = selectCommand.ExecuteReader();
-                while (selectResult.Read())
+                try
                 {
-                    // Console.WriteLine(selectResult.GetString(0));
-                    if (Cuenta == selectResult.GetString(0))
-                    {
-                        string retornable = selectResult.GetString(1);
-                        CloseConnection();
-                        return retornable;
 
+                    selectCommand.Parameters.Add(new SqlParameter("@Cuenta", Cuenta));
+                    SqlDataReader selectResult = selectCommand.ExecuteReader();
+                    while (selectResult.Read())
+                    {
+                        // Console.WriteLine(selectResult.GetString(0));
+                        if (Cuenta == selectResult.GetString(0))
+                        {
+                            string retornable = selectResult.GetString(1);
+                            CloseConnection();
+                            return retornable;
+
+                        }
                     }
+
                 }
-            
-                } catch (Exception e) {
-                    Console.WriteLine("getmailconvert "+e.Message);
+                catch (Exception e)
+                {
+                    Console.WriteLine("getmailconvert " + e.Message);
                     return " ";
                 }
-               
+
             }
             catch (Exception e)
             {
-                Console.WriteLine("get mail"+e.Message);
+                Console.WriteLine("get mail" + e.Message);
             }
             CloseConnection();
             string aus = "";
@@ -651,7 +663,7 @@ namespace BotVinculacionUnitec
                 OpenConnection();
                 try
                 {
-                    
+
                     selectCommand.Parameters.Add(new SqlParameter("@Cuenta", Cuenta));
                     SqlDataReader selectResult = selectCommand.ExecuteReader();
                     while (selectResult.Read())
@@ -665,14 +677,15 @@ namespace BotVinculacionUnitec
                         }
                     }
                 }
-                catch (Exception e) {
+                catch (Exception e)
+                {
                     return false;
                 }
-                
+
             }
             catch (Exception e)
             {
-                Console.WriteLine("cuenta existe"+e.Message);
+                Console.WriteLine("cuenta existe" + e.Message);
             }
             CloseConnection();
             return false;
@@ -715,7 +728,8 @@ namespace BotVinculacionUnitec
             return random;
         }
 
-        public bool newToken(string Cuenta) {
+        public bool newToken(string Cuenta)
+        {
 
 
             string selectQuery = "SELECT * from DataBot where telegramid=@Cuenta";
@@ -775,7 +789,7 @@ namespace BotVinculacionUnitec
             return false;
         }
 
-        public bool newTokenDb(string Cuenta,string mail)
+        public bool newTokenDb(string Cuenta, string mail)
         {
 
             //Console.WriteLine(Cuenta);
@@ -800,8 +814,8 @@ namespace BotVinculacionUnitec
                         if (DateTime.Compare(actual, nos) <= 0)
                         {
 
-                           
-                           
+
+
                             Console.WriteLine(mail);
                             CloseConnection();
                             string tokenNuevo = createToken();
@@ -829,7 +843,7 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Console.WriteLine("new token"+e.Message);
+                Console.WriteLine("new token" + e.Message);
             }
 
 
@@ -997,7 +1011,7 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Console.WriteLine("insertar"+e.Message);
+                Console.WriteLine("insertar" + e.Message);
             }
 
         }
@@ -1015,7 +1029,7 @@ namespace BotVinculacionUnitec
                 OpenConnection();
                 try
                 {
-                    
+
                     selectCommand.Parameters.Add(new SqlParameter("@Cuenta", Cuenta));
                     SqlDataReader selectResult = selectCommand.ExecuteReader();
                     while (selectResult.Read())
@@ -1030,13 +1044,14 @@ namespace BotVinculacionUnitec
                         }
                     }
                 }
-                catch (Exception e) {
-                    Console.WriteLine("getidcaste"+e.Message);
+                catch (Exception e)
+                {
+                    Console.WriteLine("getidcaste" + e.Message);
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("getid"+e.Message);
+                Console.WriteLine("getid" + e.Message);
             }
             CloseConnection();
             string aus = "";
@@ -1044,90 +1059,18 @@ namespace BotVinculacionUnitec
         }
 
 
-        public string getTotalHoras(string Cuenta)
-        {
-
-            string numero = "";
-            string selectQuery = "SELECT * from horas where cuenta=@Cuenta";
-            try
-            {
-                using var selectCommand = new SqlCommand(selectQuery, myConnection);
-                OpenConnection();
-
-                selectCommand.Parameters.Add(new SqlParameter("@Cuenta", Cuenta));
-                SqlDataReader selectResult = selectCommand.ExecuteReader();
-                while (selectResult.Read())
-                {
-                    // Console.WriteLine(selectResult.GetString(0));
-                    if (Cuenta == selectResult.GetString(0))
-                    {
-                        int retornable = selectResult.GetInt32(1);
-                        CloseConnection();
-                        return retornable.ToString();
-
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            CloseConnection();
-
-
-
-
-            return numero;
-        }
-
-        public string HorasDetalle(string nCuenta)
-        {
-            string detalles = "";
-            string lectura;
-            string cadena_com = "SELECT * FROM detalleHoras";
-            try
-            {
-                SqlCommand com = new SqlCommand(cadena_com, myConnection);
-
-                OpenConnection();
-                SqlDataReader leer = com.ExecuteReader();
-                while (leer.Read())
-                {
-
-                    //PERIODO DE PROYECTO
-                    detalles += "Periodo: " + leer.GetString(0) + "\n";
-
-                    //Extraccion de Campo Nombre Clase TABLA DATOS CLASE
-
-                    detalles += "Nombre Clase: " + leer.GetString(1) + "\n";
-                    //Extraccion de Nombre Proyecto TABLA DATOS PROYECTOS
-
-
-                    detalles += "Nombre Proyecto: " + leer.GetString(2) + "\n";
-                    //HORAS DE PROYECTO 
-                    detalles += "Horas de Proyecto: " + leer.GetString(3) + "\n\n";
-
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            CloseConnection();
-            return detalles;
-        }
-
         public string HorasTotales(string nCuenta)
         {
-            string cadena_com = "SELECT horas_trabajadas FROM horas_proyectos inner join alumnos on horas_proyectos.id_alumno=alumnos.id where alumnos.codigo_alumno=@Cuenta";
+            string cadena_com = "SELECT horas_trabajadas FROM horas_proyectos inner join alumnos on horas_proyectos.id_alumno=alumnos.id where alumnos.codigo_alumno=@Cuenta and horas_proyectos.estado=1";
             try
             {
-               // Console.WriteLine("nUMEROcUENTA " + nCuenta);
+                // Console.WriteLine("nUMEROcUENTA " + nCuenta);
                 int NumeroTotalHoras = 0;
                 SqlCommand com = new SqlCommand(cadena_com, myConnection);
                 OpenConnection();
-                try {
-                    
+                try
+                {
+
                     com.Parameters.Add(new SqlParameter("@Cuenta", nCuenta));
                     SqlDataReader leer = com.ExecuteReader();
 
@@ -1141,22 +1084,25 @@ namespace BotVinculacionUnitec
 
                     return NumeroTotalHoras.ToString();
                 }
-                catch (Exception e) {
+                catch (Exception e)
+                {
                     Console.WriteLine("cast horas tot");
                     return " ";
                 }
-        }catch(Exception e){
-            Console.WriteLine("horas totales"+e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("horas totales" + e.Message);
                 return " ";
-                }
-        
+            }
+
         }
 
         public string HorasDetalle2(string nCuenta)
         {
             string detalles = "";
             string lectura;
-            string cadena_com = "SELECT codigo_proyecto,nombre_proyecto,horas_trabajadas FROM horas_proyectos inner join alumnos on horas_proyectos.id_alumno=alumnos.id inner join proyectos on horas_proyectos.id_proyecto = proyectos.id where alumnos.codigo_alumno=@Cuenta" +
+            string cadena_com = "SELECT codigo_proyecto,nombre_proyecto,horas_trabajadas FROM horas_proyectos inner join alumnos on horas_proyectos.id_alumno=alumnos.id inner join proyectos on horas_proyectos.id_proyecto = proyectos.id where alumnos.codigo_alumno=@Cuenta and horas_proyectos.estado=1" +
                 "";
             try
             {
@@ -1165,7 +1111,7 @@ namespace BotVinculacionUnitec
                     SqlCommand com = new SqlCommand(cadena_com, myConnection);
 
                     OpenConnection();
-                    
+
                     com.Parameters.Add(new SqlParameter("@Cuenta", nCuenta));
                     SqlDataReader leer = com.ExecuteReader();
                     while (leer.Read())
@@ -1194,7 +1140,8 @@ namespace BotVinculacionUnitec
                 CloseConnection();
                 return detalles;
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 Console.WriteLine("castmalodetalle");
                 return detalles;
             }

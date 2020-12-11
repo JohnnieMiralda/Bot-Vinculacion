@@ -34,20 +34,27 @@ namespace BotVinculacionUnitec
 
         }
 
+
+
         private static void Bot_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
             var message = e.Message;
-            //pruebas temporales------------------------------
-            Logger.Log(message.Text, LogType.Warn);
-            Logger.Log(message.Text, LogType.Fatal);
-            Logger.Log(message.Text, LogType.Error);
-            //-----------------------------------------
-            //Console.WriteLine($"Mensaje de @{message.Chat.Username}:" + message.Text);
+
+            /*Prueba de Log4net
+     var message = e.Message;
+         Logger.Log(message.Text, LogType.Warn);
+       Logger.Log(message.Text, LogType.Fatal);
+       Logger.Log(message.Text, LogType.Error);
+
+
+       if (message.Text == "hola")
+           Bot.SendTextMessageAsync(message.Chat.Id, "Adios " + message.Chat.Username);
+       return;
+    */
+
             sqlserver sqlite = new sqlserver();
 
-            if (message.Text == "hola")
-                Bot.SendTextMessageAsync(message.Chat.Id, "Adios " + message.Chat.Username);
-            return;
+            Console.WriteLine($"Mensaje de @{message.Chat.Username}:" + message.Text);
 
             if (message == null || message.Type != Telegram.Bot.Types.Enums.MessageType.Text) return; ;
 
@@ -97,7 +104,7 @@ namespace BotVinculacionUnitec
                         bool verifcadoCorrectamen = sqlite.VerificarUpdateDb(message.Chat.Username, message.Text.Split(" ").Last().ToString());
                         if (verifcadoCorrectamen)
                         {
-                            Bot.SendTextMessageAsync(message.Chat.Id, "Tu cuenta se Verifico Exitosamente");
+                            Bot.SendTextMessageAsync(message.Chat.Id, "¡Tu cuenta se verifico exitosamente!");
                             //Declaracion Botones
                             string numCuenta = sqlite.GetCuentaNUMDb(message.Chat.Username);
                             string nombre = sqlite.GetCuentaDb(message.Chat.Username);
@@ -137,12 +144,12 @@ namespace BotVinculacionUnitec
                         //envio respeusta de donde envie su codigo de confirmacion
                         if (sqlite.newTokenDb(message.Chat.Username, Mail))
                         {
-                            Console.WriteLine("Se reenvio un nuevo codigo a de confimacion al correo:" + changedMail);
+                            Console.WriteLine("Reenvio exitoso al correo:" + changedMail);
                             Bot.SendTextMessageAsync(message.Chat.Id, "Se reenvio un nuevo codigo a de confimacion al correo:" + changedMail);
                         }
                         else
                         {
-                            Bot.SendTextMessageAsync(message.Chat.Id, "Para Solicitar un nuevo codigo debes tener mas de 5 minutos de haber recibido tu ultimo codigo ");
+                            Bot.SendTextMessageAsync(message.Chat.Id, "Debes esperar almenos 5 minutos desde tu ultima solicitud ");
                         }
 
 
@@ -170,8 +177,6 @@ namespace BotVinculacionUnitec
 
                             break;
 
-
-
                         default:
 
                             switch (!sqlite.CuentaExisteDb(message.Text.Split(" ").First().ToString()))
@@ -187,7 +192,7 @@ namespace BotVinculacionUnitec
                                             //Caso cuenta verificada pero con otro user de telegram
                                             case true:
 
-                                                Bot.SendTextMessageAsync(message.Chat.Id, "El numero de Cuenta que ingresaste ya esta ligado a otra cuenta de telegram \nPara consultas enviar correo a:\nvinculacionsps@unitec.edu ó andrea.orellana@unitec.edu.hn");
+                                                Bot.SendTextMessageAsync(message.Chat.Id, "El numero de Cuenta que ingresaste ya esta vinculado a otra cuenta de telegram \nPara consultas enviar correo a:\nvinculacionsps@unitec.edu ó andrea.orellana@unitec.edu.hn");
 
                                                 break;//case cuenta verificada con otro user de telegram
 
@@ -311,6 +316,8 @@ namespace BotVinculacionUnitec
 
         }
 
-
+        //Revision de Si existe la cuenta
     }
+
+
 }
