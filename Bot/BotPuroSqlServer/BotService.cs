@@ -39,9 +39,6 @@ namespace BotVinculacionUnitec
         private static void Bot_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
             var message = e.Message;
-
-            /*Prueba de Log4net
-     var message = e.Message;
          Logger.Log(message.Text, LogType.Warn);
        Logger.Log(message.Text, LogType.Fatal);
        Logger.Log(message.Text, LogType.Error);
@@ -50,7 +47,7 @@ namespace BotVinculacionUnitec
        if (message.Text == "hola")
            Bot.SendTextMessageAsync(message.Chat.Id, "Adios " + message.Chat.Username);
        return;
-    */
+    
 
             sqlserver sqlite = new sqlserver();
 
