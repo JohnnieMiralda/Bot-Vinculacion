@@ -11,7 +11,7 @@ namespace BotVinculacionUnitec
 {
     class AccesDB
     { 
-		public static string connectionString = @"Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\Unitec\Bot_Vinculacion\BASE DATOS MODIFICADA 29 Ene.accdb";
+		public static string connectionString = @"Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\BotVinculacion\db\Vinculacion_Base.accdb";
         OdbcConnection odbcConnection;
         OdbcCommand cmd;
         
