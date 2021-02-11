@@ -15,4 +15,7 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgStyleCop_MSBuild Condition=" '$(PkgStyleCop_MSBuild)' == '' ">C:\Users\isaac\.nuget\packages\stylecop.msbuild\6.2.0</PkgStyleCop_MSBuild>
+  </PropertyGroup>
 </Project>

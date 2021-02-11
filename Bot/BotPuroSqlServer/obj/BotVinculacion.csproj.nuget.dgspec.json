@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {}
+    "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj": {}
   },
   "projects": {
-    "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {
+    "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
-        "projectName": "BotPuroSqlServer",
-        "projectPath": "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
+        "projectUniqueName": "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
+        "projectName": "BotVinculacion",
+        "projectPath": "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
         "packagesPath": "C:\\Users\\isaac\\.nuget\\packages\\",
         "outputPath": "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\obj\\",
         "projectStyle": "PackageReference",
@@ -40,6 +40,12 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "StyleCop.MSBuild": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.1, )"
@@ -64,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

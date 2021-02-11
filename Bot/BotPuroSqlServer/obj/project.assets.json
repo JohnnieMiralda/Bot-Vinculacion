@@ -318,6 +318,12 @@
           }
         }
       },
+      "StyleCop.MSBuild/6.2.0": {
+        "type": "package",
+        "build": {
+          "build/StyleCop.MSBuild.targets": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1827,6 +1833,37 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "StyleCop.MSBuild/6.2.0": {
+      "sha512": "6J51Kt5X+Os+Ckp20SFP1SlLu3tZl+3qBhCMtJUJqGDgwSr4oHT+eg545hXCdp07tRB/8nZfXTOBDdA1XXvjUw==",
+      "type": "package",
+      "path": "stylecop.msbuild/6.2.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/StyleCop.MSBuild.targets",
+        "license.txt",
+        "stylecop.msbuild.6.2.0.nupkg.sha512",
+        "stylecop.msbuild.nuspec",
+        "tools/CustomDictionary.en-GB.xml",
+        "tools/CustomDictionary.en-US.xml",
+        "tools/CustomDictionary.xml",
+        "tools/Settings.StyleCop",
+        "tools/StyleCop.CSharp.Rules.dll",
+        "tools/StyleCop.CSharp.dll",
+        "tools/StyleCop.SettingsEditor.exe",
+        "tools/StyleCop.dll",
+        "tools/de-DE/StyleCop.CSharp.Rules.resources.dll",
+        "tools/en-GB/StyleCop.CSharp.Rules.resources.dll",
+        "tools/es-MX/StyleCop.CSharp.Rules.resources.dll",
+        "tools/fr-FR/StyleCop.CSharp.Rules.resources.dll",
+        "tools/mssp7en.dll",
+        "tools/mssp7en.lex",
+        "tools/pl-PL/StyleCop.CSharp.Rules.resources.dll",
+        "tools/pt-BR/StyleCop.CSharp.Rules.resources.dll",
+        "tools/ru-RU/StyleCop.CSharp.Rules.resources.dll"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -5119,24 +5156,25 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "StyleCop.MSBuild >= 6.2.0",
       "System.Data.SqlClient >= 4.8.1",
       "Telegram.Bot >= 15.5.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Enrique\\.nuget\\packages\\": {}
+    "C:\\Users\\isaac\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
-      "projectName": "BotPuroSqlServer",
-      "projectPath": "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
-      "packagesPath": "C:\\Users\\Enrique\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\obj\\",
+      "projectUniqueName": "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
+      "projectName": "BotVinculacion",
+      "projectPath": "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
+      "packagesPath": "C:\\Users\\isaac\\.nuget\\packages\\",
+      "outputPath": "E:\\Documents\\repos\\BotVinculacion\\Bot-Vinculacion-master\\Bot\\BotPuroSqlServer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Enrique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\isaac\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5148,6 +5186,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5159,7 +5198,14 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "StyleCop.MSBuild": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.2.0, )"
+          },
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.1, )"
@@ -5184,7 +5230,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

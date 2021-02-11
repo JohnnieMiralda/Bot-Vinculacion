@@ -15,7 +15,7 @@ namespace BotVinculacionUnitec
         {
             //Método que se ejecuta cuando se recibe un mensaje
             Bot.OnMessage += Bot_OnMessage; ;
-  
+
             //Método que se ejecuta cuando se recibe un callbackQuery
             Bot.OnCallbackQuery += Bot_OnCallbackQuery; ;
 
