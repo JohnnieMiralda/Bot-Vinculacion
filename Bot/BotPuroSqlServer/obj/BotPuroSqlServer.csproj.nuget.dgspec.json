@@ -1,27 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {}
+    "C:\\Unitec\\repos\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {
+    "C:\\Unitec\\repos\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
+        "projectUniqueName": "C:\\Unitec\\repos\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
         "projectName": "BotPuroSqlServer",
-        "projectPath": "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
-        "packagesPath": "C:\\Users\\Enrique\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Enrique\\Documents\\Ingenieria de software I\\primer parcial\\VinculacionUnitec-SPS\\Bot\\BotPuroSqlServer\\obj\\",
+        "projectPath": "C:\\Unitec\\repos\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
+        "packagesPath": "C:\\Users\\bot_admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Unitec\\repos\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Enrique\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\bot_admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,13 +39,37 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.Extensions.Logging.Log4Net.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.Odbc": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.1, )"
             },
+            "System.Runtime.Caching": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.ServiceProcess.ServiceController": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Telegram.Bot": {
               "target": "Package",
               "version": "[15.5.1, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.12, )"
+            },
+            "topshelf": {
+              "target": "Package",
+              "version": "[4.2.1, )"
             }
           },
           "imports": [
@@ -62,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -42,3 +42,172 @@ C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUn
 C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.dll
 C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.pdb
 C:\Users\Enrique\Documents\Ingenieria de software I\primer parcial\VinculacionUnitec-SPS\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.genruntimeconfig.cache
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.exe
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.deps.json
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.runtimeconfig.json
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.runtimeconfig.dev.json
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.pdb
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Telegram.Bot.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfoInputs.cache
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfo.cs
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CopyComplete
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.pdb
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.genruntimeconfig.cache
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\log4net.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CoreCompileInputs.cache
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Diagnostics.EventLog.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.ServiceProcess.ServiceController.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Topshelf.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\TopShelf.ServiceInstaller.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.ServiceProcess.ServiceController.dll
+C:\Users\Enrique\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csprojAssemblyReference.cache
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csprojAssemblyReference.cache
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfoInputs.cache
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfo.cs
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.pdb
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.exe
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.deps.json
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.runtimeconfig.json
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.runtimeconfig.dev.json
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.pdb
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\log4net.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Diagnostics.EventLog.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.ServiceProcess.ServiceController.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Telegram.Bot.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Topshelf.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\TopShelf.ServiceInstaller.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.ServiceProcess.ServiceController.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CopyComplete
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.genruntimeconfig.cache
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Data.Odbc.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\freebsd\lib\netcoreapp2.0\System.Data.Odbc.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\linux\lib\netcoreapp2.0\System.Data.Odbc.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\osx\lib\netcoreapp2.0\System.Data.Odbc.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Data.Odbc.dll
+C:\Users\alberto jose lopez\Desktop\uni\tri 12\ingenieria de software\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CoreCompileInputs.cache
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.pdb
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csprojAssemblyReference.cache
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfoInputs.cache
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.AssemblyInfo.cs
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CoreCompileInputs.cache
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.exe
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.deps.json
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.runtimeconfig.json
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.runtimeconfig.dev.json
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\BotPuroSqlServer.pdb
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\log4net.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Data.Odbc.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Diagnostics.EventLog.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.ServiceProcess.ServiceController.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Telegram.Bot.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\Topshelf.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\TopShelf.ServiceInstaller.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\freebsd\lib\netcoreapp2.0\System.Data.Odbc.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\linux\lib\netcoreapp2.0\System.Data.Odbc.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\osx\lib\netcoreapp2.0\System.Data.Odbc.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Data.Odbc.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.ServiceProcess.ServiceController.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.csproj.CopyComplete
+C:\Unitec\repos\Bot-Vinculacion\Bot\BotPuroSqlServer\obj\Debug\netcoreapp3.1\BotPuroSqlServer.genruntimeconfig.cache
