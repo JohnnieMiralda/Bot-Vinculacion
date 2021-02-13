@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {}
+    "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj": {}
   },
   "projects": {
-    "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj": {
+    "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
-        "projectName": "BotPuroSqlServer",
-        "projectPath": "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
+        "projectUniqueName": "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
+        "projectName": "BotVinculacion",
+        "projectPath": "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
         "packagesPath": "C:\\Users\\isaac\\.nuget\\packages\\",
         "outputPath": "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\obj\\",
         "projectStyle": "PackageReference",

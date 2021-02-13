@@ -6138,32 +6138,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bot_admin\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\isaac\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Unitec\\repos\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
-      "projectName": "BotPuroSqlServer",
-      "projectPath": "C:\\Unitec\\repos\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotPuroSqlServer.csproj",
-      "packagesPath": "C:\\Users\\bot_admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Unitec\\repos\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\obj\\",
+      "projectUniqueName": "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
+      "projectName": "BotVinculacion",
+      "projectPath": "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
+      "packagesPath": "C:\\Users\\isaac\\.nuget\\packages\\",
+      "outputPath": "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\bot_admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\isaac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -6175,6 +6174,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.Extensions.Logging.Log4Net.AspNetCore": {
             "target": "Package",
@@ -6224,7 +6224,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
