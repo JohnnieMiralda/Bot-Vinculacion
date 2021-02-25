@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
+using System.IO;
 using Topshelf;
 
 namespace BotVinculacionUnitec
@@ -25,6 +27,12 @@ namespace BotVinculacionUnitec
                     x.SetDescription("This service moves files around");
                 });
                 int exitCodeValue = (int)Convert.ChangeType(exitCode, exitCode.GetTypeCode());
+                var config =
+                new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", true)
+                .AddEnvironmentVariables()
+                .Build();
                 Environment.ExitCode = exitCodeValue;
             }
             catch (Exception e)
@@ -32,6 +40,8 @@ namespace BotVinculacionUnitec
                // Console.WriteLine(e.Message);
                 Environment.Exit(-1);
             }
+
+
 
         }
 

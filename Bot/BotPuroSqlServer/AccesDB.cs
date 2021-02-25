@@ -1,17 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Extensions.Configuration;
+using System;
+using System.Configuration;
 using System.Data.Odbc;
-using System.IO;
-using System.Linq;
 using System.Net.Mail;
 using System.Runtime.Caching;
 using System.Timers;
+using Microsoft.Extensions.Configuration.Json;
+using System.Text.Json;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace BotVinculacionUnitec
 {
+   
+    
     class AccesDB
-    { 
-		public static string connectionString = @"Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\BotVinculacion\db\Vinculacion_Base.accdb";
+    {
+        Config con;
+        public static string connectionString;
+        public AccesDB()
+        {
+            con = JsonConvert.DeserializeObject<Config>(File.ReadAllText(@"c:\appsettings.json"));
+
+            connectionString = @con.ConnectionStringDB;
+        }
+        
+
         OdbcConnection odbcConnection;
         OdbcCommand cmd;
         

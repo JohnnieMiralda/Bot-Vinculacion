@@ -1,14 +1,24 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 
 using System.Data.SqlClient;
-
+using System.IO;
 
 namespace BotVinculacionUnitec
 {
     class sqlserver
     {
-        SqlConnection myConnection = new SqlConnection("Server=tcp:hours-tracker-staging.database.windows.net,1433;Initial Catalog=HoursTrackerStaging;Persist Security Info=False;User ID=hours-tracker;Password=H0ur5-7r4ck3r-123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        Config con;
+        public static string connectionString;
+        public sqlserver()
+        {
+            con = JsonConvert.DeserializeObject<Config>(File.ReadAllText(@"c:\appsettings.json"));
+
+            connectionString = con.SQLserverConnectionString;
+        }
+
+        SqlConnection myConnection = new SqlConnection(connectionString);
 
         public void OpenConnection()
         {

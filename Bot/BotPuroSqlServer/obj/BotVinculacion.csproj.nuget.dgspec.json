@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj": {}
+    "C:\\Users\\darkz\\Documents\\BotVinculacion\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj": {}
   },
   "projects": {
-    "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj": {
+    "C:\\Users\\darkz\\Documents\\BotVinculacion\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
+        "projectUniqueName": "C:\\Users\\darkz\\Documents\\BotVinculacion\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
         "projectName": "BotVinculacion",
-        "projectPath": "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
-        "packagesPath": "C:\\Users\\isaac\\.nuget\\packages\\",
-        "outputPath": "E:\\Documents\\GitHub\\Bot-Vinculacion2\\Bot\\BotPuroSqlServer\\obj\\",
+        "projectPath": "C:\\Users\\darkz\\Documents\\BotVinculacion\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\BotVinculacion.csproj",
+        "packagesPath": "C:\\Users\\darkz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\darkz\\Documents\\BotVinculacion\\Bot-Vinculacion\\Bot\\BotPuroSqlServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\isaac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\darkz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,9 +40,33 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.Extensions.Configuration.EnvironmentVariables": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.Extensions.Logging.Log4Net.AspNetCore": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Microsoft.NETCore.Platforms": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             },
             "System.Data.Odbc": {
               "target": "Package",
@@ -88,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
