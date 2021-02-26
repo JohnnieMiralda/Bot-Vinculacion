@@ -6,16 +6,49 @@ using Microsoft.AspNetCore.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace BotVinculacionUnitec
 {
-    
-    public class Config
+	class Config
 	{
-		public string telegramToken { get; set; }
+		static ConnectionStrings connectionManager;
 
-		public string ConnectionStringDB { get; set; }
+		public Config()
+		{
+			connectionManager = JsonConvert.DeserializeObject<ConnectionStrings>(File.ReadAllText(@"appsettings.json"));
 
-		public string SQLserverConnectionString { get; set; }
+			Console.WriteLine(connectionManager.TelegramToken);
+			Console.WriteLine(connectionManager.ConnectionStringBot);
+			Console.WriteLine(connectionManager.ConnectionStringData);
+
+		}
+
+		public static string GetTelegramToken()
+		{
+			return connectionManager.TelegramToken;
+		}
+
+		public static string GetBotConnection()
+		{
+			return connectionManager.ConnectionStringBot;
+		}
+
+		public static string GetDataConnection()
+		{
+			return connectionManager.ConnectionStringData;
+		}
+
 	}
+
+	struct ConnectionStrings
+	{
+		public string TelegramToken { get; set; }
+
+		public string ConnectionStringBot { get; set; }
+
+		public string ConnectionStringData { get; set; }
+	}
+
 }
