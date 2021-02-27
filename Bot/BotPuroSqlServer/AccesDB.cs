@@ -16,21 +16,16 @@ namespace BotVinculacionUnitec
     
     class AccesDB
     {
-        Config con;
-        public static string connectionString;
-        public AccesDB()
-        {
-            con = JsonConvert.DeserializeObject<Config>(File.ReadAllText(@"c:\appsettings.json"));
 
-            connectionString = @con.ConnectionStringDB;
-        }
+        
+
+            
+        
         
 
         OdbcConnection odbcConnection;
         OdbcCommand cmd;
-        
-        
-        
+  
         public void iniciarTimer()
         {
             CrearCacheHorasTotales();
@@ -48,7 +43,7 @@ namespace BotVinculacionUnitec
             {
                 AbsoluteExpiration = DateTimeOffset.Now.AddDays(1)
             };
-            OdbcConnection con = new OdbcConnection(connectionString);
+            OdbcConnection con = new OdbcConnection(@Config.GetBotConnection());
             string queryString = "SELECT No_Cuenta, sum(Horas_Acum) FROM [Tabla General] Group By No_Cuenta;";
             OdbcCommand command = new OdbcCommand(queryString, con);
             con.Open();
@@ -76,7 +71,7 @@ namespace BotVinculacionUnitec
             {
                 AbsoluteExpiration = DateTimeOffset.Now.AddDays(1)
             };
-            OdbcConnection con = new OdbcConnection(connectionString);
+            OdbcConnection con = new OdbcConnection(Config.GetBotConnection());
             string queryString = "SELECT No_Cuenta, sum(Horas_Acum) FROM [Tabla General] Group By No_Cuenta;";
             OdbcCommand command = new OdbcCommand(queryString, con);
             con.Open();
@@ -103,7 +98,7 @@ namespace BotVinculacionUnitec
             //{
                 //string connetionString = null;
                 //connetionString = @"Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=" + file;
-                odbcConnection = new OdbcConnection(connectionString);
+                odbcConnection = new OdbcConnection(Config.GetBotConnection());
             //}
             //else
             //{ 

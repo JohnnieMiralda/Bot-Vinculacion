@@ -9,6 +9,9 @@ namespace BotVinculacionUnitec
     {
          static  void Main(string[] args)
         {
+
+            Config test= new Config();
+
             try
             {
                 var exitCode = HostFactory.Run(x =>
@@ -27,13 +30,10 @@ namespace BotVinculacionUnitec
                     x.SetDescription("This service moves files around");
                 });
                 int exitCodeValue = (int)Convert.ChangeType(exitCode, exitCode.GetTypeCode());
-                var config =
-                new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true)
-                .AddEnvironmentVariables()
-                .Build();
+                
                 Environment.ExitCode = exitCodeValue;
+
+                
             }
             catch (Exception e)
             {

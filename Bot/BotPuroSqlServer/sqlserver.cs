@@ -9,16 +9,9 @@ namespace BotVinculacionUnitec
 {
     class sqlserver
     {
-        Config con;
-        public static string connectionString;
-        public sqlserver()
-        {
-            con = JsonConvert.DeserializeObject<Config>(File.ReadAllText(@"c:\appsettings.json"));
+        
 
-            connectionString = con.SQLserverConnectionString;
-        }
-
-        SqlConnection myConnection = new SqlConnection(connectionString);
+        SqlConnection myConnection = new SqlConnection(Config.GetDataConnection());
 
         public void OpenConnection()
         {

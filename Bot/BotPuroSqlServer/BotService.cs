@@ -11,20 +11,17 @@ namespace BotVinculacionUnitec
     class BotService
     {
 
-        Config con;
-        public static string connectionString;
-        
+        private static readonly TelegramBotClient Bot = new TelegramBotClient(Config.GetTelegramToken());
+
         //bot de enriquecs 
         //1242656066:AAF3AqRwRp3VHVJ0ULpY53HLQKrZjkt5bH8
         //1341384254:AAHMn7Q-48X4eUYOftbeUixZrXMJMDPyjZY
         //1099955313:AAE4MUcmOzK09op7z8K-K5VNANtumC2n9WQ
-        
+
 
         public BotService()
         {
-            con = JsonConvert.DeserializeObject<Config>(File.ReadAllText(@"c:\appsettings.json"));
-
-            connectionString = con.telegramToken;
+            
             //Método que se ejecuta cuando se recibe un mensaje
             Bot.OnMessage += Bot_OnMessage; ;
 
@@ -35,7 +32,6 @@ namespace BotVinculacionUnitec
             Bot.OnReceiveError += Bot_OnReceiveError; ;
         }
 
-        private static readonly TelegramBotClient Bot = new TelegramBotClient(connectionString);
 
         public void Stop()
         {
