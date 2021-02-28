@@ -1,0 +1,8 @@
+WARN  2021-02-28 08:11:39,248  6508ms BotVinculacion         - Existe ExecuteReader: Connection property has not been initialized.
+WARN  2021-02-28 08:11:55,999 23259ms BotVinculacion         - Existe ExecuteReader: Connection property has not been initialized.
+ERROR 2021-02-28 08:31:29,846  8461ms BotVinculacion         - ExecuteReader requires an open and available Connection. The connection's current state is closed.
+ERROR 2021-02-28 08:31:32,141 10756ms BotVinculacion         - Error Horas totalesUnable to cast object of type 'System.DBNull' to type 'System.Int32'.
+ERROR 2021-02-28 08:34:42,230  4434ms BotVinculacion         - ExecuteReader requires an open and available Connection. The connection's current state is closed.
+ERROR 2021-02-28 08:34:44,038  6242ms BotVinculacion         - Error Horas totalesUnable to cast object of type 'System.DBNull' to type 'System.Int32'.
+WARN  2021-02-28 10:05:52,033  1270ms BotVinculacion         - Error generando tokenUnable to cast object of type 'System.DBNull' to type 'System.String'.
+ERROR 2021-02-28 10:05:54,978  4215ms BotVinculacion         - Get id Index was outside the bounds of the array.

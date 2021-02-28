@@ -58,6 +58,7 @@ namespace BotVinculacionUnitec
             Logger.Log(message.Chat.Username+ ":" + message.Text, LogType.Info);
             //AccesDB access = new AccesDB();
             access.connection();
+            access.connectionBotOnly();
             Console.WriteLine($"Mensaje de @{message.Chat.Username}:" + message.Text);
 
             if (message == null || message.Type != Telegram.Bot.Types.Enums.MessageType.Text) return; ;
@@ -255,6 +256,7 @@ namespace BotVinculacionUnitec
         { 
             //AccesDB access = new AccesDB();
             access.connection();
+            access.connectionBotOnly();
             var callbackQuery = callbackQueryEventArgs.CallbackQuery;
             switch (callbackQuery.Data.Split(" ").First().ToLower())
             {

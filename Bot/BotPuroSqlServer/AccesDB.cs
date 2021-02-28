@@ -16,16 +16,12 @@ namespace BotVinculacionUnitec
     
     class AccesDB
     {
-
-        
-
-            
-        
-        
-
         OdbcConnection odbcConnection;
         OdbcCommand cmd;
-  
+        OdbcConnection odbcConnectionBotOnly;
+        OdbcCommand cmdBotOnly;
+
+        
         public void iniciarTimer()
         {
             CrearCacheHorasTotales();
@@ -90,20 +86,11 @@ namespace BotVinculacionUnitec
         }
         public void connection()
         {
-            //Colocar el path donde tengan la base de datos 
-            //En un futuro se cambiara de manera dinamica, no se como pero simon
-            //string path = @"C:\Users\Johel\Downloads\";
-            //var file = Directory.GetFiles(@path, "BASE DATOS MODIFICADA 29 Ene.accdb").FirstOrDefault();
-            //if (File.Exists(file))
-            //{
-                //string connetionString = null;
-                //connetionString = @"Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=" + file;
                 odbcConnection = new OdbcConnection(Config.GetBotConnection());
-            //}
-            //else
-            //{ 
-            //    Console.WriteLine("file not found");
-           // }
+        }
+        public void connectionBotOnly()
+        {
+            odbcConnectionBotOnly = new OdbcConnection(Config.GetBotConnectionOnly());
         }
 
         public void Open()
@@ -133,6 +120,36 @@ namespace BotVinculacionUnitec
                 Console.WriteLine(e.Message);
             }
             
+        }
+
+        public void OpenBotOnly()
+        {
+            try
+            {
+
+                odbcConnectionBotOnly.Open();
+
+            }
+            catch (OdbcException e)
+            {
+                Logger.Log(e.Message, LogType.Error);
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void CloseBotOnly()
+        {
+
+            try
+            {
+                odbcConnectionBotOnly.Close();
+            }
+            catch (OdbcException e)
+            {
+                Logger.Log(e.Message, LogType.Error);
+                Console.WriteLine(e.Message);
+            }
+
         }
 
         public bool CuentaExiste(string Cuenta)
@@ -165,9 +182,9 @@ namespace BotVinculacionUnitec
 
         public bool ExisteDb(string Cuenta)
         {
-            string selectQuery = "SELECT cuenta_telegram from [Datos Alumno Bot] where cuenta_telegram = ? ;";
-            cmd = new OdbcCommand(selectQuery, odbcConnection);
-            Open();
+            string selectQuery = "SELECT CuentaTelegram from [AlumnosBot] where CuentaTelegram = ? ;";
+            cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
+            OpenBotOnly();
             try
             {
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
@@ -177,10 +194,11 @@ namespace BotVinculacionUnitec
                 {
                     if (Cuenta == MyDataReader.GetString(0))
                     {
-                        Close();
+                        CloseBotOnly();
                         return true;
                     }
                 }
+                CloseBotOnly();
             }
             catch (OdbcException e)
             {
@@ -192,16 +210,16 @@ namespace BotVinculacionUnitec
                 Console.WriteLine("Existe " + e.Message);
             }
           
-            Close();
+            CloseBotOnly();
             return false;
         }
 
         public bool estadoDb(string Cuenta)
         {
 
-            string selectQuery = "SELECT estado from [Datos Alumno Bot] where cuenta_telegram = ? ;";
-            cmd = new OdbcCommand(selectQuery, odbcConnection);
-            Open();
+            string selectQuery = "SELECT Estado from [AlumnosBot] where CuentaTelegram = ? ;";
+            cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
+            OpenBotOnly();
             try
             {
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
@@ -212,7 +230,7 @@ namespace BotVinculacionUnitec
                     // Console.WriteLine(num);
                     if (num == 2)
                     {
-                        Close();
+                        CloseBotOnly();
                         return true;
                     }
                    
@@ -223,39 +241,69 @@ namespace BotVinculacionUnitec
                 Logger.Log("estado " + e.Message, LogType.Warn);
                 Console.WriteLine("estado " + e.Message);
             }
-            Close();
+            CloseBotOnly();
             return false;
         }
 
         public string GetCuentaNUMDb(string Cuenta)
         {
 
-            string selectQuery = "SELECT cuenta_telegram,[Datos Alumno].No_Cuenta from [Datos Alumno] inner join [Datos Alumno Bot] on [Datos Alumno].No_Cuenta=[Datos Alumno Bot].No_Cuenta where cuenta_telegram= ? ;";
+            //string selectQuery = "SELECT cuenta_telegram,[Datos Alumno].No_Cuenta from [Datos Alumno] inner join [Datos Alumno Bot] on [Datos Alumno].No_Cuenta=[Datos Alumno Bot].No_Cuenta where cuenta_telegram= ? ;";
+            string selectQuery = "SELECT [Datos Alumno].No_Cuenta from [Datos Alumno]  ; ";
+            string selectQuery2 = "SELECT CuentaTelegram, NumeroCuenta from [AlumnosBot] WHERE CuentaTelegram = ? ; ";
+            string numeroCuenta = "";
             try
             {
                 cmd = new OdbcCommand(selectQuery, odbcConnection);
-                Open();
+                cmdBotOnly = new OdbcCommand(selectQuery2, odbcConnectionBotOnly);
+                
                 try
                 {
+                    OpenBotOnly();
                     try
                     {
-                        cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                        OdbcDataReader MyDataReader = cmd.ExecuteReader();
+                        cmdBotOnly.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
+                        OdbcDataReader MyDataReader = cmdBotOnly.ExecuteReader();
                         while (MyDataReader.Read())
                         {
                             // Console.WriteLine(selectResult.GetString(0));
                             if (Cuenta == MyDataReader.GetString(0))
                             {
-
-                                string retornable = MyDataReader.GetString(1);
-                                Close();
-                                return retornable;
-
+                                numeroCuenta = MyDataReader.GetString(1);
                             }
                         }
+                        CloseBotOnly();
                     }
                     catch (Exception e)
                     {
+                        Logger.Log(e.Message, LogType.Error);
+                        Console.WriteLine("");
+                        CloseBotOnly();
+                        return "";
+                    }
+                    Open();
+                    try
+                    {
+                        OdbcDataReader MyDataReader = cmd.ExecuteReader();
+
+                        while (MyDataReader.Read())
+                        {
+                            // Console.WriteLine(selectResult.GetString(0));
+                            if (MyDataReader.GetString(0) == numeroCuenta)
+                            {
+                                //cuentaUnitec = MyDataReader.GetString(1);
+                                string retornable = MyDataReader.GetString(0);
+                                Close();
+                                return retornable;
+                            }
+                        }
+                        Close();
+
+
+                    }
+                    catch (Exception e)
+                    {
+                        Close();
                         Logger.Log(e.Message, LogType.Error);
                         Console.WriteLine("");
                         return "";
@@ -279,19 +327,45 @@ namespace BotVinculacionUnitec
 
         public string GetCuentaDb(string Cuenta)
         {
-            string selectQuery = "SELECT cuenta_telegram, P_Nombre, [P_ Apellido] FROM [Datos Alumno] inner join [Datos Alumno Bot] on [Datos Alumno].No_Cuenta=[Datos Alumno Bot].No_Cuenta WHERE cuenta_telegram= ?";
+            //string selectQuery = "SELECT cuenta_telegram, P_Nombre, [P_ Apellido] FROM [Datos Alumno] inner join [Datos Alumno Bot] on [Datos Alumno].No_Cuenta=[Datos Alumno Bot].No_Cuenta WHERE cuenta_telegram= ?";
+            string selectQuery = "SELECT No_Cuenta, P_Nombre, [P_ Apellido] FROM [Datos Alumno];";
+            string selectQueryBotOnly = "SELECT CuentaTelegram, NumeroCuenta FROM [AlumnosBot] WHERE CuentaTelegram = ? ;";
+            string numeroCuenta = "";
             try
             {
-                cmd = new OdbcCommand(selectQuery, odbcConnection);
-                Open();
+                cmdBotOnly = new OdbcCommand(selectQueryBotOnly, odbcConnectionBotOnly);
+                OpenBotOnly();
                 try
                 {
-                    cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                    OdbcDataReader MyDataReader = cmd.ExecuteReader();
+                    cmdBotOnly.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
+                    OdbcDataReader MyDataReader = cmdBotOnly.ExecuteReader();
                     while (MyDataReader.Read())
                     {
                         // Console.WriteLine(selectResult.GetString(0));
                         if (Cuenta == MyDataReader.GetString(0))
+                        {
+
+                            numeroCuenta = MyDataReader.GetString(1);
+                            
+
+                        }
+                    }
+                    CloseBotOnly();
+                }
+                catch (Exception e)
+                {
+                    Logger.Log("esta malo get cuenta", LogType.Error);
+                    Console.WriteLine("casta malo getcuenta");
+                }
+                cmd = new OdbcCommand(selectQuery, odbcConnection);
+                Open();
+                try
+                {
+                    OdbcDataReader MyDataReader = cmd.ExecuteReader();
+                    while (MyDataReader.Read())
+                    {
+                        // Console.WriteLine(selectResult.GetString(0));
+                        if (numeroCuenta == MyDataReader.GetString(0))
                         {
 
                             string retornable = MyDataReader.GetString(1) + " " + MyDataReader.GetString(2);
@@ -320,9 +394,9 @@ namespace BotVinculacionUnitec
 
         public bool VerificarDb(string Cuenta, string code)
         {
-            string selectQuery = "SELECT token_generado from [Datos Alumno Bot] where cuenta_telegram = ? ";
-            cmd = new OdbcCommand(selectQuery, odbcConnection);
-            Open();
+            string selectQuery = "SELECT TokenGenerado from [AlumnosBot] where CuentaTelegram = ? ;";
+            cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
+            OpenBotOnly();
             try
             {
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
@@ -333,7 +407,7 @@ namespace BotVinculacionUnitec
                    
                     if (code == MyDataReader.GetString(0))
                     {
-                        Close();
+                        CloseBotOnly();
                         return true;
                     }
                    
@@ -344,7 +418,7 @@ namespace BotVinculacionUnitec
                 Logger.Log("verificar" + e.Message, LogType.Error);
                 Console.WriteLine("verificar " + e.Message);
             }
-            Close();
+            CloseBotOnly();
             return false;
         }
 
@@ -352,13 +426,14 @@ namespace BotVinculacionUnitec
         {
             DateTime now = DateTime.Now;
             //string updatequery = "Update alumnos_bot set Fecha_confirmacion=@now ,confirmado=1 ,estado=2,token_generado=@unique where token_generado=@code and cuenta_telegram=@Cuenta";
-            string updatequery = "UPDATE [Datos Alumno Bot] set Fecha_confirmacion='"+ now + "', confirmado=1, Estado=2, Token_generado='"+" "+"' WHERE Token_generado='"+code+"' and cuenta_telegram='"+Cuenta+"'";
+            //string updatequery = "UPDATE [Datos Alumno Bot] set Fecha_confirmacion='"+ now + "', confirmado=1, Estado=2, Token_generado='"+" "+"' WHERE Token_generado='"+code+"' and cuenta_telegram='"+Cuenta+"'";
+            string updatequery = "UPDATE AlumnosBot set FechaConfirmacion='" + now + "', Confirmado=1, Estado=2, TokenGenerado='" + " " + "' WHERE TokenGenerado='" + code + "' and CuentaTelegram='" + Cuenta + "'";
             try
             {
-                cmd = new OdbcCommand(updatequery, odbcConnection);
-                Open();
+                cmd = new OdbcCommand(updatequery, odbcConnectionBotOnly);
+                OpenBotOnly();
                 cmd.ExecuteNonQuery();
-                Close();
+                CloseBotOnly();
                 return true;
             }
             catch (Exception e)
@@ -374,11 +449,11 @@ namespace BotVinculacionUnitec
         public string GetMailDb(string Cuenta)
         {
 
-            string selectQuery = "SELECT No_Cuenta,correo_electronico from [Datos Alumno Bot] where No_Cuenta= ? ";
+            string selectQuery = "SELECT NumeroCuenta,CorreoElectronico from [Alumnos] where NumeroCuenta= ? ;";
             try
             {
-                cmd = new OdbcCommand(selectQuery, odbcConnection);
-                Open();
+                cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
+                OpenBotOnly();
                 try
                 {
                     cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
@@ -390,7 +465,7 @@ namespace BotVinculacionUnitec
                         if (Cuenta == MyDataReader.GetString(0))
                         {
                             string retornable = MyDataReader.GetString(1);
-                            Close();
+                            CloseBotOnly();
                             return retornable;
 
                         }
@@ -410,7 +485,7 @@ namespace BotVinculacionUnitec
                 Logger.Log("get mail" + e.Message, LogType.Warn);
                 Console.WriteLine("get mail" + e.Message);
             }
-            Close();
+            CloseBotOnly();
             string aus = "";
             return aus;
         }
@@ -448,11 +523,11 @@ namespace BotVinculacionUnitec
 
         public bool newTokenDb(string Cuenta, string mail)
         {
-            string selectQuery = "SELECT cuenta_telegram,fecha_ultimo_token from [Datos Alumno Bot] where cuenta_telegram= ? ;";
+            string selectQuery = "SELECT CuentaTelegram,FechaUltimoToken from [AlumnosBot] where CuentaTelegram= ? ;";
             try
             {
-                cmd = new OdbcCommand(selectQuery, odbcConnection);
-                Open();
+                cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
+                OpenBotOnly();
 
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                 OdbcDataReader MyDataReader = cmd.ExecuteReader();
@@ -473,20 +548,20 @@ namespace BotVinculacionUnitec
 
 
                             Console.WriteLine(mail);
-                            Close();
+                            CloseBotOnly();
                             string tokenNuevo = createToken();
                             EnviarCorreo(mail, tokenNuevo);
 
                             AccesDB db = new AccesDB();
-                            db.connection();
+                            db.connectionBotOnly();
                             //string updateQuery = "UPDATE alumnos_bot set token_generado=@token,fecha_ultimo_token=@nos WHERE cuenta_telegram=@Cuenta";
-                            string updateQuery = "UPDATE [Datos Alumno Bot] set token_generado='"+tokenNuevo+"',fecha_ultimo_token='"+nos+"' WHERE cuenta_telegram= ?";
-                            OdbcCommand updateCommand = new OdbcCommand(updateQuery, db.odbcConnection);
-                            db.Open();
+                            string updateQuery = "UPDATE AlumnosBot set TokenGenerado='" + tokenNuevo + "',FechaUltimoToken='" + nos + "' WHERE CuentaTelegram= ?";
+                            OdbcCommand updateCommand = new OdbcCommand(updateQuery, db.odbcConnectionBotOnly);
+                            db.OpenBotOnly();
 
                             updateCommand.Parameters.Add("@Cuenta", OdbcType.Text).Value = Cuenta;
                             updateCommand.ExecuteNonQuery();
-                            db.Close();
+                            db.CloseBotOnly();
 
                             return true;
                         }
@@ -495,6 +570,7 @@ namespace BotVinculacionUnitec
 
                     }
                 }
+                CloseBotOnly();
             }
             catch (Exception e)
             {
@@ -517,9 +593,9 @@ namespace BotVinculacionUnitec
                 {
                     ing = false;
                     random = generator.Next(0, 999999).ToString("D6");
-                    string selectQuery = "SELECT token_generado from [Datos Alumno Bot] ";
-                    cmd = new OdbcCommand(selectQuery, odbcConnection);
-                    Open();
+                    string selectQuery = "SELECT TokenGenerado from [AlumnosBot] ;";
+                    cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
+                    OpenBotOnly();
 
                     OdbcDataReader MyDataReader = cmd.ExecuteReader();
                     while (MyDataReader.Read())
@@ -538,7 +614,7 @@ namespace BotVinculacionUnitec
                 Logger.Log("Error generando token" + e.Message, LogType.Warn);
                 Console.WriteLine(e.Message);
             }
-            Close();
+            CloseBotOnly();
             return random;
         }
 
@@ -583,20 +659,43 @@ namespace BotVinculacionUnitec
         }
 
         public bool CuentaVerificadaDb(string numeroCuenta)
-        { 
-            string selectQuery = "SELECT * FROM [Datos Alumno] inner join [Datos Alumno Bot] on [Datos Alumno].No_Cuenta=[Datos Alumno Bot].No_Cuenta WHERE [Datos Alumno].No_Cuenta= ? and [Datos Alumno Bot].Confirmado=1";
-
+        {
+            //string selectQuery = "SELECT * FROM [Datos Alumno] inner join [Datos Alumno Bot] on [Datos Alumno].No_Cuenta=[Datos Alumno Bot].No_Cuenta WHERE [Datos Alumno].No_Cuenta= ? and [Datos Alumno Bot].Confirmado=1";
+            string selectQuery = "SELECT * FROM [Datos Alumno] WHERE No_Cuenta = ? ;";
+            string selectQueryBotOnly = "SELECT * FROM [AlumnosBot] WHERE NumeroCuenta = ? AND Confirmado=1 ;";
+            string numCuenta="";
             cmd = new OdbcCommand(selectQuery, odbcConnection);
             Open();
             cmd.Parameters.Add("@NumeroCuenta", OdbcType.VarChar).Value = numeroCuenta;
-            
+
             try
             {
                 OdbcDataReader MyDataReader = cmd.ExecuteReader();
 
+                while (MyDataReader.Read())
+                {
+                    if(numeroCuenta == MyDataReader.GetString(0))
+                    {
+                        numCuenta = MyDataReader.GetString(0);
+                    }
+                }
+                Close();
+            }
+            catch (Exception e)
+            {
+                Logger.Log("Cuenta verificar" + e.Message, LogType.Error);
+                Console.WriteLine("CuentaVerificar" + e.Message);
+            }
+            cmdBotOnly = new OdbcCommand(selectQueryBotOnly, odbcConnectionBotOnly);
+            OpenBotOnly();
+            cmdBotOnly.Parameters.Add("@NumeroCuenta", OdbcType.VarChar).Value = numCuenta;
+            try
+            {
+                OdbcDataReader MyDataReader = cmdBotOnly.ExecuteReader();
+
                 if (MyDataReader.HasRows)
                 {
-                    Close();
+                    CloseBotOnly();
                     return true;
                 }
             }
@@ -605,7 +704,7 @@ namespace BotVinculacionUnitec
                 Logger.Log("Cuenta verificar" + e.Message, LogType.Error);
                 Console.WriteLine("CuentaVerificar" + e.Message);
             }
-            Close();
+            CloseBotOnly();
             return false;
         }
 
@@ -622,14 +721,15 @@ namespace BotVinculacionUnitec
             bool prueba = true;
             //string insertquery = "INSERT into [Datos Alumno Bot] (deshabilitado,cuenta_telegram,token_generado,confirmado,fecha_confirmacion,estado,fecha_ultimo_token,id) values ('"+ prueba+ "','"+ telegramid+"','"+ token + "',"+ verified + ",'"+confirmacion+"',"+ Estado + ",'"+today+"','"+ id_alumno +"');";
             string updatequery = "UPDATE [Datos Alumno Bot] set deshabilitado='" + prueba + "', cuenta_telegram= '"+ telegramid + "', Token_generado='" + token + "', confirmado = "+verified+", fecha_confirmacion = '"+ confirmacion + "', estado = "+ Estado + ", fecha_ultimo_token = '"+today+"'  WHERE No_cuenta= ? ;";
+            string insertquery = "INSERT into [AlumnosBot] (NumeroCuenta,Deshabilitado,CuentaTelegram,TokenGenerado,Confirmado,FechaConfirmacion,Estado,FechaUltimoToken,ChatId) values ('" + noCuenta + "','" + prueba + "','" + telegramid + "','" + token + "'," + verified + ",'" + confirmacion + "'," + Estado + ",'" + today + "','" + id_alumno + "'); ";
             try
             {
-                cmd = new OdbcCommand(updatequery, odbcConnection);
-                Open();
+                cmd = new OdbcCommand(insertquery, odbcConnectionBotOnly);
+                OpenBotOnly();
                 
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = noCuenta;
                 cmd.ExecuteNonQuery();
-                Close();
+                CloseBotOnly();
             }
             catch (Exception e)
             {
