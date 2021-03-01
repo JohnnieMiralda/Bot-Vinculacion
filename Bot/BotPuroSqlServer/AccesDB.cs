@@ -27,6 +27,7 @@ namespace BotVinculacionUnitec
             CrearCacheHorasTotales();
             //Console.WriteLine("Tiempo corriendo...");
             Timer t = new Timer(TimeSpan.FromDays(1).TotalMilliseconds);
+            Logger.Log("Se inicio el timer a las " + t, LogType.Debug);
             t.AutoReset = true;
             t.Elapsed += new System.Timers.ElapsedEventHandler(reCrearCacheHorasTotales);
             t.Start();
@@ -57,9 +58,12 @@ namespace BotVinculacionUnitec
             {
                 Console.WriteLine($"{item.Key} : {item.Value}");
             }*/
-            Console.WriteLine("Caché creado con éxito!");
+            //Console.WriteLine("Caché creado con éxito!");
+            Logger.Log("Caché creado con éxito!", LogType.Debug);
+
+
         }
-        
+
         public void reCrearCacheHorasTotales(object sender, ElapsedEventArgs e)
         {
             
@@ -87,37 +91,39 @@ namespace BotVinculacionUnitec
         public void connection()
         {
                 odbcConnection = new OdbcConnection(Config.GetBotConnection());
+                Logger.Log("Conexion Vinculacion_Base creada con éxito!", LogType.Info);
         }
         public void connectionBotOnly()
         {
             odbcConnectionBotOnly = new OdbcConnection(Config.GetBotConnectionOnly());
+            Logger.Log("Conexion Bot_Base creada con éxito!", LogType.Info);
         }
 
         public void Open()
         {
             try
-            {
-                
+            {                
                 odbcConnection.Open();
-
-            }catch(OdbcException e)
+                Logger.Log("Conexion Vinculacion_Base abierta con éxito!", LogType.Debug);
+            }
+            catch(OdbcException e)
             {
-                Logger.Log(e.Message, LogType.Error);
-                Console.WriteLine(e.Message);
+                Logger.Log("Error a abrir conexion en Vinculacion_base "+e.Message, LogType.Error);
+                //Console.WriteLine(e.Message);
             }
         }
 
         public void Close()
         {
-         
             try
             {
                 odbcConnection.Close();
+                Logger.Log("Conexion Vinculacion_Base cerrada con éxito!", LogType.Debug);
             }
             catch (OdbcException e)
             {
-                Logger.Log(e.Message, LogType.Error);
-                Console.WriteLine(e.Message);
+                Logger.Log("Error a cerrar conexion en Vinculacion_base " + e.Message, LogType.Error);
+                //Console.WriteLine(e.Message);
             }
             
         }
@@ -126,28 +132,27 @@ namespace BotVinculacionUnitec
         {
             try
             {
-
                 odbcConnectionBotOnly.Open();
-
+                Logger.Log("Conexion Bot_Base abierta con éxito!", LogType.Debug);
             }
             catch (OdbcException e)
             {
-                Logger.Log(e.Message, LogType.Error);
+                Logger.Log("Error a abrir conexion en Bot_Base " + e.Message, LogType.Error);
                 Console.WriteLine(e.Message);
             }
         }
 
         public void CloseBotOnly()
         {
-
             try
             {
                 odbcConnectionBotOnly.Close();
+                Logger.Log("Conexion Bot_Base cerrada con éxito!", LogType.Debug);
             }
             catch (OdbcException e)
             {
-                Logger.Log(e.Message, LogType.Error);
-                Console.WriteLine(e.Message);
+                Logger.Log("Error a cerrar conexion en Bot_base " + e.Message, LogType.Error);
+                //Console.WriteLine(e.Message);
             }
 
         }
@@ -167,14 +172,15 @@ namespace BotVinculacionUnitec
                     {
                         string retornable = MyDataReader.GetString(1);
                         Close();
+                        Logger.Log("Se encontro cuenta en CuentaExiste " + retornable, LogType.Debug);
                         return true;
                     }
                 }
             }
             catch (Exception e)
             {
-                Logger.Log(e.Message, LogType.Error);
-                Console.WriteLine(e.Message);
+                Logger.Log("Error en CunetaExiste "+e.Message, LogType.Error);
+                //Console.WriteLine(e.Message);
             }
             Close();
             return false;
@@ -194,6 +200,7 @@ namespace BotVinculacionUnitec
                 {
                     if (Cuenta == MyDataReader.GetString(0))
                     {
+                        Logger.Log("Se encontro cuenta en ExisteDb " + MyDataReader.GetString(0), LogType.Debug);
                         CloseBotOnly();
                         return true;
                     }
@@ -202,12 +209,12 @@ namespace BotVinculacionUnitec
             }
             catch (OdbcException e)
             {
-                Logger.Log("database " + e.Message, LogType.Error);    
+                Logger.Log("Error en database ExisteDb " + e.Message, LogType.Error);    
             }
             catch (Exception e)
             {
-                Logger.Log("Existe " + e.Message, LogType.Warn);
-                Console.WriteLine("Existe " + e.Message);
+                Logger.Log("Existe en database ExisteDb " + e.Message, LogType.Error);
+                //Console.WriteLine("Existe " + e.Message);
             }
           
             CloseBotOnly();
@@ -216,7 +223,6 @@ namespace BotVinculacionUnitec
 
         public bool estadoDb(string Cuenta)
         {
-
             string selectQuery = "SELECT Estado from [AlumnosBot] where CuentaTelegram = ? ;";
             cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
             OpenBotOnly();
@@ -227,10 +233,10 @@ namespace BotVinculacionUnitec
                 while (MyDataReader.Read())
                 {
                     int num = MyDataReader.GetInt32(0);
-                    // Console.WriteLine(num);
                     if (num == 2)
                     {
                         CloseBotOnly();
+                        Logger.Log("Retorno true en estadoDb ", LogType.Debug);
                         return true;
                     }
                    
@@ -238,17 +244,16 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Logger.Log("estado " + e.Message, LogType.Warn);
-                Console.WriteLine("estado " + e.Message);
+                Logger.Log("Error en estadoDb " + e.Message, LogType.Error);
+                ////Console.WriteLine("estado " + e.Message);
             }
             CloseBotOnly();
+            Logger.Log("Retorno false en estadoDb ", LogType.Debug);
             return false;
         }
 
         public string GetCuentaNUMDb(string Cuenta)
         {
-
-            //string selectQuery = "SELECT cuenta_telegram,[Datos Alumno].No_Cuenta from [Datos Alumno] inner join [Datos Alumno Bot] on [Datos Alumno].No_Cuenta=[Datos Alumno Bot].No_Cuenta where cuenta_telegram= ? ;";
             string selectQuery = "SELECT [Datos Alumno].No_Cuenta from [Datos Alumno]  ; ";
             string selectQuery2 = "SELECT CuentaTelegram, NumeroCuenta from [AlumnosBot] WHERE CuentaTelegram = ? ; ";
             string numeroCuenta = "";
@@ -256,7 +261,6 @@ namespace BotVinculacionUnitec
             {
                 cmd = new OdbcCommand(selectQuery, odbcConnection);
                 cmdBotOnly = new OdbcCommand(selectQuery2, odbcConnectionBotOnly);
-                
                 try
                 {
                     OpenBotOnly();
@@ -298,27 +302,24 @@ namespace BotVinculacionUnitec
                             }
                         }
                         Close();
-
-
                     }
                     catch (Exception e)
                     {
                         Close();
                         Logger.Log(e.Message, LogType.Error);
-                        Console.WriteLine("");
                         return "";
                     }
                 }
                 catch (Exception e)
                 {
                     Logger.Log("esta malo get cuenta", LogType.Error);
-                    Console.WriteLine("esta malo getcuenta");
+                    //Console.WriteLine("esta malo getcuenta");
                 }
             }
             catch (Exception e)
             {
                 Logger.Log("getCuenta" + e.Message, LogType.Error);
-                Console.WriteLine("getCuenta" + e.Message);
+                //Console.WriteLine("getCuenta" + e.Message);
             }
             Close();
             string aus = "";
@@ -355,7 +356,7 @@ namespace BotVinculacionUnitec
                 catch (Exception e)
                 {
                     Logger.Log("esta malo get cuenta", LogType.Error);
-                    Console.WriteLine("casta malo getcuenta");
+                    //Console.WriteLine("casta malo getcuenta");
                 }
                 cmd = new OdbcCommand(selectQuery, odbcConnection);
                 Open();
@@ -378,13 +379,13 @@ namespace BotVinculacionUnitec
                 catch (Exception e)
                 {
                     Logger.Log("esta malo get cuenta", LogType.Error);
-                    Console.WriteLine("casta malo getcuenta");
+                    //Console.WriteLine("casta malo getcuenta");
                 }
             }
             catch (Exception e)
             {
                 Logger.Log("getCuenta" + e.Message, LogType.Error);
-                Console.WriteLine("getCuenta" + e.Message);
+                //Console.WriteLine("getCuenta" + e.Message);
             }
             Close();
             string aus = "";
@@ -416,7 +417,7 @@ namespace BotVinculacionUnitec
             catch (Exception e)
             {
                 Logger.Log("verificar" + e.Message, LogType.Error);
-                Console.WriteLine("verificar " + e.Message);
+                //Console.WriteLine("verificar " + e.Message);
             }
             CloseBotOnly();
             return false;
@@ -438,8 +439,8 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Logger.Log("XD" + e.Message, LogType.Error);
-                Console.WriteLine("Cgaada Tio" + e.Message);
+                Logger.Log("Error en verificarUpdateDb" + e.Message, LogType.Error);
+                //Console.WriteLine("Cgaada Tio" + e.Message);
                 return false;
             }
 
@@ -467,7 +468,6 @@ namespace BotVinculacionUnitec
                             string retornable = MyDataReader.GetString(1);
                             CloseBotOnly();
                             return retornable;
-
                         }
                     }
 
@@ -475,15 +475,14 @@ namespace BotVinculacionUnitec
                 catch (Exception e)
                 {
                     Logger.Log("getMail Convert" + e.Message, LogType.Warn);
-                    Console.WriteLine("getmailconvert " + e.Message);
+                    //Console.WriteLine("getmailconvert " + e.Message);
                     return " ";
                 }
-
             }
             catch (Exception e)
             {
                 Logger.Log("get mail" + e.Message, LogType.Warn);
-                Console.WriteLine("get mail" + e.Message);
+                //Console.WriteLine("get mail" + e.Message);
             }
             CloseBotOnly();
             string aus = "";
@@ -541,33 +540,23 @@ namespace BotVinculacionUnitec
                         actual = actual.AddMinutes(5);
                         DateTime nos = DateTime.Now;
                         int compare = DateTime.Compare(actual, nos);
-                        // Console.WriteLine(nos);
                         if (DateTime.Compare(actual, nos) <= 0)
                         {
-
-
-
-                            Console.WriteLine(mail);
+                            //Console.WriteLine(mail);
                             CloseBotOnly();
                             string tokenNuevo = createToken();
                             EnviarCorreo(mail, tokenNuevo);
-
                             AccesDB db = new AccesDB();
                             db.connectionBotOnly();
                             //string updateQuery = "UPDATE alumnos_bot set token_generado=@token,fecha_ultimo_token=@nos WHERE cuenta_telegram=@Cuenta";
                             string updateQuery = "UPDATE AlumnosBot set TokenGenerado='" + tokenNuevo + "',FechaUltimoToken='" + nos + "' WHERE CuentaTelegram= ?";
                             OdbcCommand updateCommand = new OdbcCommand(updateQuery, db.odbcConnectionBotOnly);
                             db.OpenBotOnly();
-
                             updateCommand.Parameters.Add("@Cuenta", OdbcType.Text).Value = Cuenta;
                             updateCommand.ExecuteNonQuery();
                             db.CloseBotOnly();
-
                             return true;
                         }
-
-
-
                     }
                 }
                 CloseBotOnly();
@@ -575,10 +564,8 @@ namespace BotVinculacionUnitec
             catch (Exception e)
             {
                 Logger.Log("Error generando token" + e.Message, LogType.Warn);
-                Console.WriteLine("new token" + e.Message);
+                //Console.WriteLine("new token" + e.Message);
             }
-
-
             return false;
         }
 
@@ -596,7 +583,6 @@ namespace BotVinculacionUnitec
                     string selectQuery = "SELECT TokenGenerado from [AlumnosBot] ;";
                     cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
                     OpenBotOnly();
-
                     OdbcDataReader MyDataReader = cmd.ExecuteReader();
                     while (MyDataReader.Read())
                     {
@@ -604,7 +590,6 @@ namespace BotVinculacionUnitec
                         {
                             ing = true;
                         }
-
                     }
 
                 }
@@ -612,7 +597,7 @@ namespace BotVinculacionUnitec
             catch (Exception e)
             {
                 Logger.Log("Error generando token" + e.Message, LogType.Warn);
-                Console.WriteLine(e.Message);
+                ////Console.WriteLine(e.Message);
             }
             CloseBotOnly();
             return random;
@@ -645,17 +630,16 @@ namespace BotVinculacionUnitec
             try
             {
                 cliente.Send(message);
-                Console.WriteLine("Se envio el correo :)");
-                Logger.Log("correo enviado a :" + destinatario, LogType.Info);
+                //Console.WriteLine("Se envio el correo :)");
+                Logger.Log("correo enviado a :" + destinatario, LogType.Debug);
                 return true;
             }
             catch (Exception e)
             {
                 Logger.Log("Error al enviar correo a :" + destinatario + e.Message, LogType.Error);
-                Console.WriteLine("Error al enviar el correo :(" + e.Message);
+                //Console.WriteLine("Error al enviar el correo :(" + e.Message);
                 return false;
             }
-
         }
 
         public bool CuentaVerificadaDb(string numeroCuenta)
@@ -667,7 +651,6 @@ namespace BotVinculacionUnitec
             cmd = new OdbcCommand(selectQuery, odbcConnection);
             Open();
             cmd.Parameters.Add("@NumeroCuenta", OdbcType.VarChar).Value = numeroCuenta;
-
             try
             {
                 OdbcDataReader MyDataReader = cmd.ExecuteReader();
@@ -684,7 +667,7 @@ namespace BotVinculacionUnitec
             catch (Exception e)
             {
                 Logger.Log("Cuenta verificar" + e.Message, LogType.Error);
-                Console.WriteLine("CuentaVerificar" + e.Message);
+                //Console.WriteLine("CuentaVerificar" + e.Message);
             }
             cmdBotOnly = new OdbcCommand(selectQueryBotOnly, odbcConnectionBotOnly);
             OpenBotOnly();
@@ -702,7 +685,7 @@ namespace BotVinculacionUnitec
             catch (Exception e)
             {
                 Logger.Log("Cuenta verificar" + e.Message, LogType.Error);
-                Console.WriteLine("CuentaVerificar" + e.Message);
+                //Console.WriteLine("CuentaVerificar" + e.Message);
             }
             CloseBotOnly();
             return false;
@@ -734,9 +717,8 @@ namespace BotVinculacionUnitec
             catch (Exception e)
             {
                 Logger.Log("Error insertando datos" + e.Message, LogType.Error);
-                Console.WriteLine("insertar" + e.Message);
+                //Console.WriteLine("insertar" + e.Message);
             }
-
         }
 
         public int Getid(string Cuenta)
@@ -751,27 +733,26 @@ namespace BotVinculacionUnitec
                     cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                     OdbcDataReader MyDataReader = cmd.ExecuteReader();
                     while (MyDataReader.Read())
-                    {
-                        // Console.WriteLine(selectResult.GetString(0));
+                    {   
+                        Console.WriteLine(MyDataReader.GetString(0));
                         if (Cuenta == MyDataReader.GetString(0))
                         {
-                            int retornable = MyDataReader.GetInt32(1);
+                            int retornable = MyDataReader.GetInt32(0);
                             Close();
-                            return retornable;
-
+                            return retornable;                       
                         }
                     }
                 }
                 catch (Exception e)
                 {
                     Logger.Log("Get id " + e.Message, LogType.Error);
-                    Console.WriteLine("getidcaste" + e.Message);
+                    //Console.WriteLine("get id caste " + e.Message);
                 }
             }
             catch (Exception e)
             {
-                Logger.Log("Erro get id" + e.Message, LogType.Error);
-                Console.WriteLine("getid" + e.Message);
+                Logger.Log("Erro get id " + e.Message, LogType.Error);
+                //Console.WriteLine("get id " + e.Message);
             }
             Close();
             string aus = "";
@@ -794,7 +775,7 @@ namespace BotVinculacionUnitec
             catch (Exception e)
             {
                 Logger.Log("Error Horas totales" + e.Message, LogType.Error);
-                Console.WriteLine("cast horas tot");
+                //Console.WriteLine("cast horas tot");
                 Close();
                 //return " ";
             }
@@ -819,7 +800,7 @@ namespace BotVinculacionUnitec
                 catch (Exception e)
                 {
                     Logger.Log("Error Horas totales" + e.Message, LogType.Error);
-                    Console.WriteLine("cast horas tot");
+                    //Console.WriteLine("cast horas tot");
                     Close();
                     return " ";
                 }
@@ -828,7 +809,7 @@ namespace BotVinculacionUnitec
             {
                 Logger.Log("Error Horas totales" + e.Message, LogType.Error);
                 Close();
-                Console.WriteLine("horas totales" + e.Message);
+                //Console.WriteLine("horas totales" + e.Message);
                 return " ";
             }
 
@@ -852,22 +833,19 @@ namespace BotVinculacionUnitec
                     detalles += "Beneficiaro: " + MyDataReader.GetString(2) + "\n";
                     //HORAS DE PROYECTO 
                     detalles += "Horas Trabajadas:" + MyDataReader.GetInt32(3).ToString() + "\n\n";
-
                 }
             }
             catch (Exception e)
             {
                 Logger.Log("Error detalles" + e.Message, LogType.Error);
-                Console.WriteLine("detalle" + e.Message);
+                //Console.WriteLine("detalle" + e.Message);
             }
             Close();
             return detalles;
-
         }
 
         public bool CuentaExisteDb(string Cuenta)
         {
-
             string selectQuery = "SELECT No_Cuenta from [Datos Alumno] where No_Cuenta= ? ;";
             try
             {
@@ -875,7 +853,6 @@ namespace BotVinculacionUnitec
                 Open();
                 try
                 {
-
                     cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                     OdbcDataReader MyDataReader = cmd.ExecuteReader();
                     while (MyDataReader.Read())
@@ -885,27 +862,23 @@ namespace BotVinculacionUnitec
                         {
                             Close();
                             return true;
-
                         }
                     }
                 }
                 catch (Exception e)
                 {
+                    Logger.Log("Error al recorrer query en CuentaExisteDb " + e.Message, LogType.Error);
                     return false;
                 }
-
             }
             catch (Exception e)
             {
-                Console.WriteLine("cuenta existe" + e.Message);
+                //Console.WriteLine("cuenta existe" + e.Message);
+                Logger.Log("Error al hacer el query en CuentaExisteDb " + e.Message, LogType.Error);
             }
             Close();
             return false;
         }
-
-
-
-
     }
 }
 
