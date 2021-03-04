@@ -5,6 +5,7 @@ using System.Data.Odbc;
 using System.Net.Mail;
 using System.Runtime.Caching;
 using System.Timers;
+using System.Data;
 using Microsoft.Extensions.Configuration.Json;
 using System.Text.Json;
 using System.IO;
@@ -12,16 +13,14 @@ using Newtonsoft.Json;
 
 namespace BotVinculacionUnitec
 {
-   
-    
     class AccesDB
     {
         OdbcConnection odbcConnection;
-        OdbcCommand cmd;
+        // OdbcCommand cmd;
         OdbcConnection odbcConnectionBotOnly;
-        OdbcCommand cmdBotOnly;
+        // OdbcCommand cmdBotOnly;
+        private readonly object l = new object();
 
-        
         public void iniciarTimer()
         {
             CrearCacheHorasTotales();
@@ -32,8 +31,10 @@ namespace BotVinculacionUnitec
             t.Elapsed += new System.Timers.ElapsedEventHandler(reCrearCacheHorasTotales);
             t.Start();
         }
+
         System.Runtime.Caching.MemoryCache cache = new System.Runtime.Caching.MemoryCache("HorasTotalesCache");
-        public void CrearCacheHorasTotales()
+    
+    public void CrearCacheHorasTotales()
         {
 
             var cacheItemPolicy = new CacheItemPolicy
@@ -88,50 +89,101 @@ namespace BotVinculacionUnitec
                 Console.WriteLine($"{item.Key} : {item.Value}");
             }*/
         }
+
+// // ya esta
+//         public void CrearCacheHorasTotales2()
+//         {
+//             try{
+//             var cacheItemPolicy = new CacheItemPolicy
+//             {
+//                 AbsoluteExpiration = DateTimeOffset.Now.AddDays(1)
+//             };
+//             string queryString = "SELECT No_Cuenta, sum(Horas_Acum) AS horas FROM [Tabla General] Group By No_Cuenta;";
+//             var cmd = new OdbcCommand(queryString, odbcConnection);
+//             var datatable = GetDataTable(cmd);
+//             foreach (DataRow dr in datatable.Rows)
+//             {
+//                 var cacheIt = new CacheItem(dr["No_Cuenta"].ToString(), dr["horas"].ToString());
+//                 cache.Add(cacheIt, cacheItemPolicy);
+//             }
+//             Logger.Log("Caché creado con éxito!", LogType.Debug);
+//             }catch(Exception e){
+//                 Logger.Log(e, LogType.Error)
+//             }
+//         }
+
+// // ya esta
+//         public void reCrearCacheHorasTotales(object sender, ElapsedEventArgs e)
+//         {
+//             var cacheItemPolicy = new CacheItemPolicy
+//             {
+//                 AbsoluteExpiration = DateTimeOffset.Now.AddDays(1)
+//             };
+//             string queryString = "SELECT No_Cuenta, sum(Horas_Acum) as horas FROM [Tabla General] Group By No_Cuenta;";
+//             var cmd = new OdbcCommand(queryString, odbcConnection);
+//             var datatable = GetDataTable(cmd);
+//             foreach (DataRow dr in datatable.Rows)
+//             {
+//                 var cacheIt = new CacheItem(dr["No_Cuenta"].ToString(), dr["horas"].ToString());
+//                 cache.Add(cacheIt, cacheItemPolicy);
+//             }
+//             Logger.Log("Caché creado con éxito!", LogType.Debug);
+//         }
+
+// ya esta
         public void connection()
         {
                 odbcConnection = new OdbcConnection(Config.GetBotConnection());
                 Logger.Log("Conexion Vinculacion_Base creada con éxito!", LogType.Info);
         }
+
+// ya esta
         public void connectionBotOnly()
         {
             odbcConnectionBotOnly = new OdbcConnection(Config.GetBotConnectionOnly());
             Logger.Log("Conexion Bot_Base creada con éxito!", LogType.Info);
         }
 
+// ya esta
         public void Open()
         {
             try
-            {                
+            {
+                if (odbcConnection.State == ConnectionState.Open)
+                    return;
                 odbcConnection.Open();
                 Logger.Log("Conexion Vinculacion_Base abierta con éxito!", LogType.Debug);
             }
             catch(OdbcException e)
             {
                 Logger.Log("Error a abrir conexion en Vinculacion_base "+e.Message, LogType.Error);
-                //Console.WriteLine(e.Message);
             }
         }
 
+// ya esta
         public void Close()
         {
             try
             {
+                if (odbcConnection.State == ConnectionState.Closed)
+                    return;
                 odbcConnection.Close();
                 Logger.Log("Conexion Vinculacion_Base cerrada con éxito!", LogType.Debug);
             }
             catch (OdbcException e)
             {
                 Logger.Log("Error a cerrar conexion en Vinculacion_base " + e.Message, LogType.Error);
-                //Console.WriteLine(e.Message);
             }
             
         }
 
+// ya esta
         public void OpenBotOnly()
         {
             try
             {
+                if (odbcConnectionBotOnly.State == ConnectionState.Open)
+                    return;
                 odbcConnectionBotOnly.Open();
                 Logger.Log("Conexion Bot_Base abierta con éxito!", LogType.Debug);
             }
@@ -142,10 +194,14 @@ namespace BotVinculacionUnitec
             }
         }
 
+// ya esta
         public void CloseBotOnly()
         {
             try
             {
+                if (odbcConnectionBotOnly.State == ConnectionState.Closed)
+                    return;
+
                 odbcConnectionBotOnly.Close();
                 Logger.Log("Conexion Bot_Base cerrada con éxito!", LogType.Debug);
             }
@@ -157,21 +213,20 @@ namespace BotVinculacionUnitec
 
         }
 
+// ya esta
         public bool CuentaExiste(string Cuenta)
         {
             string selectQuery = "SELECT * from [Datos Alumno] where No_Cuenta = ? ;";
+            var cmd = new OdbcCommand(selectQuery, odbcConnection);
             try
             {  
-                cmd = new OdbcCommand(selectQuery, odbcConnection);
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                Open();
-                OdbcDataReader MyDataReader = cmd.ExecuteReader();
-                while (MyDataReader.Read())
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
                 {
-                    if (Cuenta == MyDataReader.GetString(0))
+                    if (Cuenta == dr["No_Cuenta"].ToString())
                     {
-                        string retornable = MyDataReader.GetString(1);
-                        Close();
+                        string retornable = dr["P_Nombre"].ToString();
                         Logger.Log("Se encontro cuenta en CuentaExiste " + retornable, LogType.Debug);
                         return true;
                     }
@@ -182,30 +237,26 @@ namespace BotVinculacionUnitec
                 Logger.Log("Error en CunetaExiste "+e.Message, LogType.Error);
                 //Console.WriteLine(e.Message);
             }
-            Close();
             return false;
         }
 
+// ya esta
         public bool ExisteDb(string Cuenta)
         {
             string selectQuery = "SELECT CuentaTelegram from [AlumnosBot] where CuentaTelegram = ? ;";
-            cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
-            OpenBotOnly();
+            var cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
             try
             {
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                OdbcDataReader MyDataReader = cmd.ExecuteReader();
-
-                while (MyDataReader.Read())
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
                 {
-                    if (Cuenta == MyDataReader.GetString(0))
+                    if (Cuenta == dr["CuentaTelegram"].ToString())
                     {
-                        Logger.Log("Se encontro cuenta en ExisteDb " + MyDataReader.GetString(0), LogType.Debug);
-                        CloseBotOnly();
+                        Logger.Log("Se encontro cuenta en ExisteDb " + dr["CuentaTelegram"].ToString(), LogType.Debug);
                         return true;
                     }
                 }
-                CloseBotOnly();
             }
             catch (OdbcException e)
             {
@@ -213,45 +264,39 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Logger.Log("Existe en database ExisteDb " + e.Message, LogType.Error);
-                //Console.WriteLine("Existe " + e.Message);
+                Logger.Log("Existe en database ExisteDb " + e.Message, LogType.Error);             
             }
-          
-            CloseBotOnly();
             return false;
         }
 
+// ya esta
         public bool estadoDb(string Cuenta)
         {
             string selectQuery = "SELECT Estado from [AlumnosBot] where CuentaTelegram = ? ;";
-            cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
-            OpenBotOnly();
+            var cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
             try
             {
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                OdbcDataReader MyDataReader = cmd.ExecuteReader();
-                while (MyDataReader.Read())
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
                 {
-                    int num = MyDataReader.GetInt32(0);
+                    int num = Int32.Parse(dr["Estado"].ToString());
                     if (num == 2)
                     {
-                        CloseBotOnly();
                         Logger.Log("Retorno true en estadoDb ", LogType.Debug);
                         return true;
                     }
-                   
                 }
             }
             catch (Exception e)
             {
-                Logger.Log("Error en estadoDb " + e.Message, LogType.Error);
-                ////Console.WriteLine("estado " + e.Message);
+                Logger.Log(e, LogType.Error);
             }
-            CloseBotOnly();
             Logger.Log("Retorno false en estadoDb ", LogType.Debug);
             return false;
         }
 
+// ya esta
         public string GetCuentaNUMDb(string Cuenta)
         {
             string selectQuery = "SELECT [Datos Alumno].No_Cuenta from [Datos Alumno]  ; ";
@@ -259,236 +304,179 @@ namespace BotVinculacionUnitec
             string numeroCuenta = "";
             try
             {
-                cmd = new OdbcCommand(selectQuery, odbcConnection);
-                cmdBotOnly = new OdbcCommand(selectQuery2, odbcConnectionBotOnly);
-                try
+                //cmdBotOnly.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
+                //OdbcDataReader MyDataReader = cmdBotOnly.ExecuteReader();
+                var cmd = new OdbcCommand(selectQuery2, odbcConnectionBotOnly);
+                cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
                 {
-                    OpenBotOnly();
-                    try
+                    if (Cuenta == dr["CuentaTelegram"].ToString())
                     {
-                        cmdBotOnly.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                        OdbcDataReader MyDataReader = cmdBotOnly.ExecuteReader();
-                        while (MyDataReader.Read())
-                        {
-                            // Console.WriteLine(selectResult.GetString(0));
-                            if (Cuenta == MyDataReader.GetString(0))
-                            {
-                                numeroCuenta = MyDataReader.GetString(1);
-                            }
-                        }
-                        CloseBotOnly();
-                    }
-                    catch (Exception e)
-                    {
-                        Logger.Log(e.Message, LogType.Error);
-                        Console.WriteLine("");
-                        CloseBotOnly();
-                        return "";
-                    }
-                    Open();
-                    try
-                    {
-                        OdbcDataReader MyDataReader = cmd.ExecuteReader();
-
-                        while (MyDataReader.Read())
-                        {
-                            // Console.WriteLine(selectResult.GetString(0));
-                            if (MyDataReader.GetString(0) == numeroCuenta)
-                            {
-                                //cuentaUnitec = MyDataReader.GetString(1);
-                                string retornable = MyDataReader.GetString(0);
-                                Close();
-                                return retornable;
-                            }
-                        }
-                        Close();
-                    }
-                    catch (Exception e)
-                    {
-                        Close();
-                        Logger.Log(e.Message, LogType.Error);
-                        return "";
+                        numeroCuenta = dr["NumeroCuenta"].ToString();
                     }
                 }
-                catch (Exception e)
+                cmd = new OdbcCommand(selectQuery, odbcConnection);
+                var datatable2 = GetDataTable(cmd);
+                foreach (DataRow dr in datatable2.Rows)
                 {
-                    Logger.Log("esta malo get cuenta", LogType.Error);
-                    //Console.WriteLine("esta malo getcuenta");
+                    if (dr["No_Cuenta"].ToString() == numeroCuenta)
+                    {
+                        string retornable = dr["No_Cuenta"].ToString();
+                        return retornable;
+                    }
                 }
             }
             catch (Exception e)
             {
-                Logger.Log("getCuenta" + e.Message, LogType.Error);
-                //Console.WriteLine("getCuenta" + e.Message);
+                Logger.Log(e, LogType.Error);
+                return "";
             }
-            Close();
             string aus = "";
             return aus;
         }
 
+// ya esta
         public string GetCuentaDb(string Cuenta)
         {
-            //string selectQuery = "SELECT cuenta_telegram, P_Nombre, [P_ Apellido] FROM [Datos Alumno] inner join [Datos Alumno Bot] on [Datos Alumno].No_Cuenta=[Datos Alumno Bot].No_Cuenta WHERE cuenta_telegram= ?";
             string selectQuery = "SELECT No_Cuenta, P_Nombre, [P_ Apellido] FROM [Datos Alumno];";
             string selectQueryBotOnly = "SELECT CuentaTelegram, NumeroCuenta FROM [AlumnosBot] WHERE CuentaTelegram = ? ;";
             string numeroCuenta = "";
             try
             {
-                cmdBotOnly = new OdbcCommand(selectQueryBotOnly, odbcConnectionBotOnly);
-                OpenBotOnly();
-                try
+                //cmdBotOnly.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
+                //OdbcDataReader MyDataReader = cmdBotOnly.ExecuteReader();
+                var cmd = new OdbcCommand(selectQueryBotOnly, odbcConnectionBotOnly);
+                cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
                 {
-                    cmdBotOnly.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                    OdbcDataReader MyDataReader = cmdBotOnly.ExecuteReader();
-                    while (MyDataReader.Read())
+                    if (Cuenta == dr["CuentaTelegram"].ToString())
                     {
-                        // Console.WriteLine(selectResult.GetString(0));
-                        if (Cuenta == MyDataReader.GetString(0))
-                        {
-
-                            numeroCuenta = MyDataReader.GetString(1);
-                            
-
-                        }
+                        numeroCuenta = dr["NumeroCuenta"].ToString();
                     }
-                    CloseBotOnly();
                 }
-                catch (Exception e)
-                {
-                    Logger.Log("esta malo get cuenta", LogType.Error);
-                    //Console.WriteLine("casta malo getcuenta");
-                }
+
                 cmd = new OdbcCommand(selectQuery, odbcConnection);
-                Open();
-                try
+                var datatable2 = GetDataTable(cmd);
+                foreach (DataRow dr in datatable2.Rows)
                 {
-                    OdbcDataReader MyDataReader = cmd.ExecuteReader();
-                    while (MyDataReader.Read())
+                    if (dr["No_Cuenta"].ToString() == numeroCuenta)
                     {
-                        // Console.WriteLine(selectResult.GetString(0));
-                        if (numeroCuenta == MyDataReader.GetString(0))
-                        {
-
-                            string retornable = MyDataReader.GetString(1) + " " + MyDataReader.GetString(2);
-                            Close();
-                            return retornable;
-
-                        }
+                        string retornable = dr["P_Nombre"].ToString() + dr["P_Apelido"].ToString();
+                        return retornable;
                     }
-                }
-                catch (Exception e)
-                {
-                    Logger.Log("esta malo get cuenta", LogType.Error);
-                    //Console.WriteLine("casta malo getcuenta");
                 }
             }
             catch (Exception e)
             {
-                Logger.Log("getCuenta" + e.Message, LogType.Error);
-                //Console.WriteLine("getCuenta" + e.Message);
+                Logger.Log(e, LogType.Error);
+                return "";
             }
-            Close();
             string aus = "";
             return aus;
         }
 
-
+// ya esta
         public bool VerificarDb(string Cuenta, string code)
         {
             string selectQuery = "SELECT TokenGenerado from [AlumnosBot] where CuentaTelegram = ? ;";
-            cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
-            OpenBotOnly();
+            var cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
             try
             {
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                OdbcDataReader MyDataReader = cmd.ExecuteReader();
-                while (MyDataReader.Read())
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
                 {
-                    // Console.WriteLine(selectResult.GetString(0));
-                   
-                    if (code == MyDataReader.GetString(0))
+                    if (code == dr["TokenGenerado"].ToString())
                     {
-                        CloseBotOnly();
                         return true;
                     }
-                   
                 }
             }
             catch (Exception e)
             {
-                Logger.Log("verificar" + e.Message, LogType.Error);
-                //Console.WriteLine("verificar " + e.Message);
+                Logger.Log(e, LogType.Error);
             }
-            CloseBotOnly();
             return false;
         }
 
+// ya esta
+        private DataTable GetDataTable(OdbcCommand cmd)
+        {
+            OdbcDataAdapter da1 = new OdbcDataAdapter(cmd);
+            var datatable = new DataTable();
+            da1.Fill(datatable);
+            return datatable;
+        }
+
+// ya esta
+        private void ExecuteNonQuery(OdbcCommand cmd)
+        {
+            lock (l)
+            {
+                try
+                {
+                    OpenBotOnly();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Logger.Log(e, LogType.Error);
+                }
+                finally
+                {
+                    CloseBotOnly();
+                }
+            }
+        }
+
+// ya esta
         public bool VerificarUpdateDb(string Cuenta, string code)
         {
             DateTime now = DateTime.Now;
-            //string updatequery = "Update alumnos_bot set Fecha_confirmacion=@now ,confirmado=1 ,estado=2,token_generado=@unique where token_generado=@code and cuenta_telegram=@Cuenta";
-            //string updatequery = "UPDATE [Datos Alumno Bot] set Fecha_confirmacion='"+ now + "', confirmado=1, Estado=2, Token_generado='"+" "+"' WHERE Token_generado='"+code+"' and cuenta_telegram='"+Cuenta+"'";
             string updatequery = "UPDATE AlumnosBot set FechaConfirmacion='" + now + "', Confirmado=1, Estado=2, TokenGenerado='" + " " + "' WHERE TokenGenerado='" + code + "' and CuentaTelegram='" + Cuenta + "'";
             try
             {
-                cmd = new OdbcCommand(updatequery, odbcConnectionBotOnly);
-                OpenBotOnly();
-                cmd.ExecuteNonQuery();
-                CloseBotOnly();
+                var cmd = new OdbcCommand(updatequery, odbcConnectionBotOnly);
+                ExecuteNonQuery(cmd);
                 return true;
             }
             catch (Exception e)
             {
-                Logger.Log("Error en verificarUpdateDb" + e.Message, LogType.Error);
-                //Console.WriteLine("Cgaada Tio" + e.Message);
+                Logger.Log( e, LogType.Error);
                 return false;
             }
-
-
         }
 
+// ya esta
         public string GetMailDb(string Cuenta)
         {
-
             string selectQuery = "SELECT NumeroCuenta,CorreoElectronico from [Alumnos] where NumeroCuenta= ? ;";
+            var cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
             try
-            {
-                cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
-                OpenBotOnly();
-                try
                 {
                     cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                    OdbcDataReader MyDataReader = cmd.ExecuteReader();
-         
-                    while (MyDataReader.Read())
+                    var datatable = GetDataTable(cmd);         
+                    foreach (DataRow dr in datatable.Rows)
                     {
-                        // Console.WriteLine(selectResult.GetString(0));
-                        if (Cuenta == MyDataReader.GetString(0))
+                        if (Cuenta == dr["NumeroCuenta"].ToString())
                         {
-                            string retornable = MyDataReader.GetString(1);
-                            CloseBotOnly();
+                            string retornable = dr["CorreoElectronico"].ToString();
                             return retornable;
                         }
                     }
-
                 }
-                catch (Exception e)
-                {
-                    Logger.Log("getMail Convert" + e.Message, LogType.Warn);
-                    //Console.WriteLine("getmailconvert " + e.Message);
-                    return " ";
-                }
-            }
             catch (Exception e)
             {
-                Logger.Log("get mail" + e.Message, LogType.Warn);
-                //Console.WriteLine("get mail" + e.Message);
+                Logger.Log("getMail Convert" + e.Message, LogType.Warn);
+                return " ";
             }
-            CloseBotOnly();
             string aus = "";
             return aus;
         }
 
+// ya esta
         public string ConverMail(string mail)
         {
             var converted = new char[mail.Length];
@@ -519,42 +507,33 @@ namespace BotVinculacionUnitec
             return mail;
         }
 
-
         public bool newTokenDb(string Cuenta, string mail)
         {
             string selectQuery = "SELECT CuentaTelegram,FechaUltimoToken from [AlumnosBot] where CuentaTelegram= ? ;";
             try
             {
-                cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
-                OpenBotOnly();
-
+                var cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                OdbcDataReader MyDataReader = cmd.ExecuteReader();
-
-                while (MyDataReader.Read())
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
                 {
                     // Console.WriteLine(selectResult.GetString(0));
-                    if (Cuenta == MyDataReader.GetString(0))
+                    if (Cuenta == dr["CuentaTelegram"].ToString())
                     {
-                        DateTime actual = MyDataReader.GetDateTime(1);
+                        DateTime actual = DateTime.Parse(dr["CuentaTelegram"].ToString());
                         actual = actual.AddMinutes(5);
                         DateTime nos = DateTime.Now;
                         int compare = DateTime.Compare(actual, nos);
                         if (DateTime.Compare(actual, nos) <= 0)
                         {
-                            //Console.WriteLine(mail);
-                            CloseBotOnly();
                             string tokenNuevo = createToken();
                             EnviarCorreo(mail, tokenNuevo);
-                            AccesDB db = new AccesDB();
-                            db.connectionBotOnly();
-                            //string updateQuery = "UPDATE alumnos_bot set token_generado=@token,fecha_ultimo_token=@nos WHERE cuenta_telegram=@Cuenta";
+
                             string updateQuery = "UPDATE AlumnosBot set TokenGenerado='" + tokenNuevo + "',FechaUltimoToken='" + nos + "' WHERE CuentaTelegram= ?";
-                            OdbcCommand updateCommand = new OdbcCommand(updateQuery, db.odbcConnectionBotOnly);
-                            db.OpenBotOnly();
+                            var updateCommand = new OdbcCommand(updateQuery, odbcConnectionBotOnly);
                             updateCommand.Parameters.Add("@Cuenta", OdbcType.Text).Value = Cuenta;
-                            updateCommand.ExecuteNonQuery();
-                            db.CloseBotOnly();
+                            // updateCommand.ExecuteNonQuery();
+                            ExecuteNonQuery(updateCommand);
                             return true;
                         }
                     }
@@ -569,6 +548,7 @@ namespace BotVinculacionUnitec
             return false;
         }
 
+// ya esta
         public string createToken()
         {
             Random generator = new Random();
@@ -581,28 +561,25 @@ namespace BotVinculacionUnitec
                     ing = false;
                     random = generator.Next(0, 999999).ToString("D6");
                     string selectQuery = "SELECT TokenGenerado from [AlumnosBot] ;";
-                    cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
-                    OpenBotOnly();
-                    OdbcDataReader MyDataReader = cmd.ExecuteReader();
-                    while (MyDataReader.Read())
+                    var cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
+                    var datatable = GetDataTable(cmd);
+                    foreach (DataRow dr in datatable.Rows)
                     {
-                        if (MyDataReader.GetString(0) == random)
+                        if (dr["TokenGenerado"].ToString() == random)
                         {
                             ing = true;
                         }
                     }
-
                 }
             }
             catch (Exception e)
             {
                 Logger.Log("Error generando token" + e.Message, LogType.Warn);
-                ////Console.WriteLine(e.Message);
             }
-            CloseBotOnly();
             return random;
         }
 
+// ya esta
         public bool EnviarCorreo(string destinatario, string codigo)
         {
             var fromAddress = new MailAddress("botvinculacionunitec@gmail.com", "Vinculacion Unitec");
@@ -642,55 +619,46 @@ namespace BotVinculacionUnitec
             }
         }
 
+// ya esta
         public bool CuentaVerificadaDb(string numeroCuenta)
         {
-            //string selectQuery = "SELECT * FROM [Datos Alumno] inner join [Datos Alumno Bot] on [Datos Alumno].No_Cuenta=[Datos Alumno Bot].No_Cuenta WHERE [Datos Alumno].No_Cuenta= ? and [Datos Alumno Bot].Confirmado=1";
             string selectQuery = "SELECT * FROM [Datos Alumno] WHERE No_Cuenta = ? ;";
-            string selectQueryBotOnly = "SELECT * FROM [AlumnosBot] WHERE NumeroCuenta = ? AND Confirmado=1 ;";
+            string selectQueryBotOnly = "SELECT Confirmado FROM [AlumnosBot] WHERE NumeroCuenta = ?;";
             string numCuenta="";
-            cmd = new OdbcCommand(selectQuery, odbcConnection);
-            Open();
-            cmd.Parameters.Add("@NumeroCuenta", OdbcType.VarChar).Value = numeroCuenta;
             try
-            {
-                OdbcDataReader MyDataReader = cmd.ExecuteReader();
-
-                while (MyDataReader.Read())
+            {   
+                var cmd = new OdbcCommand(selectQuery, odbcConnection);
+                cmd.Parameters.Add("@NumeroCuenta", OdbcType.VarChar).Value = numeroCuenta;
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
                 {
-                    if(numeroCuenta == MyDataReader.GetString(0))
+                    if(numeroCuenta == dr["No_Cuenta"].ToString())
                     {
-                        numCuenta = MyDataReader.GetString(0);
+                        numCuenta = dr["No_Cuenta"].ToString();
                     }
                 }
-                Close();
-            }
-            catch (Exception e)
-            {
-                Logger.Log("Cuenta verificar" + e.Message, LogType.Error);
-                //Console.WriteLine("CuentaVerificar" + e.Message);
-            }
-            cmdBotOnly = new OdbcCommand(selectQueryBotOnly, odbcConnectionBotOnly);
-            OpenBotOnly();
-            cmdBotOnly.Parameters.Add("@NumeroCuenta", OdbcType.VarChar).Value = numCuenta;
-            try
-            {
-                OdbcDataReader MyDataReader = cmdBotOnly.ExecuteReader();
 
-                if (MyDataReader.HasRows)
-                {
-                    CloseBotOnly();
-                    return true;
+                var cmdBotOnly = new OdbcCommand(selectQueryBotOnly, odbcConnectionBotOnly);
+                cmdBotOnly.Parameters.Add("@NumeroCuenta", OdbcType.VarChar).Value = numCuenta;
+                var datatable2 = GetDataTable(cmd);
+                foreach (DataRow dr in datatable2.Rows){
+                    if (dr["Confirmado"].ToString()== "1")
+                    {
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
                 }
             }
             catch (Exception e)
             {
-                Logger.Log("Cuenta verificar" + e.Message, LogType.Error);
-                //Console.WriteLine("CuentaVerificar" + e.Message);
+                Logger.Log(e, LogType.Error);
             }
-            CloseBotOnly();
             return false;
         }
 
+// ya esta
         public void insertarDb(string telegramid, string noCuenta, string mail)
         {
             string token = createToken();
@@ -698,67 +666,56 @@ namespace BotVinculacionUnitec
             int Estado = 1;
             DateTime today = DateTime.Now;
             DateTime confirmacion = DateTime.Now;
-          
             EnviarCorreo(mail, token);
             int id_alumno = Getid(noCuenta);
             bool prueba = true;
-            //string insertquery = "INSERT into [Datos Alumno Bot] (deshabilitado,cuenta_telegram,token_generado,confirmado,fecha_confirmacion,estado,fecha_ultimo_token,id) values ('"+ prueba+ "','"+ telegramid+"','"+ token + "',"+ verified + ",'"+confirmacion+"',"+ Estado + ",'"+today+"','"+ id_alumno +"');";
-            string updatequery = "UPDATE [Datos Alumno Bot] set deshabilitado='" + prueba + "', cuenta_telegram= '"+ telegramid + "', Token_generado='" + token + "', confirmado = "+verified+", fecha_confirmacion = '"+ confirmacion + "', estado = "+ Estado + ", fecha_ultimo_token = '"+today+"'  WHERE No_cuenta= ? ;";
             string insertquery = "INSERT into [AlumnosBot] (NumeroCuenta,Deshabilitado,CuentaTelegram,TokenGenerado,Confirmado,FechaConfirmacion,Estado,FechaUltimoToken,ChatId) values ('" + noCuenta + "','" + prueba + "','" + telegramid + "','" + token + "'," + verified + ",'" + confirmacion + "'," + Estado + ",'" + today + "','" + id_alumno + "'); ";
             try
             {
-                cmd = new OdbcCommand(insertquery, odbcConnectionBotOnly);
-                OpenBotOnly();
-                
+                var cmd = new OdbcCommand(insertquery, odbcConnectionBotOnly);
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = noCuenta;
-                cmd.ExecuteNonQuery();
-                CloseBotOnly();
+                lock (l)
+                {
+                    OpenBotOnly();
+                    cmd.ExecuteNonQuery();
+                    CloseBotOnly();
+                }
+                
             }
             catch (Exception e)
             {
-                Logger.Log("Error insertando datos" + e.Message, LogType.Error);
-                //Console.WriteLine("insertar" + e.Message);
+                Logger.Log(e, LogType.Error);
             }
         }
 
+// ya esta
         public int Getid(string Cuenta)
         {
             string selectQuery = "SELECT No_Cuenta from [Datos Alumno] where No_Cuenta= ? ";
+            var cmd = new OdbcCommand(selectQuery, odbcConnection);
             try
             {
-                cmd = new OdbcCommand(selectQuery, odbcConnection);
-                Open();
-                try
-                {
-                    cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                    OdbcDataReader MyDataReader = cmd.ExecuteReader();
-                    while (MyDataReader.Read())
-                    {   
-                        Console.WriteLine(MyDataReader.GetString(0));
-                        if (Cuenta == MyDataReader.GetString(0))
-                        {
-                            int retornable = MyDataReader.GetInt32(0);
-                            Close();
-                            return retornable;                       
-                        }
+                cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
+                {   
+                    Console.WriteLine(dr["No_Cuenta"].ToString());
+                    if (Cuenta == dr["No_Cuenta"].ToString())
+                    {
+                        int retornable = Int32.Parse(dr["No_Cuenta"].ToString());
+                        return retornable;                       
                     }
-                }
-                catch (Exception e)
-                {
-                    Logger.Log("Get id " + e.Message, LogType.Error);
-                    //Console.WriteLine("get id caste " + e.Message);
                 }
             }
             catch (Exception e)
             {
-                Logger.Log("Erro get id " + e.Message, LogType.Error);
-                //Console.WriteLine("get id " + e.Message);
+                Logger.Log(e, LogType.Error);
             }
-            Close();
             string aus = "";
             return -1;
         }
 
+// ya esta
         public string HorasTotales(string nCuenta)
         {
             try
@@ -774,109 +731,77 @@ namespace BotVinculacionUnitec
             }
             catch (Exception e)
             {
-                Logger.Log("Error Horas totales" + e.Message, LogType.Error);
-                //Console.WriteLine("cast horas tot");
-                Close();
-                //return " ";
+                Logger.Log(e, LogType.Error);
             }
+
             string selectQuery = "SELECT sum(Horas_Acum) as Horas_Totales FROM [Tabla General] where No_Cuenta = ? ";
             try
             {
                 // Console.WriteLine("nUMEROcUENTA " + nCuenta);
                 int NumeroTotalHoras = 0;
-                cmd = new OdbcCommand(selectQuery, odbcConnection);
-                Open();
-                try
+                var cmd = new OdbcCommand(selectQuery, odbcConnection);
+                cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = nCuenta;
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
                 {
-                    cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = nCuenta;
-                    OdbcDataReader MyDataReader = cmd.ExecuteReader();
-                    while (MyDataReader.Read())
-                    {
-                        NumeroTotalHoras = MyDataReader.GetInt32(0);
-                    }
-                    Close();
-                    return NumeroTotalHoras.ToString();
+                    NumeroTotalHoras = Convert.ToInt32(dr["Horas_Totales"]);
                 }
-                catch (Exception e)
-                {
-                    Logger.Log("Error Horas totales" + e.Message, LogType.Error);
-                    //Console.WriteLine("cast horas tot");
-                    Close();
-                    return " ";
-                }
+                return NumeroTotalHoras.ToString();
             }
             catch (Exception e)
             {
-                Logger.Log("Error Horas totales" + e.Message, LogType.Error);
-                Close();
-                //Console.WriteLine("horas totales" + e.Message);
+                Logger.Log(e, LogType.Error);
                 return " ";
             }
 
         }
 
+// ya esta
         public string HorasDetalle2(string nCuenta)
         {
             string detalles = "";
             string selectQuery = "SELECT id_proyecto,Periodo,Beneficiario,Horas_Acum FROM [Tabla General] where No_Cuenta = ? ";
             try
             {
-                cmd = new OdbcCommand(selectQuery, odbcConnection);
-                Open();
-
+                var cmd = new OdbcCommand(selectQuery, odbcConnection);
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = nCuenta;
-                OdbcDataReader MyDataReader = cmd.ExecuteReader();
-                while (MyDataReader.Read())
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
                 {
-                    detalles += "Nombre de Proyecto: " + MyDataReader.GetString(0) + "\n";
-                    detalles += "Periodo: " + MyDataReader.GetString(1) + "\n";
-                    detalles += "Beneficiaro: " + MyDataReader.GetString(2) + "\n";
-                    //HORAS DE PROYECTO 
-                    detalles += "Horas Trabajadas:" + MyDataReader.GetInt32(3).ToString() + "\n\n";
+                    detalles += "Nombre de Proyecto: " + dr["id_proyecto"].ToString() + "\n";
+                    detalles += "Periodo: " + dr["Periodo"].ToString() + "\n";
+                    detalles += "Beneficiaro: " + dr["Beneficiario"].ToString() + "\n";                   //HORAS DE PROYECTO 
+                    detalles += "Horas Trabajadas:" + dr["Horas_Acum"].ToString() + "\n\n";
                 }
             }
             catch (Exception e)
             {
-                Logger.Log("Error detalles" + e.Message, LogType.Error);
-                //Console.WriteLine("detalle" + e.Message);
+                Logger.Log(e, LogType.Error);
             }
-            Close();
             return detalles;
         }
 
+// ya esta
         public bool CuentaExisteDb(string Cuenta)
         {
             string selectQuery = "SELECT No_Cuenta from [Datos Alumno] where No_Cuenta= ? ;";
             try
             {
-                cmd = new OdbcCommand(selectQuery, odbcConnection);
-                Open();
-                try
+                var cmd = new OdbcCommand(selectQuery, odbcConnection);
+                cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)                
                 {
-                    cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                    OdbcDataReader MyDataReader = cmd.ExecuteReader();
-                    while (MyDataReader.Read())
+                    if (Cuenta == dr["No_Cuenta"].ToString())
                     {
-                        // Console.WriteLine(selectResult.GetString(0));
-                        if (Cuenta == MyDataReader.GetString(0))
-                        {
-                            Close();
-                            return true;
-                        }
+                        return true;
                     }
-                }
-                catch (Exception e)
-                {
-                    Logger.Log("Error al recorrer query en CuentaExisteDb " + e.Message, LogType.Error);
-                    return false;
                 }
             }
             catch (Exception e)
             {
-                //Console.WriteLine("cuenta existe" + e.Message);
-                Logger.Log("Error al hacer el query en CuentaExisteDb " + e.Message, LogType.Error);
+                Logger.Log(e, LogType.Error);
             }
-            Close();
             return false;
         }
     }

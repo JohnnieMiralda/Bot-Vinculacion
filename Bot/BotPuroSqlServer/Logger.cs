@@ -34,7 +34,10 @@ namespace BotVinculacionUnitec {
             }
         }
 
-
+        public static void Log(Exception ex, LogType logType)
+        {
+            Log(ex.ToString(), logType);
+        }
         private static void EnsureLogger() {
             if (log != null) return;
             var assembly = Assembly.GetEntryAssembly();

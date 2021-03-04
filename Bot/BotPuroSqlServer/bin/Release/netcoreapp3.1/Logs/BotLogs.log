@@ -1,0 +1,2 @@
+ERROR 2021-03-01 14:35:23,937 19251ms BotVinculacion         - Get id Unable to cast object of type 'System.String' to type 'System.Int32'.
+ERROR 2021-03-01 14:43:05,810 139773ms BotVinculacion         - Get id Unable to cast object of type 'System.String' to type 'System.Int32'.

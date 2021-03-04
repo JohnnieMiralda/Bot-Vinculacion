@@ -21,7 +21,6 @@ namespace BotVinculacionUnitec
 
 			Console.WriteLine(connectionManager.TelegramToken);
 			Console.WriteLine(connectionManager.ConnectionStringBot);
-			Console.WriteLine(connectionManager.ConnectionStringData);
 
 		}
 
@@ -40,10 +39,6 @@ namespace BotVinculacionUnitec
 			return connectionManager.ConnectionStringBotOnly;
 		}
 
-		public static string GetDataConnection()
-		{
-			return connectionManager.ConnectionStringData;
-		}
 
 	}
 
@@ -55,7 +50,6 @@ namespace BotVinculacionUnitec
 
 		public string ConnectionStringBotOnly { get; set; }
 
-		public string ConnectionStringData { get; set; }
 	}
 
 }

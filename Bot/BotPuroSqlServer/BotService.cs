@@ -229,11 +229,7 @@ namespace BotVinculacionUnitec
                                     break;
 
                                 default:
-
-
-                                    Bot.SendTextMessageAsync(message.Chat.Id, "Numero de Cuenta Incorrecto Vuelve a ingresarlo Para consultas enviar correo a:\nvinculacionsps@unitec.edu ó andrea.orellana@unitec.edu.hn");
-
-
+                                    Bot.SendTextMessageAsync(message.Chat.Id, "Estimados estudiante, a la fecha no aparece ningún registro de horas correspondiente a su número de cuenta. Para consultas enviar correo a: \nvinculacionsps@unitec.edu \no \nandrea.orellana@unitec.edu.hn");
                                     break;
                             }
 
