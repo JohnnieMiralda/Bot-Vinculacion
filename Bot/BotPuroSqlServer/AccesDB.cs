@@ -63,19 +63,25 @@ namespace BotVinculacionUnitec
 // // ya esta
         public void reCrearCacheHorasTotales(object sender, ElapsedEventArgs e)
         {
-            var cacheItemPolicy = new CacheItemPolicy
+            try
             {
-                AbsoluteExpiration = DateTimeOffset.Now.AddDays(1)
-            };
-            string queryString = "SELECT No_Cuenta, sum(Horas_Acum) as horas FROM [Tabla General] Group By No_Cuenta;";
-            var cmd = new OdbcCommand(queryString, odbcConnection);
-            var datatable = GetDataTable(cmd);
-            foreach (DataRow dr in datatable.Rows)
+                var cacheItemPolicy = new CacheItemPolicy
+                {
+                    AbsoluteExpiration = DateTimeOffset.Now.AddDays(1)
+                };
+                string queryString = "SELECT No_Cuenta, sum(Horas_Acum) as horas FROM [Tabla General] Group By No_Cuenta;";
+                var cmd = new OdbcCommand(queryString, odbcConnection);
+                var datatable = GetDataTable(cmd);
+                foreach (DataRow dr in datatable.Rows)
+                {
+                    var cacheIt = new CacheItem(dr["No_Cuenta"].ToString(), dr["horas"].ToString());
+                    cache.Add(cacheIt, cacheItemPolicy);
+                }
+                Logger.Log("Caché creado con éxito!", LogType.Debug);
+            }catch(Exception ex)
             {
-                var cacheIt = new CacheItem(dr["No_Cuenta"].ToString(), dr["horas"].ToString());
-                cache.Add(cacheIt, cacheItemPolicy);
+                Logger.Log(ex, LogType.Error);
             }
-            Logger.Log("Caché creado con éxito!", LogType.Debug);
         }
 
 // ya esta
@@ -170,14 +176,13 @@ namespace BotVinculacionUnitec
             {  
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)
+                //if (datatable.Rows.Count > 0)
+                  //  numeroCuenta = datatable.Rows[0]["NumeroCuenta"].ToString();
+                if (datatable.Rows.Count > 0)
                 {
-                    if (Cuenta == dr["No_Cuenta"].ToString())
-                    {
-                        string retornable = dr["P_Nombre"].ToString();
-                        Logger.Log("Se encontro cuenta en CuentaExiste " + retornable, LogType.Debug);
-                        return true;
-                    }
+                    string retornable = datatable.Rows[0]["P_Nombre"].ToString();
+                    Logger.Log("Se encontro cuenta en CuentaExiste " + retornable, LogType.Debug);
+                    return true;
                 }
             }
             catch (Exception e)
@@ -197,14 +202,13 @@ namespace BotVinculacionUnitec
             {
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)
+
+                if (datatable.Rows.Count > 0)
                 {
-                    if (Cuenta == dr["CuentaTelegram"].ToString())
-                    {
-                        Logger.Log("Se encontro cuenta en ExisteDb " + dr["CuentaTelegram"].ToString(), LogType.Debug);
+                        Logger.Log("Se encontro cuenta en ExisteDb " + datatable.Rows[0]["CuentaTelegram"].ToString(), LogType.Debug);
                         return true;
-                    }
                 }
+
             }
             catch (OdbcException e)
             {
@@ -226,9 +230,9 @@ namespace BotVinculacionUnitec
             {
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)
+                if (datatable.Rows.Count > 0)
                 {
-                    int num = Int32.Parse(dr["Estado"].ToString());
+                    int num = Int32.Parse(datatable.Rows[0]["Estado"].ToString());
                     if (num == 2)
                     {
                         Logger.Log("Retorno true en estadoDb ", LogType.Debug);
@@ -247,7 +251,7 @@ namespace BotVinculacionUnitec
 // ya esta
         public string GetCuentaNUMDb(string Cuenta)
         {
-            string selectQuery = "SELECT [Datos Alumno].No_Cuenta from [Datos Alumno]  ; ";
+            string selectQuery = "SELECT [Datos Alumno].No_Cuenta from [Datos Alumno] WHERE [Datos Alumno].No_Cuenta = ? ; ";
             string selectQuery2 = "SELECT CuentaTelegram, NumeroCuenta from [AlumnosBot] WHERE CuentaTelegram = ? ; ";
             string numeroCuenta = "";
             try
@@ -257,23 +261,22 @@ namespace BotVinculacionUnitec
                 var cmd = new OdbcCommand(selectQuery2, odbcConnectionBotOnly);
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)
+
+                if (datatable.Rows.Count > 0)
                 {
-                    if (Cuenta == dr["CuentaTelegram"].ToString())
-                    {
-                        numeroCuenta = dr["NumeroCuenta"].ToString();
-                    }
+                        numeroCuenta = datatable.Rows[0]["NumeroCuenta"].ToString();
                 }
+                
                 cmd = new OdbcCommand(selectQuery, odbcConnection);
+                cmd.Parameters.Add("@No_Cuenta", OdbcType.VarChar).Value = numeroCuenta;
                 var datatable2 = GetDataTable(cmd);
-                foreach (DataRow dr in datatable2.Rows)
+
+                if (datatable2.Rows.Count > 0)
                 {
-                    if (dr["No_Cuenta"].ToString() == numeroCuenta)
-                    {
-                        string retornable = dr["No_Cuenta"].ToString();
+                        string retornable = datatable2.Rows[0]["No_Cuenta"].ToString();
                         return retornable;
-                    }
                 }
+                
             }
             catch (Exception e)
             {
@@ -306,7 +309,7 @@ namespace BotVinculacionUnitec
                 var datatable2 = GetDataTable(cmd);
                 if (datatable2.Rows.Count > 0)
                 {
-                     string retornable = datatable2.Rows[0]["Nombre"].ToString() + datatable2.Rows[0]["Apellido"].ToString();
+                     string retornable = datatable2.Rows[0]["Nombre"].ToString() +" "+ datatable2.Rows[0]["Apellido"].ToString();
                     Logger.Log($"Nombre del alumno es: {retornable}", LogType.Debug);
                      return retornable;
                 }
@@ -328,13 +331,12 @@ namespace BotVinculacionUnitec
             {
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)
+
+                if (datatable.Rows.Count > 0)
                 {
-                    if (code == dr["TokenGenerado"].ToString())
-                    {
-                        return true;
-                    }
+                    return true;
                 }
+                
             }
             catch (Exception e)
             {
@@ -399,15 +401,14 @@ namespace BotVinculacionUnitec
             try
                 {
                     cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                    var datatable = GetDataTable(cmd);         
-                    foreach (DataRow dr in datatable.Rows)
-                    {
-                        if (Cuenta == dr["NumeroCuenta"].ToString())
-                        {
-                            string retornable = dr["CorreoElectronico"].ToString();
-                            return retornable;
-                        }
-                    }
+                    var datatable = GetDataTable(cmd);
+
+                if (datatable.Rows.Count > 0)
+                {
+                    string retornable = datatable.Rows[0]["CorreoElectronico"].ToString();
+                    return retornable;
+                }
+                    
                 }
             catch (Exception e)
             {
@@ -457,29 +458,28 @@ namespace BotVinculacionUnitec
                 var cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)
-                {
-                    // Console.WriteLine(selectResult.GetString(0));
-                    if (Cuenta == dr["CuentaTelegram"].ToString())
-                    {
-                        DateTime actual = DateTime.Parse(dr["CuentaTelegram"].ToString());
-                        actual = actual.AddMinutes(5);
-                        DateTime nos = DateTime.Now;
-                        int compare = DateTime.Compare(actual, nos);
-                        if (DateTime.Compare(actual, nos) <= 0)
-                        {
-                            string tokenNuevo = createToken();
-                            EnviarCorreo(mail, tokenNuevo);
 
-                            string updateQuery = "UPDATE AlumnosBot set TokenGenerado='" + tokenNuevo + "',FechaUltimoToken='" + nos + "' WHERE CuentaTelegram= ?";
-                            var updateCommand = new OdbcCommand(updateQuery, odbcConnectionBotOnly);
-                            updateCommand.Parameters.Add("@Cuenta", OdbcType.Text).Value = Cuenta;
-                            // updateCommand.ExecuteNonQuery();
-                            ExecuteNonQuery(updateCommand);
-                            return true;
-                        }
+                // Console.WriteLine(selectResult.GetString(0));
+                if (datatable.Rows.Count > 0)
+                {
+                    DateTime actual = DateTime.Parse(datatable.Rows[0]["CuentaTelegram"].ToString());
+                    actual = actual.AddMinutes(5);
+                    DateTime nos = DateTime.Now;
+                    int compare = DateTime.Compare(actual, nos);
+                    if (DateTime.Compare(actual, nos) <= 0)
+                    {
+                        string tokenNuevo = createToken();
+                        EnviarCorreo(mail, tokenNuevo);
+
+                        string updateQuery = "UPDATE AlumnosBot set TokenGenerado='" + tokenNuevo + "',FechaUltimoToken='" + nos + "' WHERE CuentaTelegram= ?";
+                        var updateCommand = new OdbcCommand(updateQuery, odbcConnectionBotOnly);
+                        updateCommand.Parameters.Add("@Cuenta", OdbcType.Text).Value = Cuenta;
+                        // updateCommand.ExecuteNonQuery();
+                        ExecuteNonQuery(updateCommand);
+                        return true;
                     }
                 }
+                
                 CloseBotOnly();
             }
             catch (Exception e)
@@ -505,13 +505,12 @@ namespace BotVinculacionUnitec
                     string selectQuery = "SELECT TokenGenerado from [AlumnosBot] ;";
                     var cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
                     var datatable = GetDataTable(cmd);
-                    foreach (DataRow dr in datatable.Rows)
+
+                    if (datatable.Rows.Count > 0)
                     {
-                        if (dr["TokenGenerado"].ToString() == random)
-                        {
-                            ing = true;
-                        }
+                        ing = true;
                     }
+                    
                 }
             }
             catch (Exception e)
@@ -633,15 +632,12 @@ namespace BotVinculacionUnitec
             {
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)
-                {   
-                    Console.WriteLine(dr["No_Cuenta"].ToString());
-                    if (Cuenta == dr["No_Cuenta"].ToString())
-                    {
-                        int retornable = Int32.Parse(dr["No_Cuenta"].ToString());
-                        return retornable;                       
-                    }
+                if (datatable.Rows.Count > 0)
+                {
+                    int retornable = Int32.Parse(datatable.Rows[0]["No_Cuenta"].ToString());
+                    return retornable;                       
                 }
+                
             }
             catch (Exception e)
             {
@@ -678,10 +674,9 @@ namespace BotVinculacionUnitec
                 var cmd = new OdbcCommand(selectQuery, odbcConnection);
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = nCuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)
-                {
-                    NumeroTotalHoras = Convert.ToInt32(dr["Horas_Totales"]);
-                }
+                
+                NumeroTotalHoras = Convert.ToInt32(datatable.Rows[0]["Horas_Totales"]);
+                
                 return NumeroTotalHoras.ToString();
             }
             catch (Exception e)
@@ -702,13 +697,12 @@ namespace BotVinculacionUnitec
                 var cmd = new OdbcCommand(selectQuery, odbcConnection);
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = nCuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)
-                {
-                    detalles += "Nombre de Proyecto: " + dr["id_proyecto"].ToString() + "\n";
-                    detalles += "Periodo: " + dr["Periodo"].ToString() + "\n";
-                    detalles += "Beneficiaro: " + dr["Beneficiario"].ToString() + "\n";                   //HORAS DE PROYECTO 
-                    detalles += "Horas Trabajadas:" + dr["Horas_Acum"].ToString() + "\n\n";
-                }
+                
+                detalles += "Nombre de Proyecto: " + datatable.Rows[0]["id_proyecto"].ToString() + "\n";
+                detalles += "Periodo: " + datatable.Rows[0]["Periodo"].ToString() + "\n";
+                detalles += "Beneficiaro: " + datatable.Rows[0]["Beneficiario"].ToString() + "\n";                   //HORAS DE PROYECTO 
+                detalles += "Horas Trabajadas:" + datatable.Rows[0]["Horas_Acum"].ToString() + "\n\n";
+                
             }
             catch (Exception e)
             {
@@ -726,13 +720,12 @@ namespace BotVinculacionUnitec
                 var cmd = new OdbcCommand(selectQuery, odbcConnection);
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)                
+
+                if (datatable.Rows.Count > 0)
                 {
-                    if (Cuenta == dr["No_Cuenta"].ToString())
-                    {
-                        return true;
-                    }
+                    return true;
                 }
+                
             }
             catch (Exception e)
             {
