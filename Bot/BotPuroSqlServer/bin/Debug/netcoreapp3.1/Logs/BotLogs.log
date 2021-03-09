@@ -84,3 +84,149 @@ ERROR 2021-03-04 00:56:44,103 707677ms BotVinculacion         - System.ArgumentE
    at System.Data.DataRow.GetDataColumn(String columnName)
    at System.Data.DataRow.get_Item(String columnName)
    at BotVinculacionUnitec.AccesDB.GetCuentaDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 366
+ERROR 2021-03-04 17:39:42,148 26168ms BotVinculacion         - System.ArgumentException: Column 'Confirmado' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 587
+ERROR 2021-03-04 17:40:11,831 55850ms BotVinculacion         - System.ArgumentException: Column 'Confirmado' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 587
+INFO  2021-03-04 17:43:12,154   546ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:43:12,320   713ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:43:13,558  1950ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-04 17:43:14,067  2460ms BotVinculacion         - bradsanchez:802904
+INFO  2021-03-04 17:43:14,068  2461ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:43:14,070  2463ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-04 17:43:33,742 22134ms BotVinculacion         - System.ArgumentException: Column 'Nombre' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at BotVinculacionUnitec.AccesDB.GetCuentaDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 309
+INFO  2021-03-04 17:43:33,893 22286ms BotVinculacion         - bradsanchez:/start
+INFO  2021-03-04 17:43:33,896 22289ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:43:33,901 22294ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-04 17:43:34,935 23328ms BotVinculacion         - System.ArgumentException: Column 'Nombre' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at BotVinculacionUnitec.AccesDB.GetCuentaDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 309
+INFO  2021-03-04 17:43:34,985 23378ms BotVinculacion         - elvin_deras:/start
+INFO  2021-03-04 17:43:34,988 23381ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:43:34,991 23384ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:43:59,883 48276ms BotVinculacion         - elvin_deras:/start
+INFO  2021-03-04 17:43:59,884 48277ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:43:59,888 48281ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:44:08,399 56791ms BotVinculacion         - elvin_deras:Hola
+INFO  2021-03-04 17:44:08,400 56793ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:44:08,403 56796ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:44:09,092 57485ms BotVinculacion         - JohnnieMiralda:21741237
+INFO  2021-03-04 17:44:09,097 57490ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:44:09,099 57491ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-04 17:44:09,584 57977ms BotVinculacion         - System.ArgumentException: Column 'Confirmado' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 587
+INFO  2021-03-04 17:44:18,660 67053ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-04 17:44:18,661 67054ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:44:18,663 67056ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-04 17:44:19,128 67521ms BotVinculacion         - System.ArgumentException: Column 'Confirmado' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 587
+INFO  2021-03-04 17:45:01,444 109837ms BotVinculacion         - JohnnieMiralda:519478
+INFO  2021-03-04 17:45:01,447 109840ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:45:01,451 109844ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:47:00,639   475ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:47:00,787   624ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:47:01,918  1754ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-04 17:47:02,319  2156ms BotVinculacion         - JohnnieMiralda:519478
+INFO  2021-03-04 17:47:02,320  2157ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:47:02,322  2159ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:47:09,980  9816ms BotVinculacion         - elvin_deras:/start
+INFO  2021-03-04 17:47:10,007  9843ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:47:10,016  9852ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:47:17,048 16884ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-04 17:47:17,051 16887ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:47:17,052 16888ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:48:04,079 63915ms BotVinculacion         - bradsanchez:/start
+INFO  2021-03-04 17:48:04,082 63918ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:48:04,088 63924ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:48:05,118 64954ms BotVinculacion         - elvin_deras:/start
+INFO  2021-03-04 17:48:05,119 64955ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:48:05,121 64957ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:48:09,961 69797ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:48:09,962 69798ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:48:10,511 70348ms BotVinculacion         - JaydenHimada:F
+INFO  2021-03-04 17:48:10,513 70349ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:48:10,516 70353ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:48:11,835 71671ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:48:11,838 71674ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:48:17,387 77223ms BotVinculacion         - JaydenHimada:/start
+INFO  2021-03-04 17:48:17,389 77225ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:48:17,393 77229ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:48:25,043 84880ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:48:25,045 84881ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:48:25,229 85065ms BotVinculacion         - elvin_deras:4141414141
+INFO  2021-03-04 17:48:25,230 85067ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:48:25,234 85070ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:48:25,647 85483ms BotVinculacion         - JaydenHimada:22041263
+INFO  2021-03-04 17:48:25,652 85488ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:48:25,656 85492ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-04 17:48:26,345 86181ms BotVinculacion         - System.ArgumentException: Column 'Confirmado' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 587
+INFO  2021-03-04 17:48:26,768 86604ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:48:26,779 86615ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:53:57,038   596ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:53:57,254   811ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:53:58,699  2257ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-04 17:54:02,043  5601ms BotVinculacion         - elvin_deras:/start
+INFO  2021-03-04 17:54:02,046  5603ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:54:02,048  5606ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:54:03,267  6824ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-04 17:54:03,268  6826ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:54:03,271  6828ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:54:10,599 14157ms BotVinculacion         - elvin_deras:223333
+INFO  2021-03-04 17:54:10,601 14159ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:54:10,603 14161ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:54:19,542 23099ms BotVinculacion         - elvin_deras:555555555
+INFO  2021-03-04 17:54:19,543 23101ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:54:19,546 23104ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:54:22,062 25620ms BotVinculacion         - bradsanchez:/start
+INFO  2021-03-04 17:54:22,063 25621ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:54:22,067 25625ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:54:27,948 31506ms BotVinculacion         - elvin_deras:11111111
+INFO  2021-03-04 17:54:27,951 31508ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:54:27,953 31511ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:54:35,407 38964ms BotVinculacion         - elvin_deras:3333333333
+INFO  2021-03-04 17:54:35,408 38966ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:54:35,411 38969ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:54:40,734 44292ms BotVinculacion         - elvin_deras:555444444
+INFO  2021-03-04 17:54:40,742 44299ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:54:40,743 44301ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-04 17:54:49,422 52979ms BotVinculacion         - elvin_deras:4444444444
+INFO  2021-03-04 17:54:49,426 52984ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-04 17:54:49,427 52985ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-05 01:07:11,404  2518ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-05 01:07:11,644  2758ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-05 01:07:13,311  4425ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-05 01:07:14,007  5121ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-05 01:07:14,008  5122ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-05 01:07:20,129 11244ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-05 01:07:20,131 11245ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-05 01:07:25,465 16579ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-05 01:07:25,466 16580ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-05 01:07:25,468 16582ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-05 01:07:28,994 20108ms BotVinculacion         - JohnnieMiralda:
+INFO  2021-03-05 01:07:28,997 20112ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-05 01:07:29,000 20115ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-05 01:07:58,106 49221ms BotVinculacion         - JohnnieMiralda:21721030
+INFO  2021-03-05 01:07:58,108 49222ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-05 01:07:58,110 49224ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-05 01:08:18,143 69257ms BotVinculacion         - JohnnieMiralda:377202
+INFO  2021-03-05 01:08:18,144 69259ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-05 01:08:18,147 69262ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-05 01:08:23,640 74754ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-05 01:08:23,642 74756ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-05 01:08:26,007 77121ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-05 01:08:26,010 77124ms BotVinculacion         - Conexion Bot_Base creada con éxito!

@@ -15,11 +15,15 @@ namespace BotVinculacionUnitec
 {
     class AccesDB
     {
-        OdbcConnection odbcConnection;
-        // OdbcCommand cmd;
-        OdbcConnection odbcConnectionBotOnly;
-        // OdbcCommand cmdBotOnly;
+
+        OdbcConnection odbcConnection = null;
+        OdbcConnection odbcConnectionBotOnly = null;
         private readonly object l = new object();
+
+        public AccesDB(){
+            connection();
+            connectionBotOnly();
+        }
 
         public void iniciarTimer()
         {
@@ -33,102 +37,46 @@ namespace BotVinculacionUnitec
         }
 
         System.Runtime.Caching.MemoryCache cache = new System.Runtime.Caching.MemoryCache("HorasTotalesCache");
-    
-    public void CrearCacheHorasTotales()
-        {
 
+// ya esta
+        public void CrearCacheHorasTotales()
+        {
+            try{
             var cacheItemPolicy = new CacheItemPolicy
             {
                 AbsoluteExpiration = DateTimeOffset.Now.AddDays(1)
             };
-            OdbcConnection con = new OdbcConnection(@Config.GetBotConnection());
-            string queryString = "SELECT No_Cuenta, sum(Horas_Acum) FROM [Tabla General] Group By No_Cuenta;";
-            OdbcCommand command = new OdbcCommand(queryString, con);
-            con.Open();
-            OdbcDataReader reader = command.ExecuteReader();
-            //Console.WriteLine(reader.FieldCount);
-            while (reader.Read())
+            string queryString = "SELECT No_Cuenta, sum(Horas_Acum) AS horas FROM [Tabla General] Group By No_Cuenta;";
+            var cmd = new OdbcCommand(queryString, odbcConnection);
+            var datatable = GetDataTable(cmd);
+            foreach (DataRow dr in datatable.Rows)
             {
-                var cacheIt = new CacheItem(reader.GetString(0), reader.GetString(1));
+                var cacheIt = new CacheItem(dr["No_Cuenta"].ToString(), dr["horas"].ToString());
                 cache.Add(cacheIt, cacheItemPolicy);
             }
-            reader.Close();
-            var chek = cache.Get("21841180");
-            //Console.WriteLine(chek);
-            /*foreach (var item in cache)
-            {
-                Console.WriteLine($"{item.Key} : {item.Value}");
-            }*/
-            //Console.WriteLine("Caché creado con éxito!");
             Logger.Log("Caché creado con éxito!", LogType.Debug);
-
-
+            }catch(Exception e){
+                Logger.Log(e, LogType.Error);
+            }
         }
 
+// // ya esta
         public void reCrearCacheHorasTotales(object sender, ElapsedEventArgs e)
         {
-            
             var cacheItemPolicy = new CacheItemPolicy
             {
                 AbsoluteExpiration = DateTimeOffset.Now.AddDays(1)
             };
-            OdbcConnection con = new OdbcConnection(Config.GetBotConnection());
-            string queryString = "SELECT No_Cuenta, sum(Horas_Acum) FROM [Tabla General] Group By No_Cuenta;";
-            OdbcCommand command = new OdbcCommand(queryString, con);
-            con.Open();
-            OdbcDataReader reader = command.ExecuteReader();
-            //Console.WriteLine(reader.FieldCount);
-            while (reader.Read())
+            string queryString = "SELECT No_Cuenta, sum(Horas_Acum) as horas FROM [Tabla General] Group By No_Cuenta;";
+            var cmd = new OdbcCommand(queryString, odbcConnection);
+            var datatable = GetDataTable(cmd);
+            foreach (DataRow dr in datatable.Rows)
             {
-                var cacheIt = new CacheItem(reader.GetString(0), reader.GetString(1));
+                var cacheIt = new CacheItem(dr["No_Cuenta"].ToString(), dr["horas"].ToString());
                 cache.Add(cacheIt, cacheItemPolicy);
             }
-            reader.Close();
-            /*foreach (var item in cache)
-            {
-                Console.WriteLine($"{item.Key} : {item.Value}");
-            }*/
+            Logger.Log("Caché creado con éxito!", LogType.Debug);
         }
-
-// // ya esta
-//         public void CrearCacheHorasTotales2()
-//         {
-//             try{
-//             var cacheItemPolicy = new CacheItemPolicy
-//             {
-//                 AbsoluteExpiration = DateTimeOffset.Now.AddDays(1)
-//             };
-//             string queryString = "SELECT No_Cuenta, sum(Horas_Acum) AS horas FROM [Tabla General] Group By No_Cuenta;";
-//             var cmd = new OdbcCommand(queryString, odbcConnection);
-//             var datatable = GetDataTable(cmd);
-//             foreach (DataRow dr in datatable.Rows)
-//             {
-//                 var cacheIt = new CacheItem(dr["No_Cuenta"].ToString(), dr["horas"].ToString());
-//                 cache.Add(cacheIt, cacheItemPolicy);
-//             }
-//             Logger.Log("Caché creado con éxito!", LogType.Debug);
-//             }catch(Exception e){
-//                 Logger.Log(e, LogType.Error)
-//             }
-//         }
-
-// // ya esta
-//         public void reCrearCacheHorasTotales(object sender, ElapsedEventArgs e)
-//         {
-//             var cacheItemPolicy = new CacheItemPolicy
-//             {
-//                 AbsoluteExpiration = DateTimeOffset.Now.AddDays(1)
-//             };
-//             string queryString = "SELECT No_Cuenta, sum(Horas_Acum) as horas FROM [Tabla General] Group By No_Cuenta;";
-//             var cmd = new OdbcCommand(queryString, odbcConnection);
-//             var datatable = GetDataTable(cmd);
-//             foreach (DataRow dr in datatable.Rows)
-//             {
-//                 var cacheIt = new CacheItem(dr["No_Cuenta"].ToString(), dr["horas"].ToString());
-//                 cache.Add(cacheIt, cacheItemPolicy);
-//             }
-//             Logger.Log("Caché creado con éxito!", LogType.Debug);
-//         }
 
 // ya esta
         public void connection()
@@ -339,33 +287,28 @@ namespace BotVinculacionUnitec
 // ya esta
         public string GetCuentaDb(string Cuenta)
         {
-            string selectQuery = "SELECT No_Cuenta, P_Nombre, [P_ Apellido] FROM [Datos Alumno];";
+            string selectQuery = "SELECT No_Cuenta, [P_Nombre] as Nombre , [P_ Apellido] as Apellido FROM [Datos Alumno] WHERE No_Cuenta = ?;";
             string selectQueryBotOnly = "SELECT CuentaTelegram, NumeroCuenta FROM [AlumnosBot] WHERE CuentaTelegram = ? ;";
             string numeroCuenta = "";
+            Logger.Log($"Obteniendo infomacion de la cuenta: {Cuenta}", LogType.Debug);
             try
             {
-                //cmdBotOnly.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
-                //OdbcDataReader MyDataReader = cmdBotOnly.ExecuteReader();
                 var cmd = new OdbcCommand(selectQueryBotOnly, odbcConnectionBotOnly);
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = Cuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)
-                {
-                    if (Cuenta == dr["CuentaTelegram"].ToString())
-                    {
-                        numeroCuenta = dr["NumeroCuenta"].ToString();
-                    }
-                }
+                if (datatable.Rows.Count > 0)
+                    numeroCuenta = datatable.Rows[0]["NumeroCuenta"].ToString();
+                
 
                 cmd = new OdbcCommand(selectQuery, odbcConnection);
+                cmd.Parameters.Add("@No_Cuenta", OdbcType.VarChar).Value = numeroCuenta;
+
                 var datatable2 = GetDataTable(cmd);
-                foreach (DataRow dr in datatable2.Rows)
+                if (datatable2.Rows.Count > 0)
                 {
-                    if (dr["No_Cuenta"].ToString() == numeroCuenta)
-                    {
-                        string retornable = dr["P_Nombre"].ToString() + dr["P_Apelido"].ToString();
-                        return retornable;
-                    }
+                     string retornable = datatable2.Rows[0]["Nombre"].ToString() + datatable2.Rows[0]["Apellido"].ToString();
+                    Logger.Log($"Nombre del alumno es: {retornable}", LogType.Debug);
+                     return retornable;
                 }
             }
             catch (Exception e)
@@ -373,8 +316,7 @@ namespace BotVinculacionUnitec
                 Logger.Log(e, LogType.Error);
                 return "";
             }
-            string aus = "";
-            return aus;
+            return "";
         }
 
 // ya esta
@@ -630,25 +572,19 @@ namespace BotVinculacionUnitec
                 var cmd = new OdbcCommand(selectQuery, odbcConnection);
                 cmd.Parameters.Add("@NumeroCuenta", OdbcType.VarChar).Value = numeroCuenta;
                 var datatable = GetDataTable(cmd);
-                foreach (DataRow dr in datatable.Rows)
-                {
-                    if(numeroCuenta == dr["No_Cuenta"].ToString())
-                    {
-                        numCuenta = dr["No_Cuenta"].ToString();
-                    }
-                }
+              
+                if(datatable.Rows.Count > 0)
+                    numCuenta = datatable.Rows[0]["No_Cuenta"].ToString();
 
                 var cmdBotOnly = new OdbcCommand(selectQueryBotOnly, odbcConnectionBotOnly);
                 cmdBotOnly.Parameters.Add("@NumeroCuenta", OdbcType.VarChar).Value = numCuenta;
-                var datatable2 = GetDataTable(cmd);
-                foreach (DataRow dr in datatable2.Rows){
-                    if (dr["Confirmado"].ToString()== "1")
-                    {
+                var datatable2 = GetDataTable(cmdBotOnly);
+                if(datatable2.Rows.Count > 0)
+                {
+                    if (datatable2.Rows[0]["Confirmado"].ToString()== "1")
                         return true;
-                    }
-                    else{
+                    else
                         return false;
-                    }
                 }
             }
             catch (Exception e)
