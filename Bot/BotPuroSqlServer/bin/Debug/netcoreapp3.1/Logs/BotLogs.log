@@ -356,3 +356,691 @@ INFO  2021-03-08 22:36:18,143 15000ms BotVinculacion         - Conexion Vinculac
 INFO  2021-03-08 22:36:18,144 15001ms BotVinculacion         - Conexion Bot_Base creada con éxito!
 INFO  2021-03-08 22:36:19,288 16145ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
 INFO  2021-03-08 22:36:19,289 16146ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:40:02,623   748ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:40:02,906  1031ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:40:04,560  2685ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 16:40:05,106  3231ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 16:40:05,153  3278ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:40:05,154  3279ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:40:06,963  5088ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 16:40:06,964  5089ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:40:06,967  5092ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:40:08,252  6377ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 16:40:08,254  6379ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:40:08,256  6381ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:40:24,178 22303ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:40:24,179 22304ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:41:23,053   359ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:41:23,369   675ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:41:24,538  1843ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 16:41:29,143  6448ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 16:41:29,144  6450ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:41:29,145  6451ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:41:36,310 13615ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 16:41:36,311 13616ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:41:36,313 13618ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:47:03,409   871ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:47:03,814  1277ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:47:05,038  2501ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 16:47:05,438  2900ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 16:47:05,439  2902ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:47:05,440  2903ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 16:47:49,105 46568ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 580
+WARN  2021-03-18 16:47:49,346 46809ms BotVinculacion         - getMail ConvertExternal component has thrown an exception.
+INFO  2021-03-18 16:47:49,368 46831ms BotVinculacion         - JohnnieMiralda:Hola
+INFO  2021-03-18 16:47:49,369 46832ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:47:49,371 46833ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 16:47:49,584 47047ms BotVinculacion         - Existe en database ExisteDb External component has thrown an exception.
+ERROR 2021-03-18 16:47:49,776 47239ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+ERROR 2021-03-18 16:47:49,996 47458ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaExisteDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 722
+INFO  2021-03-18 16:47:50,019 47482ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 16:47:50,023 47486ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:47:50,024 47487ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 16:47:50,241 47704ms BotVinculacion         - Existe en database ExisteDb External component has thrown an exception.
+ERROR 2021-03-18 16:47:50,430 47893ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-18 16:48:03,686   992ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:48:03,925  1232ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:48:05,106  2412ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 16:48:41,400   760ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:48:41,731  1091ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:48:43,896  3256ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 16:51:14,093   823ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 16:51:14,450  1180ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 16:51:16,057  2787ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+ERROR 2021-03-18 16:51:16,375  3105ms BotVinculacion         - System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at System.Data.Odbc.OdbcConnection.PermissionDemand()
+   at System.Data.Odbc.OdbcConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CrearCacheHorasTotales() in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 51
+INFO  2021-03-18 17:00:28,891   414ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:00:30,003  1526ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:00:32,017  3540ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 17:00:43,443 14966ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:00:55,028 26550ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:00:55,029 26551ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:03:04,257   863ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:03:04,552  1158ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:03:05,919  2525ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 17:03:06,465  3072ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:03:06,466  3073ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:03:06,468  3074ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:03:22,205 18812ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 580
+WARN  2021-03-18 17:03:22,515 19121ms BotVinculacion         - getMail ConvertExternal component has thrown an exception.
+INFO  2021-03-18 17:03:22,546 19153ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 17:03:22,547 19153ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:03:22,549 19156ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:03:22,863 19469ms BotVinculacion         - Existe en database ExisteDb External component has thrown an exception.
+ERROR 2021-03-18 17:03:23,090 19697ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-18 17:03:23,109 19715ms BotVinculacion         - JohnnieMiralda:Hdjd
+INFO  2021-03-18 17:03:23,109 19716ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:03:23,111 19717ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:03:23,356 19963ms BotVinculacion         - Existe en database ExisteDb External component has thrown an exception.
+ERROR 2021-03-18 17:03:23,603 20209ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+ERROR 2021-03-18 17:03:23,883 20489ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaExisteDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 722
+INFO  2021-03-18 17:03:23,903 20510ms BotVinculacion         - elvin_deras:Hola
+INFO  2021-03-18 17:03:23,904 20510ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:03:23,905 20512ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:03:24,185 20791ms BotVinculacion         - Existe en database ExisteDb External component has thrown an exception.
+ERROR 2021-03-18 17:03:24,408 21014ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+ERROR 2021-03-18 17:03:24,685 21291ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaExisteDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 722
+INFO  2021-03-18 17:03:24,715 21321ms BotVinculacion         - elvin_deras:
+INFO  2021-03-18 17:03:24,716 21323ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:03:24,718 21324ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:03:24,727 21333ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:03:24,728 21334ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:03:25,410 22017ms BotVinculacion         - elvin_deras:Hola
+INFO  2021-03-18 17:03:25,411 22018ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:03:25,413 22020ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:04:07,103   769ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:04:07,470  1136ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:04:08,748  2414ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 17:04:09,146  2812ms BotVinculacion         - elvin_deras:Hola
+INFO  2021-03-18 17:04:09,147  2813ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:04:09,149  2815ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:04:20,301 13967ms BotVinculacion         - elvin_deras:Hola
+INFO  2021-03-18 17:04:20,302 13968ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:04:20,304 13970ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:04:36,044 29710ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 17:04:36,046 29712ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:04:36,048 29714ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:04:42,839 36505ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:04:42,840 36506ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:04:42,843 36509ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:06:59,639   733ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:06:59,946  1040ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:07:01,277  2371ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 17:07:01,655  2749ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:07:01,657  2751ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:07:01,658  2752ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:07:02,767  3861ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 580
+WARN  2021-03-18 17:07:03,137  4231ms BotVinculacion         - getMail ConvertExternal component has thrown an exception.
+INFO  2021-03-18 17:07:03,162  4256ms BotVinculacion         - JohnnieMiralda:Mm
+INFO  2021-03-18 17:07:03,163  4257ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:07:03,165  4258ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:07:03,425  4519ms BotVinculacion         - Existe en database ExisteDb External component has thrown an exception.
+ERROR 2021-03-18 17:07:03,660  4754ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+ERROR 2021-03-18 17:07:03,893  4987ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaExisteDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 722
+INFO  2021-03-18 17:07:03,914  5008ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 17:07:03,916  5010ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:07:03,919  5013ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:07:04,130  5224ms BotVinculacion         - Existe en database ExisteDb External component has thrown an exception.
+ERROR 2021-03-18 17:07:04,370  5464ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-18 17:07:14,142 15236ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:07:14,144 15238ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:07:14,146 15240ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:07:14,372 15465ms BotVinculacion         - Existe en database ExisteDb External component has thrown an exception.
+ERROR 2021-03-18 17:07:14,603 15697ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+ERROR 2021-03-18 17:07:14,856 15949ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaExisteDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 722
+INFO  2021-03-18 17:07:52,480 53574ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 17:08:53,274   514ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:08:53,429   669ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:08:54,504  1745ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 17:08:54,912  2153ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 17:08:54,914  2154ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:08:54,919  2160ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:09:02,946 10187ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:09:02,948 10189ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:09:02,950 10191ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:11:10,196   279ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:11:10,343   426ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:11:11,846  1929ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 17:11:12,373  2457ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:11:12,374  2458ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:11:12,388  2471ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:11:20,408 10492ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 580
+WARN  2021-03-18 17:11:20,651 10735ms BotVinculacion         - getMail ConvertExternal component has thrown an exception.
+INFO  2021-03-18 17:11:44,811   688ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:11:45,159  1036ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:11:46,236  2114ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 17:11:46,568  2445ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:11:46,568  2446ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:11:46,570  2447ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:12:00,506 16383ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 580
+WARN  2021-03-18 17:12:00,744 16621ms BotVinculacion         - getMail ConvertExternal component has thrown an exception.
+INFO  2021-03-18 17:16:11,042   863ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:16:11,198  1019ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:16:12,505  2326ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 17:16:22,659 12480ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 17:16:22,660 12481ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:16:22,661 12482ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:16:27,542 17363ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:16:27,543 17365ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:16:27,546 17367ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:27:29,346   334ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:27:29,476   465ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:27:30,702  1691ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 17:27:31,086  2075ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:27:31,087  2076ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:27:31,089  2078ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:27:37,312  8300ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 580
+INFO  2021-03-18 17:27:59,038   367ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:27:59,213   543ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:28:00,314  1644ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 17:28:00,731  2061ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:28:00,732  2062ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:28:00,734  2063ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:28:14,066 15396ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaVerificadaDb(String numeroCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 580
+WARN  2021-03-18 17:28:14,309 15639ms BotVinculacion         - getMail ConvertExternal component has thrown an exception.
+INFO  2021-03-18 17:28:14,332 15662ms BotVinculacion         - bradsanchez:/start
+INFO  2021-03-18 17:28:14,333 15662ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:28:14,334 15664ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:28:14,559 15888ms BotVinculacion         - Existe en database ExisteDb External component has thrown an exception.
+ERROR 2021-03-18 17:28:14,759 16088ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-18 17:28:14,768 16097ms BotVinculacion         - elvin_deras:Hola
+INFO  2021-03-18 17:28:14,769 16098ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:28:14,772 16102ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-18 17:28:14,967 16297ms BotVinculacion         - Existe en database ExisteDb External component has thrown an exception.
+ERROR 2021-03-18 17:28:15,184 16513ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+ERROR 2021-03-18 17:28:15,454 16784ms BotVinculacion         - System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at Interop.Odbc.SQLDriverConnectW(OdbcConnectionHandle hdbc, IntPtr hwnd, String connectionstring, Int16 cbConnectionstring, IntPtr connectionstringout, Int16 cbConnectionstringoutMax, Int16& cbConnectionstringout, Int16 fDriverCompletion)
+   at System.Data.Odbc.OdbcConnectionHandle.Connect(String connectionString)
+   at System.Data.Odbc.OdbcConnectionHandle..ctor(OdbcConnection connection, OdbcConnectionString constr, OdbcEnvironmentHandle environmentHandle)
+   at System.Data.Odbc.OdbcConnectionOpen..ctor(OdbcConnection outerConnection, OdbcConnectionString connectionOptions)
+   at System.Data.Odbc.OdbcConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.Odbc.OdbcConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 353
+   at BotVinculacionUnitec.AccesDB.CuentaExisteDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 722
+INFO  2021-03-18 17:28:15,474 16804ms BotVinculacion         - bradsanchez:
+INFO  2021-03-18 17:28:15,475 16805ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:28:15,476 16805ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:28:38,281  1010ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:28:38,482  1211ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:28:39,558  2288ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 17:28:44,574  7303ms BotVinculacion         - bradsanchez:21841180
+INFO  2021-03-18 17:28:44,575  7305ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:28:44,577  7306ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:28:49,270 11999ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:28:49,272 12001ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:28:50,680 13409ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:28:50,681 13410ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:28:56,449 19179ms BotVinculacion         - bradsanchez:Ya me agarro
+INFO  2021-03-18 17:28:56,451 19180ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:28:56,456 19185ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:29:18,160 40889ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 17:29:18,161 40890ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:29:18,163 40893ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:29:23,275 46004ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-18 17:29:23,276 46005ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:29:23,278 46007ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:30:50,664 133393ms BotVinculacion         - JohnnieMiralda:622034
+INFO  2021-03-18 17:30:50,665 133394ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:30:50,667 133396ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:30:55,634 138363ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:30:55,635 138364ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:30:58,117 140846ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:30:58,118 140848ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:31:16,790 159519ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:31:16,791 159520ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:31:44,768 187497ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:31:44,769 187499ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 17:31:55,697 198427ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 17:31:55,698 198428ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:14:44,835   775ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:14:45,173  1113ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:14:47,359  3299ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculacionUnitec-SPS
+INFO  2021-03-18 21:14:49,948  5887ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:14:49,949  5888ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:14:56,705 12644ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:14:56,706 12646ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:15:00,710 16649ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:15:00,711 16651ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:15:06,720 22660ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 21:15:06,721 22661ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:15:06,724 22664ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:15:10,129 26069ms BotVinculacion         - JohnnieMiralda:
+INFO  2021-03-18 21:15:10,131 26070ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:15:10,137 26077ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:15:14,518 30457ms BotVinculacion         - JohnnieMiralda:/start
+INFO  2021-03-18 21:15:14,519 30459ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:15:14,524 30464ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:15:19,086 35026ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:15:19,088 35027ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:15:28,385 44324ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:15:28,387 44327ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:18:46,547 242487ms BotVinculacion         - jCueva1109:Hola
+INFO  2021-03-18 21:18:46,550 242490ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:18:46,557 242496ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:18:50,183 246122ms BotVinculacion         - jCueva1109:
+INFO  2021-03-18 21:18:50,184 246123ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:18:50,186 246125ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:18:58,086 254026ms BotVinculacion         - jCueva1109:Hey
+INFO  2021-03-18 21:18:58,087 254027ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:18:58,092 254032ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:19:50,434 306374ms BotVinculacion         - jCueva1109:Hey
+INFO  2021-03-18 21:19:50,437 306377ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:19:50,446 306386ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:20:00,384 316324ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:20:00,386 316326ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:20:04,839 320779ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:20:04,845 320785ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:21:33,178 409118ms BotVinculacion         - jCueva1109:/start
+INFO  2021-03-18 21:21:33,180 409119ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:21:33,182 409122ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:21:39,390 415330ms BotVinculacion         - jCueva1109:21741211
+INFO  2021-03-18 21:21:39,391 415331ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:21:39,395 415335ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:23:22,346 518286ms BotVinculacion         - jCueva1109:276909
+INFO  2021-03-18 21:23:22,348 518288ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:23:22,354 518294ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:23:29,254 525194ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:23:29,259 525199ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:40:43,228 1559168ms BotVinculacion         - JohnnieMiralda:21551012
+INFO  2021-03-18 21:40:43,230 1559170ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:40:43,231 1559171ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:41:07,285 1583225ms BotVinculacion         - JohnnieMiralda:497364
+INFO  2021-03-18 21:41:07,286 1583226ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:41:07,287 1583226ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:41:14,533 1590473ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:41:14,534 1590474ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-18 21:41:16,248 1592188ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-18 21:41:16,249 1592189ms BotVinculacion         - Conexion Bot_Base creada con éxito!

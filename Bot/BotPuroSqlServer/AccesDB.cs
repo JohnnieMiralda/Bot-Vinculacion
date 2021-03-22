@@ -502,14 +502,14 @@ namespace BotVinculacionUnitec
                 {
                     ing = false;
                     random = generator.Next(0, 999999).ToString("D6");
-                    string selectQuery = "SELECT TokenGenerado from [AlumnosBot] ;";
+                    string selectQuery = "SELECT TokenGenerado from [AlumnosBot] where TokenGenerado = ?;";
                     var cmd = new OdbcCommand(selectQuery, odbcConnectionBotOnly);
+                    cmd.Parameters.Add("@TokenGenerado", OdbcType.Text).Value = random;
                     var datatable = GetDataTable(cmd);
 
                     if (datatable.Rows.Count > 0)
-                    {
                         ing = true;
-                    }
+                    
                     
                 }
             }
@@ -697,12 +697,13 @@ namespace BotVinculacionUnitec
                 var cmd = new OdbcCommand(selectQuery, odbcConnection);
                 cmd.Parameters.Add("@Cuenta", OdbcType.VarChar).Value = nCuenta;
                 var datatable = GetDataTable(cmd);
-                
-                detalles += "Nombre de Proyecto: " + datatable.Rows[0]["id_proyecto"].ToString() + "\n";
-                detalles += "Periodo: " + datatable.Rows[0]["Periodo"].ToString() + "\n";
-                detalles += "Beneficiaro: " + datatable.Rows[0]["Beneficiario"].ToString() + "\n";                   //HORAS DE PROYECTO 
-                detalles += "Horas Trabajadas:" + datatable.Rows[0]["Horas_Acum"].ToString() + "\n\n";
-                
+                foreach (DataRow dr in datatable.Rows)
+                {
+                    detalles += "Nombre de Proyecto: " + dr["id_proyecto"].ToString() + "\n";
+                    detalles += "Periodo: " + dr["Periodo"].ToString() + "\n";
+                    detalles += "Beneficiaro: " + dr["Beneficiario"].ToString() + "\n";                   //HORAS DE PROYECTO 
+                    detalles += "Horas Trabajadas:" + dr["Horas_Acum"].ToString() + "\n\n";
+                }
             }
             catch (Exception e)
             {
