@@ -1,2 +1,14 @@
 ERROR 2021-03-01 14:35:23,937 19251ms BotVinculacion         - Get id Unable to cast object of type 'System.String' to type 'System.Int32'.
 ERROR 2021-03-01 14:43:05,810 139773ms BotVinculacion         - Get id Unable to cast object of type 'System.String' to type 'System.Int32'.
+ERROR 2021-03-24 23:21:56,932  9466ms BotVinculacion         - System.Data.Odbc.OdbcException (0x80131937): ERROR [HY000] [Microsoft][Controlador ODBC Microsoft Access] La tabla 'Datos Asignaturas' está abierta en modo exclusivo por otro usuario o ya está abierta mediante la interfaz de usuario y no se puede manipular mediante código.
+   at System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   at System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 354
+   at BotVinculacionUnitec.AccesDB.HorasDetalle2(String nCuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 691

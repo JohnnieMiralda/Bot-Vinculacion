@@ -415,8 +415,7 @@ namespace BotVinculacionUnitec
                 Logger.Log("getMail Convert" + e.Message, LogType.Warn);
                 return " ";
             }
-            string aus = "";
-            return aus;
+            return " ";
         }
 
 // ya esta
@@ -643,7 +642,6 @@ namespace BotVinculacionUnitec
             {
                 Logger.Log(e, LogType.Error);
             }
-            string aus = "";
             return -1;
         }
 
@@ -691,7 +689,7 @@ namespace BotVinculacionUnitec
         public string HorasDetalle2(string nCuenta)
         {
             string detalles = "";
-            string selectQuery = "SELECT id_proyecto,Periodo,Beneficiario,Horas_Acum FROM [Tabla General] where No_Cuenta = ? ";
+            string selectQuery = "SELECT [Tabla General].id_proyecto, [Tabla General].Periodo, [Tabla General].Beneficiario, [Tabla General].Horas_Acum, [Datos Asignaturas].Nomb_Clase FROM [Tabla General] INNER JOIN [Datos Asignaturas] ON [Tabla General].Id_Clase=[Datos Asignaturas].Id_Clase where No_Cuenta = ? ";
             try
             {
                 var cmd = new OdbcCommand(selectQuery, odbcConnection);
@@ -699,10 +697,11 @@ namespace BotVinculacionUnitec
                 var datatable = GetDataTable(cmd);
                 foreach (DataRow dr in datatable.Rows)
                 {
-                    detalles += "Nombre de Proyecto: " + dr["id_proyecto"].ToString() + "\n";
-                    detalles += "Periodo: " + dr["Periodo"].ToString() + "\n";
-                    detalles += "Beneficiaro: " + dr["Beneficiario"].ToString() + "\n";                   //HORAS DE PROYECTO 
-                    detalles += "Horas Trabajadas:" + dr["Horas_Acum"].ToString() + "\n\n";
+                    detalles += "Asignatura: " + dr["Nomb_Clase"].ToString() + "\n";
+                    detalles += "Código de Proyecto: " + dr["id_proyecto"].ToString() + "\n";
+                    detalles += "Período: " + dr["Periodo"].ToString() + "\n";
+                    detalles += "Beneficiario: " + dr["Beneficiario"].ToString() + "\n";                   //HORAS DE PROYECTO 
+                    detalles += "Horas trabajadas:" + dr["Horas_Acum"].ToString() + "\n\n";
                 }
             }
             catch (Exception e)

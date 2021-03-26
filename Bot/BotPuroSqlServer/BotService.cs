@@ -69,10 +69,11 @@ namespace BotVinculacionUnitec
             // sqlite.FechaA();
             if (message.Chat.Username == null)
             {
-                Bot.SendTextMessageAsync(message.Chat.Id, "Su cuenta de Telegram no esta configurada correctamente porfavor\n Ve a Ajustes>Elegir Nombre de Usuario");
+                Bot.SendTextMessageAsync(message.Chat.Id, "Su cuenta de Telegram no está configurada correctamente por favor\n Ve a Ajustes>Elegir Nombre de Usuario");
             }
             else
-            {
+            {   
+
                 if (exists && estate)
                 {
                     string numCuenta = access.GetCuentaNUMDb(message.Chat.Username);
@@ -95,7 +96,7 @@ namespace BotVinculacionUnitec
                     // MOstrar Botones  
                     Bot.SendTextMessageAsync(
                       message.Chat.Id,
-                      "Estimado estudiante " + nombre + ": Bienvenido al Asistente de Vinculación UNITEC-SPS \n Elija una Opcion",
+                      "Estimado estudiante " + nombre + ": Bienvenido al Asistente de Vinculación UNITEC-SPS \nSeleccione una opción:",
                       replyMarkup: BotonesHYD);
                 }
                 else if (exists && estate == false)
@@ -129,7 +130,7 @@ namespace BotVinculacionUnitec
                             // MOstrar Botones  
                             Bot.SendTextMessageAsync(
                               message.Chat.Id,
-                              "Estimado estudiante " + nombre + ": Bienvenido al Asistente de Vinculación UNITEC-SPS \n Elija una Opcion",
+                              "Estimado estudiante " + nombre + ": Bienvenido al Asistente de Vinculación UNITEC-SPS \nSeleccione una opción:",
                               replyMarkup: BotonesHYD);
                         }
 
@@ -150,11 +151,11 @@ namespace BotVinculacionUnitec
                         if (access.newTokenDb(message.Chat.Username, Mail))
                         {
                             Console.WriteLine("Reenvio exitoso al correo:" + changedMail);
-                            Bot.SendTextMessageAsync(message.Chat.Id, "Se reenvio un nuevo codigo a de confimacion al correo:" + changedMail);
+                            Bot.SendTextMessageAsync(message.Chat.Id, "Se reenvió un nuevo código de confirmación al correo:" + changedMail);
                         }
                         else
                         {
-                            Bot.SendTextMessageAsync(message.Chat.Id, "Debes esperar almenos 5 minutos desde tu ultima solicitud ");
+                            Bot.SendTextMessageAsync(message.Chat.Id, "Debes esperar al menos 5 minutos desde tu ultima solicitud");
                         }
                     }
                     else
@@ -190,7 +191,7 @@ namespace BotVinculacionUnitec
                                             //Caso cuenta verificada pero con otro user de telegram
                                             case true:
 
-                                                Bot.SendTextMessageAsync(message.Chat.Id, "El numero de Cuenta que ingresaste ya esta vinculado a otra cuenta de telegram \nPara consultas enviar correo a:\nvinculacionsps@unitec.edu ó andrea.orellana@unitec.edu.hn");
+                                                Bot.SendTextMessageAsync(message.Chat.Id, "El número de Cuenta que ingresaste ya está vinculado a otra cuenta de Telegram \n\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: Nombre completo, Número de cuenta y Carrera\n\nSeleccione una opción:");
 
                                                 break;//case cuenta verificada con otro user de telegram
 
@@ -209,12 +210,12 @@ namespace BotVinculacionUnitec
                                                 //Proceso de enviar correo y generar token
                                                 if (Mail == null || Mail == "" || Mail == " " || Mail == "NULL")
                                                 {
-                                                    Bot.SendTextMessageAsync(message.Chat.Id, "Tu Numero de cuenta no tiene un correo vinculado \nPara consultas enviar correo a:\nvinculacionsps@unitec.edu ó andrea.orellana@unitec.edu.hn");
+                                                    Bot.SendTextMessageAsync(message.Chat.Id, "Tu Número de cuenta no tiene un correo vinculado \n\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: Nombre completo, Número de cuenta y Carrera\n\nSeleccione una opción:");
 
                                                 }
                                                 else
                                                 {
-                                                    Bot.SendTextMessageAsync(message.Chat.Id, "Numero de Cuenta no verificado \nPara verificar Tu Numero de Cuenta ingresas token enviado a tu correo: " + changedMail);
+                                                    Bot.SendTextMessageAsync(message.Chat.Id, "Número de Cuenta no verificado \nPara verificar Tu Número de Cuenta ingresas token enviado a tu correo:" + changedMail);
 
                                                     access.insertarDb(message.Chat.Username, message.Text, Mail);
                                                     Console.WriteLine("Se ha reenviado un codigo de Verificacion al correo:" + Mail);
@@ -222,14 +223,14 @@ namespace BotVinculacionUnitec
                                                 }
 
                                                 break;
-
-
                                         }
                                     }
                                     break;
 
                                 default:
-                                    Bot.SendTextMessageAsync(message.Chat.Id, "Estimados estudiante, a la fecha no aparece ningún registro de horas correspondiente a su número de cuenta. Para consultas enviar correo a: \nvinculacionsps@unitec.edu \no \nandrea.orellana@unitec.edu.hn");
+                                    var msg = message.Text.Split(" ").First().ToString();
+                                    var texto= $"Estimados estudiante,\nVerifique que el número de cuenta ingresado \"{msg}\" es válido, de ser así a la fecha no aparece ningún registro de horas correspondiente al mismo.\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: Nombre completo, Número de cuenta y Carrera";
+                                    Bot.SendTextMessageAsync(message.Chat.Id, texto);
                                     break;
                             }
 
@@ -278,7 +279,7 @@ namespace BotVinculacionUnitec
 
                     Bot.SendTextMessageAsync(
                      callbackQuery.Message.Chat.Id,
-                     "Tienes un total de " + totalHoras + " horas a la fecha.\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu ó andrea.orellana@unitec.edu.hn\n\nOpciones ",
+                     "El total de sus horas a la fecha es de: " + totalHoras + "\n\n\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: Nombre completo, Número de cuenta y Carrera \n\nSeleccione una opción:",
                      replyMarkup: BotonesHYD);
 
                     break;
@@ -302,7 +303,7 @@ namespace BotVinculacionUnitec
 
                     Bot.SendTextMessageAsync(
                    callbackQuery.Message.Chat.Id,
-                    "Tu Informacion es la siguiente:\n" + DetalleHoras + "\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu ó andrea.orellana@unitec.edu.hn\n\nOpciones",
+                    "El detalle de sus horas a la fecha es el siguiente:\n" + DetalleHoras + "\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: Nombre completo, Número de cuenta y Carrera\n\nSeleccione una opción:",
                     replyMarkup: BotonesHY);
                     break;
 
