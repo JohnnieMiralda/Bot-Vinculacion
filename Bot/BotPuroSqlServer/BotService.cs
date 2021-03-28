@@ -69,7 +69,7 @@ namespace BotVinculacionUnitec
             // sqlite.FechaA();
             if (message.Chat.Username == null)
             {
-                Bot.SendTextMessageAsync(message.Chat.Id, "Su cuenta de Telegram no está configurada correctamente por favor\n Ve a Ajustes>Elegir Nombre de Usuario");
+                Bot.SendTextMessageAsync(message.Chat.Id, "Su cuenta de Telegram no está configurada correctamente por favor\n\nVe a Ajustes > Nombre de Usuario");
             }
             else
             {   
@@ -96,7 +96,7 @@ namespace BotVinculacionUnitec
                     // MOstrar Botones  
                     Bot.SendTextMessageAsync(
                       message.Chat.Id,
-                      "Estimado estudiante " + nombre + ": Bienvenido al Asistente de Vinculación UNITEC-SPS \nSeleccione una opción:",
+                      "Estimado estudiante " + nombre + ": Bienvenido al sistente de vinculación UNITEC-SPS \nSeleccione una opción:",
                       replyMarkup: BotonesHYD);
                 }
                 else if (exists && estate == false)
@@ -130,7 +130,7 @@ namespace BotVinculacionUnitec
                             // MOstrar Botones  
                             Bot.SendTextMessageAsync(
                               message.Chat.Id,
-                              "Estimado estudiante " + nombre + ": Bienvenido al Asistente de Vinculación UNITEC-SPS \nSeleccione una opción:",
+                              "Estimado estudiante " + nombre + ": Bienvenido al asistente de vinculación UNITEC-SPS \nSeleccione una opción:",
                               replyMarkup: BotonesHYD);
                         }
 
@@ -161,7 +161,7 @@ namespace BotVinculacionUnitec
                     else
                     {
 
-                        Bot.SendTextMessageAsync(message.Chat.Id, "Token Ingresado Incorrecto\nEscribe reenviar para solicitar nuevo token");
+                        Bot.SendTextMessageAsync(message.Chat.Id, "Token ingresado incorrecto\nEscribe reenviar para solicitar nuevo token");
 
                     }
                 }
@@ -173,7 +173,7 @@ namespace BotVinculacionUnitec
 
 
                             Bot.SendTextMessageAsync(message.Chat.Id,
-                                     "Estimado estudiante: Bienvenido al Asistente de Vinculación UNITEC-SPS\n\nIngrese su número de cuenta para sus consultas");
+                                     "Estimado estudiante: Bienvenido al asistente de vinculación UNITEC-SPS\n\nIngrese su número de cuenta para sus consultas");
                             
                             break;
                         default:
@@ -191,7 +191,7 @@ namespace BotVinculacionUnitec
                                             //Caso cuenta verificada pero con otro user de telegram
                                             case true:
 
-                                                Bot.SendTextMessageAsync(message.Chat.Id, "El número de Cuenta que ingresaste ya está vinculado a otra cuenta de Telegram \n\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: Nombre completo, Número de cuenta y Carrera\n\nSeleccione una opción:");
+                                                Bot.SendTextMessageAsync(message.Chat.Id, "El número de cuenta que ingresaste ya está vinculado a otra cuenta de Telegram \n\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: nombre completo, número de cuenta y carrera\n\nSeleccione una opción:");
 
                                                 break;//case cuenta verificada con otro user de telegram
 
@@ -210,12 +210,12 @@ namespace BotVinculacionUnitec
                                                 //Proceso de enviar correo y generar token
                                                 if (Mail == null || Mail == "" || Mail == " " || Mail == "NULL")
                                                 {
-                                                    Bot.SendTextMessageAsync(message.Chat.Id, "Tu Número de cuenta no tiene un correo vinculado \n\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: Nombre completo, Número de cuenta y Carrera\n\nSeleccione una opción:");
+                                                    Bot.SendTextMessageAsync(message.Chat.Id, "Tu número de cuenta no tiene un correo vinculado \n\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: nombre completo, número de cuenta y carrera\n\nSeleccione una opción:");
 
                                                 }
                                                 else
                                                 {
-                                                    Bot.SendTextMessageAsync(message.Chat.Id, "Número de Cuenta no verificado \nPara verificar Tu Número de Cuenta ingresas token enviado a tu correo:" + changedMail);
+                                                    Bot.SendTextMessageAsync(message.Chat.Id, "Número de cuenta no verificado \nPara verificar tu número de cuenta ingresas token enviado a tu correo:" + changedMail);
 
                                                     access.insertarDb(message.Chat.Username, message.Text, Mail);
                                                     Console.WriteLine("Se ha reenviado un codigo de Verificacion al correo:" + Mail);
@@ -229,7 +229,7 @@ namespace BotVinculacionUnitec
 
                                 default:
                                     var msg = message.Text.Split(" ").First().ToString();
-                                    var texto= $"Estimados estudiante,\nVerifique que el número de cuenta ingresado \"{msg}\" es válido, de ser así a la fecha no aparece ningún registro de horas correspondiente al mismo.\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: Nombre completo, Número de cuenta y Carrera";
+                                    var texto= $"Estimados estudiante,\nVerifique que el número de cuenta ingresado \"{msg}\" es válido, de ser así a la fecha no aparece ningún registro de horas correspondiente al mismo.\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: nombre completo, número de cuenta y carrera";
                                     Bot.SendTextMessageAsync(message.Chat.Id, texto);
                                     break;
                             }
@@ -279,7 +279,7 @@ namespace BotVinculacionUnitec
 
                     Bot.SendTextMessageAsync(
                      callbackQuery.Message.Chat.Id,
-                     "El total de sus horas a la fecha es de: " + totalHoras + "\n\n\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: Nombre completo, Número de cuenta y Carrera \n\nSeleccione una opción:",
+                     "El total de sus horas a la fecha es de: " + totalHoras + "\n\n\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: nombre completo, número de cuenta y carrera \n\nSeleccione una opción:",
                      replyMarkup: BotonesHYD);
 
                     break;
@@ -303,7 +303,7 @@ namespace BotVinculacionUnitec
 
                     Bot.SendTextMessageAsync(
                    callbackQuery.Message.Chat.Id,
-                    "El detalle de sus horas a la fecha es el siguiente:\n" + DetalleHoras + "\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: Nombre completo, Número de cuenta y Carrera\n\nSeleccione una opción:",
+                    "El detalle de sus horas a la fecha es el siguiente:\n" + DetalleHoras + "\nPara consultas enviar correo a:\nvinculacionsps@unitec.edu \"o\" andrea.orellana@unitec.edu.hn \nIncluyendo la siguinte información: nombre completo, número de cuenta y carrera\n\nSeleccione una opción:",
                     replyMarkup: BotonesHY);
                     break;
 

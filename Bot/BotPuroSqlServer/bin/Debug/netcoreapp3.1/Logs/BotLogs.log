@@ -1476,3 +1476,222 @@ INFO  2021-03-25 19:53:23,200  2439ms BotVinculacion         - Conexion Vinculac
 INFO  2021-03-25 19:53:23,203  2442ms BotVinculacion         - Conexion Bot_Base creada con éxito!
 INFO  2021-03-25 19:53:23,439  2678ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
 INFO  2021-03-25 19:53:23,440  2679ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:18:53,378   540ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:18:53,584   747ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:18:55,576  2738ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculaciónUnitec-SPS
+INFO  2021-03-26 17:18:56,197  3359ms BotVinculacion         - :/start
+INFO  2021-03-26 17:18:56,200  3362ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:18:56,203  3365ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-26 17:18:57,319  4481ms BotVinculacion         - Error en database ExisteDb ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+ERROR 2021-03-26 17:18:57,684  4846ms BotVinculacion         - System.Data.Odbc.OdbcException (0x80131937): ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+   at System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   at System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 352
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-26 17:18:57,730  4892ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:18:57,730  4893ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:18:57,737  4900ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:18:57,738  4900ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:18:57,740  4902ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:18:57,740  4902ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:18:57,742  4905ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:18:57,743  4905ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:18:57,746  4909ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:18:57,748  4910ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:18:57,749  4911ms BotVinculacion         - :Ok
+INFO  2021-03-26 17:18:57,749  4912ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:18:57,752  4914ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-26 17:18:58,184  5346ms BotVinculacion         - Error en database ExisteDb ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+ERROR 2021-03-26 17:18:58,450  5612ms BotVinculacion         - System.Data.Odbc.OdbcException (0x80131937): ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+   at System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   at System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 352
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-26 17:19:03,251 10413ms BotVinculacion         - :/start
+INFO  2021-03-26 17:19:03,252 10415ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:03,259 10421ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-26 17:19:03,574 10737ms BotVinculacion         - Error en database ExisteDb ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+ERROR 2021-03-26 17:19:03,854 11016ms BotVinculacion         - System.Data.Odbc.OdbcException (0x80131937): ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+   at System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   at System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 352
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-26 17:19:11,097 18259ms BotVinculacion         - :
+INFO  2021-03-26 17:19:11,361 18523ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:11,362 18524ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:19:19,561 26724ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:19,563 26725ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:19:36,351 43513ms BotVinculacion         - :93406
+INFO  2021-03-26 17:19:36,352 43514ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:36,353 43515ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-26 17:19:37,188 44350ms BotVinculacion         - Error en database ExisteDb ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+ERROR 2021-03-26 17:19:37,957 45119ms BotVinculacion         - System.Data.Odbc.OdbcException (0x80131937): ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+   at System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   at System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 352
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-26 17:19:41,973 49135ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:41,976 49138ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:19:43,064 50226ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:43,065 50227ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:19:46,472 53634ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:46,479 53642ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:19:47,160 54323ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:47,161 54324ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:19:48,256 55419ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:48,258 55420ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:19:57,305 64467ms BotVinculacion         - :Johnnie
+INFO  2021-03-26 17:19:57,307 64469ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:57,309 64472ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-26 17:19:57,698 64861ms BotVinculacion         - Error en database ExisteDb ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+ERROR 2021-03-26 17:19:58,049 65211ms BotVinculacion         - System.Data.Odbc.OdbcException (0x80131937): ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+   at System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   at System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 352
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-26 17:19:58,222 65384ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:58,222 65384ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:19:58,535 65697ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:58,538 65700ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:19:59,771 66934ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:19:59,772 66934ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:20:00,670 67833ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:00,672 67834ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:20:01,526 68688ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:01,529 68691ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:20:21,841 89003ms BotVinculacion         - :/start
+INFO  2021-03-26 17:20:21,841 89004ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:21,842 89004ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-26 17:20:22,141 89303ms BotVinculacion         - Error en database ExisteDb ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+ERROR 2021-03-26 17:20:22,498 89660ms BotVinculacion         - System.Data.Odbc.OdbcException (0x80131937): ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+   at System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   at System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 352
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-26 17:20:25,232 92394ms BotVinculacion         - :
+INFO  2021-03-26 17:20:25,233 92395ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:25,233 92395ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:20:27,120 94283ms BotVinculacion         - :Hola
+INFO  2021-03-26 17:20:27,121 94283ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:27,122 94284ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-26 17:20:27,446 94608ms BotVinculacion         - Error en database ExisteDb ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+ERROR 2021-03-26 17:20:27,776 94938ms BotVinculacion         - System.Data.Odbc.OdbcException (0x80131937): ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+   at System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   at System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 352
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-26 17:20:28,790 95952ms BotVinculacion         - :Johnnie
+INFO  2021-03-26 17:20:28,791 95953ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:28,792 95954ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-26 17:20:29,134 96296ms BotVinculacion         - Error en database ExisteDb ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+ERROR 2021-03-26 17:20:29,445 96607ms BotVinculacion         - System.Data.Odbc.OdbcException (0x80131937): ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+   at System.Data.Odbc.OdbcConnection.HandleError(OdbcHandle hrHandle, RetCode retcode)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   at System.Data.Odbc.OdbcCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 352
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-26 17:20:34,205 101368ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:34,207 101369ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:20:35,388 102550ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:35,389 102551ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:20:37,065 104227ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:37,066 104228ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:20:37,902 105064ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:37,904 105066ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:20:38,620 105782ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:38,620 105782ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:20:52,233 119395ms BotVinculacion         - Aylin_Arevalo:Hola
+INFO  2021-03-26 17:20:52,234 119396ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:20:52,237 119399ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:21:14,361 141523ms BotVinculacion         - Aylin_Arevalo:21841242
+INFO  2021-03-26 17:21:14,361 141523ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:21:14,363 141526ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:21:28,827 155989ms BotVinculacion         - JohnnieMiralda:jj
+INFO  2021-03-26 17:21:28,828 155990ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:21:28,829 155991ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:21:43,631 170793ms BotVinculacion         - JohnnieMiralda:21741236
+INFO  2021-03-26 17:21:43,632 170794ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:21:43,633 170795ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:21:48,894 176057ms BotVinculacion         - :/start
+INFO  2021-03-26 17:21:48,898 176060ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:21:48,899 176062ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+ERROR 2021-03-26 17:21:49,237 176399ms BotVinculacion         - Error en database ExisteDb ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+ERROR 2021-03-26 17:21:49,790 176952ms BotVinculacion         - System.Data.Odbc.OdbcException (0x80131937): ERROR [HY090] [Microsoft][Controlador ODBC Microsoft Access]Longitud de cadena o de búfer no válida 
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader, Object[] methodArguments, SQL_API odbcApiMethod)
+   at System.Data.Odbc.OdbcCommand.ExecuteReaderObject(CommandBehavior behavior, String method, Boolean needReader)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BotVinculacionUnitec.AccesDB.GetDataTable(OdbcCommand cmd) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 352
+   at BotVinculacionUnitec.AccesDB.estadoDb(String Cuenta) in C:\Users\JOHNNIE\Documents\GitHub\Bot-Vinculacion\Bot\BotPuroSqlServer\AccesDB.cs:line 232
+INFO  2021-03-26 17:23:13,421   651ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:23:13,663   892ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:23:16,211  3441ms BotVinculacion         - Bot Iniciado:  Usuario ID: 1099955313, Username: VinculaciónUnitec-SPS
+INFO  2021-03-26 17:23:16,759  3988ms BotVinculacion         - Aylin_Arevalo:21841020
+INFO  2021-03-26 17:23:16,765  3994ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:23:16,769  3999ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:23:32,200 19430ms BotVinculacion         - JohnnieMiralda:245206
+INFO  2021-03-26 17:23:32,202 19431ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:23:32,204 19433ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:23:42,498 29728ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:23:42,501 29731ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:23:49,991 37220ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:23:49,992 37221ms BotVinculacion         - Conexion Bot_Base creada con éxito!
+INFO  2021-03-26 17:24:09,389 56619ms BotVinculacion         - Aylin_Arevalo:21841259
+INFO  2021-03-26 17:24:09,390 56619ms BotVinculacion         - Conexion Vinculacion_Base creada con éxito!
+INFO  2021-03-26 17:24:09,391 56620ms BotVinculacion         - Conexion Bot_Base creada con éxito!

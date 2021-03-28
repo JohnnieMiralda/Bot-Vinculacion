@@ -283,8 +283,7 @@ namespace BotVinculacionUnitec
                 Logger.Log(e, LogType.Error);
                 return "";
             }
-            string aus = "";
-            return aus;
+            return "";
         }
 
 // ya esta
@@ -698,10 +697,10 @@ namespace BotVinculacionUnitec
                 foreach (DataRow dr in datatable.Rows)
                 {
                     detalles += "Asignatura: " + dr["Nomb_Clase"].ToString() + "\n";
-                    detalles += "Código de Proyecto: " + dr["id_proyecto"].ToString() + "\n";
+                    detalles += "Código de proyecto: " + dr["id_proyecto"].ToString() + "\n";
                     detalles += "Período: " + dr["Periodo"].ToString() + "\n";
                     detalles += "Beneficiario: " + dr["Beneficiario"].ToString() + "\n";                   //HORAS DE PROYECTO 
-                    detalles += "Horas trabajadas:" + dr["Horas_Acum"].ToString() + "\n\n";
+                    detalles += "Horas trabajadas: " + dr["Horas_Acum"].ToString() + "\n\n";
                 }
             }
             catch (Exception e)
